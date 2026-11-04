@@ -1,0 +1,781 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>Contadores · NetPrinter</title>
+<link rel="stylesheet" href="static/style.css">
+<link rel="icon" href="static/icon.svg" type="image/svg+xml">
+<script src="static/app.js"></script>
+<link rel="stylesheet" href="static/demo.css"><script src="static/demo.js"></script></head>
+<body class="central"><div class="demo-banner" role="note">Demo de NetPrinter con datos inventados · Los cambios no se guardan</div>
+<svg class="sprite" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg">
+<symbol id="i-printer" viewBox="0 0 24 24"><path d="M6 9V3h12v6"/><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><path d="M6 14h12v7H6z"/></symbol>
+<symbol id="i-building" viewBox="0 0 24 24"><rect x="4" y="3" width="16" height="18" rx="1.5"/><path d="M9 21v-4h6v4"/><path d="M9 7h.01"/><path d="M15 7h.01"/><path d="M9 12h.01"/><path d="M15 12h.01"/></symbol>
+<symbol id="i-pin" viewBox="0 0 24 24"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0z"/><circle cx="12" cy="10" r="3"/></symbol>
+<symbol id="i-monitor" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="12" rx="2"/><path d="M8 20h8"/><path d="M12 16v4"/></symbol>
+<symbol id="i-receipt" viewBox="0 0 24 24"><path d="M5 3v18l2.5-1.5L10 21l2-1.5L14 21l2.5-1.5L19 21V3l-2.5 1.5L14 3l-2 1.5L10 3 7.5 4.5z"/><path d="M9 9h6"/><path d="M9 13h6"/></symbol>
+<symbol id="i-upload" viewBox="0 0 24 24"><path d="M12 15V3"/><path d="M7 8l5-5 5 5"/><path d="M4 21h16"/></symbol>
+<symbol id="i-plus" viewBox="0 0 24 24"><path d="M12 5v14"/><path d="M5 12h14"/></symbol>
+<symbol id="i-home" viewBox="0 0 24 24"><path d="M3 10.5 12 3l9 7.5"/><path d="M5 9.5V21h5v-6h4v6h5V9.5"/></symbol>
+<symbol id="i-drop" viewBox="0 0 24 24"><path d="M12 2.5s-6.5 7.2-6.5 11.8a6.5 6.5 0 0 0 13 0C18.5 9.7 12 2.5 12 2.5z"/><path d="M9 15a3 3 0 0 0 3 3"/></symbol>
+<symbol id="i-chart" viewBox="0 0 24 24"><path d="M3 3v18h18"/><path d="M7 16v-4"/><path d="M12 16V8"/><path d="M17 16v-7"/></symbol>
+<symbol id="i-settings" viewBox="0 0 24 24"><path d="M4 6h10"/><path d="M18 6h2"/><circle cx="16" cy="6" r="2"/><path d="M4 12h3"/><path d="M11 12h9"/><circle cx="9" cy="12" r="2"/><path d="M4 18h12"/><path d="M20 18h0"/><circle cx="18" cy="18" r="2"/></symbol>
+<symbol id="i-wrench" viewBox="0 0 24 24"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></symbol>
+<symbol id="i-globe" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M3 12h18"/><path d="M12 3a14 14 0 0 1 0 18"/><path d="M12 3a14 14 0 0 0 0 18"/></symbol>
+<symbol id="i-logout" viewBox="0 0 24 24"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><path d="M16 17l5-5-5-5"/><path d="M21 12H9"/></symbol>
+<symbol id="i-menu" viewBox="0 0 24 24"><path d="M4 6h16"/><path d="M4 12h16"/><path d="M4 18h16"/></symbol>
+<symbol id="i-close" viewBox="0 0 24 24"><path d="M6 6l12 12"/><path d="M18 6 6 18"/></symbol>
+<symbol id="i-lock" viewBox="0 0 24 24"><rect x="4" y="11" width="16" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></symbol>
+<symbol id="i-back" viewBox="0 0 24 24"><path d="M15 18l-6-6 6-6"/></symbol>
+<symbol id="i-refresh" viewBox="0 0 24 24"><path d="M21 12a9 9 0 1 1-2.6-6.4"/><path d="M21 3v6h-6"/></symbol>
+<symbol id="i-download" viewBox="0 0 24 24"><path d="M12 3v12"/><path d="M7 10l5 5 5-5"/><path d="M4 21h16"/></symbol>
+<symbol id="i-bell" viewBox="0 0 24 24"><path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"/><path d="M10.3 21a1.94 1.94 0 0 0 3.4 0"/></symbol>
+<symbol id="i-users" viewBox="0 0 24 24"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></symbol>
+<symbol id="i-user" viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/></symbol>
+<symbol id="i-key" viewBox="0 0 24 24"><circle cx="7.5" cy="15.5" r="5.5"/><path d="m21 2-9.6 9.6"/><path d="m15.5 7.5 3 3L22 7l-3-3"/></symbol>
+<symbol id="i-check" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></symbol>
+<symbol id="i-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v2"/><path d="M12 20v2"/><path d="m4.93 4.93 1.41 1.41"/><path d="m17.66 17.66 1.41 1.41"/><path d="M2 12h2"/><path d="M20 12h2"/><path d="m6.34 17.66-1.41 1.41"/><path d="m19.07 4.93-1.41 1.41"/></symbol>
+<symbol id="i-moon" viewBox="0 0 24 24"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></symbol>
+<symbol id="i-edit" viewBox="0 0 24 24"><path d="M12 20h9"/><path d="M16.5 3.5a2.12 2.12 0 0 1 3 3L7 19l-4 1 1-4z"/></symbol>
+<symbol id="i-simple" viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="16" rx="2"/><path d="M8 12h8"/></symbol>
+<symbol id="i-detail" viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="16" rx="2"/><path d="M8 9h8"/><path d="M8 13h8"/><path d="M8 17h5"/></symbol>
+<symbol id="i-cards" viewBox="0 0 24 24"><rect x="4" y="4" width="7" height="7" rx="1.5"/><rect x="13" y="4" width="7" height="7" rx="1.5"/><rect x="4" y="13" width="7" height="7" rx="1.5"/><rect x="13" y="13" width="7" height="7" rx="1.5"/></symbol>
+<symbol id="i-table" viewBox="0 0 24 24"><rect x="4" y="5" width="16" height="14" rx="1.5"/><path d="M4 10h16"/><path d="M4 14.5h16"/><path d="M9 10v9"/></symbol>
+<symbol id="i-search" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="M21 21l-5-5"/></symbol>
+<symbol id="i-alert" viewBox="0 0 24 24"><path d="M10.3 3.9 1.8 18a2 2 0 0 0 1.7 3h17a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0z"/><path d="M12 9v4"/><path d="M12 17h.01"/></symbol>
+</svg>
+<header class="top" id="top">
+  <a class="brand" href="index.html">NetPrinter <span class="brand-sub">Central</span></a>
+  <button class="menu-toggle" type="button" aria-controls="menu" aria-expanded="false" aria-label="Menú">
+    <span class="open-icon"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-menu"></use></svg></span><span class="close-icon"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-close"></use></svg></span>
+  </button>
+  <div class="menu" id="menu">
+    
+    <nav aria-label="Menú">
+      <a href="index.html" ><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-building"></use></svg><span>Clientes</span></a>
+      <a href="alerts.html" ><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-bell"></use></svg><span>Avisos</span><span class="count">10</span></a>
+      <a href="counters.html" aria-current="page"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-chart"></use></svg><span>Contadores</span></a>
+      <a href="settings.html" ><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-settings"></use></svg><span>Ajustes</span></a>
+    </nav>
+    <div class="tools">
+      
+      <details class="user-menu">
+        <summary><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-user"></use></svg><span>Usuario de demostración</span><span class="role muted small">Técnico</span></summary>
+        <div class="user-menu-list">
+          <a class="view-toggle" href="#" data-demo-off title="Mostrar también los datos técnicos: IP, avisos, piezas, historial"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-detail"></use></svg><span>Vista detallada</span></a>
+      <a href="#" data-demo-off lang="en" title="English"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-globe"></use></svg><span>EN</span></a>
+      <a class="theme-light" href="#" data-demo-off title="Modo claro"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-sun"></use></svg><span class="mobile-only">Modo claro</span></a>
+      <a class="theme-dark" href="#" data-demo-off title="Modo oscuro"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-moon"></use></svg><span class="mobile-only">Modo oscuro</span></a>
+          <hr>
+          <form method="post" action="/logout">
+            <input type="hidden" name="csrf" value="36cd8b276d8adf91b939f834da9a6e52">
+            <button class="link" type="submit"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-logout"></use></svg><span>Cerrar sesión</span></button>
+          </form>
+        </div>
+      </details>
+      
+    </div>
+    
+  </div>
+</header>
+<main>
+
+
+<div class="head">
+  <h1 class="page-title">Contadores</h1>
+  <form method="get" action="/counters" class="month">
+    <label>Cliente
+      <select name="client" data-autosubmit>
+        <option value="">Todos los clientes</option>
+        <option value="01a1a6ae-bedf-7000-8f4a-ed1696e8b7b4" >Asesoría Teide S.L.</option><option value="01a1a6ae-bf00-7000-a230-20db28a8e34d" >Clínica Dental Atlántico</option><option value="01a1a6ae-bf1d-7003-a9f4-be2b12de3be4" >Colegio San Borondón</option><option value="01a1a6ae-bf0c-7000-a39d-2c1152069a4b" >Construcciones Roque Nublo</option><option value="01a1a6ae-bf4b-7000-abcd-97033b88e241" >Despacho Jurídico Anaga</option><option value="01a1a6ae-bf43-7000-ac3d-00eeef80df0a" >Ferretería La Orotava</option><option value="01a1a6ae-bf35-7000-a59b-19043c761a39" >Hotel Playa Dorada</option><option value="01a1a6ae-bf1d-7000-a88a-199e1b6a07b4" >Impresoras de baja</option>
+      </select>
+    </label>
+    
+    <label>Mes
+      <select name="month" data-autosubmit>
+      <option value="2026-11" selected>noviembre 2026</option><option value="2026-10" >octubre 2026</option><option value="2026-09" >septiembre 2026</option><option value="2026-08" >agosto 2026</option><option value="2026-07" >julio 2026</option><option value="2026-06" >junio 2026</option><option value="2026-05" >mayo 2026</option><option value="2026-04" >abril 2026</option><option value="2026-03" >marzo 2026</option><option value="2026-02" >febrero 2026</option><option value="2026-01" >enero 2026</option><option value="2025-12" >diciembre 2025</option><option value="2025-11" >noviembre 2025</option><option value="2025-10" >octubre 2025</option>
+      </select>
+    </label>
+    <noscript><button type="submit">OK</button></noscript>
+    <a class="button" href="counters__month-2026-11.csv"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-download"></use></svg>Descargar CSV</a>
+  </form>
+</div>
+
+<section class="panel" id="chart">
+  <h2>Impresiones por mes</h2>
+  
+<nav class="tabs ranges" aria-label="Periodo">
+  <a href="counters__range-week.html#chart">Esta semana</a><a href="counters__range-7d.html#chart">Últimos 7 días</a><a href="counters__range-30d.html#chart">Últimos 30 días</a><a href="counters__range-12m.html#chart">Últimos 12 meses</a><a href="counters__range-24m.html#chart" aria-current="true">Últimos 24 meses</a><a href="counters__range-all.html#chart">Desde el principio</a>
+</nav>
+<figure class="chart" data-l-mono="B/N" data-l-color="Color" data-l-total="Total" data-l-nodata="sin lecturas">
+  <figcaption>
+    <span class="muted small">Todas las impresoras · Últimos 24 meses</span>
+    <ul class="legend" aria-label="Impresiones por mes">
+      <li><span class="key s-mono"></span>B/N</li>
+      <li><span class="key s-color"></span>Color</li>
+    </ul>
+  </figcaption>
+  
+  <svg class="plot" viewBox="0 0 720 240" role="img" aria-label="Impresiones por mes">
+    <line class="grid" x1="48" x2="712" y1="212" y2="212"></line>
+    <text class="tick" x="48" dx="-8" y="212" dy="4" text-anchor="end">0</text><line class="grid" x1="48" x2="712" y1="145.33333333333334" y2="145.33333333333334"></line>
+    <text class="tick" x="48" dx="-8" y="145.33333333333334" dy="4" text-anchor="end">20K</text><line class="grid" x1="48" x2="712" y1="78.66666666666667" y2="78.66666666666667"></line>
+    <text class="tick" x="48" dx="-8" y="78.66666666666667" dy="4" text-anchor="end">40K</text><line class="grid" x1="48" x2="712" y1="12" y2="12"></line>
+    <text class="tick" x="48" dx="-8" y="12" dy="4" text-anchor="end">60K</text>
+    <g class="col nodata" tabindex="0" data-month="diciembre 2024" data-mono="" data-color="" data-total=""
+      aria-label="diciembre 2024: sin lecturas">
+      <rect class="hit" x="48" y="0" width="27.666666666666668" height="212"></rect>
+      
+      
+      <text class="tick" x="61.833333333333336" y="240" dy="-8" text-anchor="middle"></text>
+    </g><g class="col nodata" tabindex="0" data-month="enero 2025" data-mono="" data-color="" data-total=""
+      aria-label="enero 2025: sin lecturas">
+      <rect class="hit" x="75.66666666666667" y="0" width="27.666666666666668" height="212"></rect>
+      
+      
+      <text class="tick" x="89.5" y="240" dy="-8" text-anchor="middle">ene 25</text>
+    </g><g class="col nodata" tabindex="0" data-month="febrero 2025" data-mono="" data-color="" data-total=""
+      aria-label="febrero 2025: sin lecturas">
+      <rect class="hit" x="103.33333333333334" y="0" width="27.666666666666668" height="212"></rect>
+      
+      
+      <text class="tick" x="117.16666666666667" y="240" dy="-8" text-anchor="middle"></text>
+    </g><g class="col nodata" tabindex="0" data-month="marzo 2025" data-mono="" data-color="" data-total=""
+      aria-label="marzo 2025: sin lecturas">
+      <rect class="hit" x="131" y="0" width="27.666666666666668" height="212"></rect>
+      
+      
+      <text class="tick" x="144.83333333333334" y="240" dy="-8" text-anchor="middle">mar 25</text>
+    </g><g class="col nodata" tabindex="0" data-month="abril 2025" data-mono="" data-color="" data-total=""
+      aria-label="abril 2025: sin lecturas">
+      <rect class="hit" x="158.66666666666669" y="0" width="27.666666666666668" height="212"></rect>
+      
+      
+      <text class="tick" x="172.50000000000003" y="240" dy="-8" text-anchor="middle"></text>
+    </g><g class="col nodata" tabindex="0" data-month="mayo 2025" data-mono="" data-color="" data-total=""
+      aria-label="mayo 2025: sin lecturas">
+      <rect class="hit" x="186.33333333333334" y="0" width="27.666666666666668" height="212"></rect>
+      
+      
+      <text class="tick" x="200.16666666666669" y="240" dy="-8" text-anchor="middle">may 25</text>
+    </g><g class="col nodata" tabindex="0" data-month="junio 2025" data-mono="" data-color="" data-total=""
+      aria-label="junio 2025: sin lecturas">
+      <rect class="hit" x="214" y="0" width="27.666666666666668" height="212"></rect>
+      
+      
+      <text class="tick" x="227.83333333333334" y="240" dy="-8" text-anchor="middle"></text>
+    </g><g class="col nodata" tabindex="0" data-month="julio 2025" data-mono="" data-color="" data-total=""
+      aria-label="julio 2025: sin lecturas">
+      <rect class="hit" x="241.66666666666669" y="0" width="27.666666666666668" height="212"></rect>
+      
+      
+      <text class="tick" x="255.50000000000003" y="240" dy="-8" text-anchor="middle">jul 25</text>
+    </g><g class="col nodata" tabindex="0" data-month="agosto 2025" data-mono="" data-color="" data-total=""
+      aria-label="agosto 2025: sin lecturas">
+      <rect class="hit" x="269.33333333333337" y="0" width="27.666666666666668" height="212"></rect>
+      
+      
+      <text class="tick" x="283.1666666666667" y="240" dy="-8" text-anchor="middle"></text>
+    </g><g class="col nodata" tabindex="0" data-month="septiembre 2025" data-mono="" data-color="" data-total=""
+      aria-label="septiembre 2025: sin lecturas">
+      <rect class="hit" x="297" y="0" width="27.666666666666668" height="212"></rect>
+      
+      
+      <text class="tick" x="310.8333333333333" y="240" dy="-8" text-anchor="middle">sep 25</text>
+    </g><g class="col" tabindex="0" data-month="octubre 2025" data-mono="38.672" data-color="8.311" data-total="46.983"
+      aria-label="octubre 2025: B/N 38.672, Color 8.311">
+      <rect class="hit" x="324.6666666666667" y="0" width="27.666666666666668" height="212"></rect>
+      <path class="s-mono" d="M330.2 212V83.09Q330.2 83.09 330.2 83.09H346.8Q346.8 83.09 346.8 83.09V212Z"></path>
+      <path class="s-color" d="M330.2 81.09V59.39Q330.2 55.39 334.2 55.39H342.8Q346.8 55.39 346.8 59.39V81.09Z"></path>
+      <text class="tick" x="338.5" y="240" dy="-8" text-anchor="middle"></text>
+    </g><g class="col" tabindex="0" data-month="noviembre 2025" data-mono="43.290" data-color="9.171" data-total="52.461"
+      aria-label="noviembre 2025: B/N 43.290, Color 9.171">
+      <rect class="hit" x="352.33333333333337" y="0" width="27.666666666666668" height="212"></rect>
+      <path class="s-mono" d="M357.87 212V67.7Q357.87 67.7 357.87 67.7H374.47Q374.47 67.7 374.47 67.7V212Z"></path>
+      <path class="s-color" d="M357.87 65.7V41.13Q357.87 37.13 361.87 37.13H370.47Q374.47 37.13 374.47 41.13V65.7Z"></path>
+      <text class="tick" x="366.1666666666667" y="240" dy="-8" text-anchor="middle">nov 25</text>
+    </g><g class="col" tabindex="0" data-month="diciembre 2025" data-mono="45.682" data-color="9.517" data-total="55.199"
+      aria-label="diciembre 2025: B/N 45.682, Color 9.517">
+      <rect class="hit" x="380" y="0" width="27.666666666666668" height="212"></rect>
+      <path class="s-mono" d="M385.53 212V59.73Q385.53 59.73 385.53 59.73H402.13Q402.13 59.73 402.13 59.73V212Z"></path>
+      <path class="s-color" d="M385.53 57.73V32Q385.53 28 389.53 28H398.13Q402.13 28 402.13 32V57.73Z"></path>
+      <text class="tick" x="393.8333333333333" y="240" dy="-8" text-anchor="middle"></text>
+    </g><g class="col" tabindex="0" data-month="enero 2026" data-mono="46.519" data-color="9.929" data-total="56.448"
+      aria-label="enero 2026: B/N 46.519, Color 9.929">
+      <rect class="hit" x="407.6666666666667" y="0" width="27.666666666666668" height="212"></rect>
+      <path class="s-mono" d="M413.2 212V56.94Q413.2 56.94 413.2 56.94H429.8Q429.8 56.94 429.8 56.94V212Z"></path>
+      <path class="s-color" d="M413.2 54.94V27.84Q413.2 23.84 417.2 23.84H425.8Q429.8 23.84 429.8 27.84V54.94Z"></path>
+      <text class="tick" x="421.5" y="240" dy="-8" text-anchor="middle">ene 26</text>
+    </g><g class="col" tabindex="0" data-month="febrero 2026" data-mono="40.328" data-color="8.789" data-total="49.117"
+      aria-label="febrero 2026: B/N 40.328, Color 8.789">
+      <rect class="hit" x="435.33333333333337" y="0" width="27.666666666666668" height="212"></rect>
+      <path class="s-mono" d="M440.87 212V77.57Q440.87 77.57 440.87 77.57H457.47Q457.47 77.57 457.47 77.57V212Z"></path>
+      <path class="s-color" d="M440.87 75.57V52.28Q440.87 48.28 444.87 48.28H453.47Q457.47 48.28 457.47 52.28V75.57Z"></path>
+      <text class="tick" x="449.1666666666667" y="240" dy="-8" text-anchor="middle"></text>
+    </g><g class="col" tabindex="0" data-month="marzo 2026" data-mono="42.558" data-color="9.152" data-total="51.710"
+      aria-label="marzo 2026: B/N 42.558, Color 9.152">
+      <rect class="hit" x="463" y="0" width="27.666666666666668" height="212"></rect>
+      <path class="s-mono" d="M468.53 212V70.14Q468.53 70.14 468.53 70.14H485.13Q485.13 70.14 485.13 70.14V212Z"></path>
+      <path class="s-color" d="M468.53 68.14V43.63Q468.53 39.63 472.53 39.63H481.13Q485.13 39.63 485.13 43.63V68.14Z"></path>
+      <text class="tick" x="476.8333333333333" y="240" dy="-8" text-anchor="middle">mar 26</text>
+    </g><g class="col" tabindex="0" data-month="abril 2026" data-mono="44.247" data-color="9.483" data-total="53.730"
+      aria-label="abril 2026: B/N 44.247, Color 9.483">
+      <rect class="hit" x="490.6666666666667" y="0" width="27.666666666666668" height="212"></rect>
+      <path class="s-mono" d="M496.2 212V64.51Q496.2 64.51 496.2 64.51H512.8Q512.8 64.51 512.8 64.51V212Z"></path>
+      <path class="s-color" d="M496.2 62.51V36.9Q496.2 32.9 500.2 32.9H508.8Q512.8 32.9 512.8 36.9V62.51Z"></path>
+      <text class="tick" x="504.5" y="240" dy="-8" text-anchor="middle"></text>
+    </g><g class="col" tabindex="0" data-month="mayo 2026" data-mono="44.614" data-color="9.459" data-total="54.073"
+      aria-label="mayo 2026: B/N 44.614, Color 9.459">
+      <rect class="hit" x="518.3333333333334" y="0" width="27.666666666666668" height="212"></rect>
+      <path class="s-mono" d="M523.87 212V63.29Q523.87 63.29 523.87 63.29H540.47Q540.47 63.29 540.47 63.29V212Z"></path>
+      <path class="s-color" d="M523.87 61.29V35.76Q523.87 31.76 527.87 31.76H536.47Q540.47 31.76 540.47 35.76V61.29Z"></path>
+      <text class="tick" x="532.1666666666667" y="240" dy="-8" text-anchor="middle">may 26</text>
+    </g><g class="col" tabindex="0" data-month="junio 2026" data-mono="43.369" data-color="8.907" data-total="52.276"
+      aria-label="junio 2026: B/N 43.369, Color 8.907">
+      <rect class="hit" x="546" y="0" width="27.666666666666668" height="212"></rect>
+      <path class="s-mono" d="M551.53 212V67.44Q551.53 67.44 551.53 67.44H568.13Q568.13 67.44 568.13 67.44V212Z"></path>
+      <path class="s-color" d="M551.53 65.44V41.75Q551.53 37.75 555.53 37.75H564.13Q568.13 37.75 568.13 41.75V65.44Z"></path>
+      <text class="tick" x="559.8333333333334" y="240" dy="-8" text-anchor="middle"></text>
+    </g><g class="col" tabindex="0" data-month="julio 2026" data-mono="47.197" data-color="10.182" data-total="57.379"
+      aria-label="julio 2026: B/N 47.197, Color 10.182">
+      <rect class="hit" x="573.6666666666667" y="0" width="27.666666666666668" height="212"></rect>
+      <path class="s-mono" d="M579.2 212V54.68Q579.2 54.68 579.2 54.68H595.8Q595.8 54.68 595.8 54.68V212Z"></path>
+      <path class="s-color" d="M579.2 52.68V24.74Q579.2 20.74 583.2 20.74H591.8Q595.8 20.74 595.8 24.74V52.68Z"></path>
+      <text class="tick" x="587.5000000000001" y="240" dy="-8" text-anchor="middle">jul 26</text>
+    </g><g class="col" tabindex="0" data-month="agosto 2026" data-mono="42.627" data-color="9.104" data-total="51.731"
+      aria-label="agosto 2026: B/N 42.627, Color 9.104">
+      <rect class="hit" x="601.3333333333334" y="0" width="27.666666666666668" height="212"></rect>
+      <path class="s-mono" d="M606.87 212V69.91Q606.87 69.91 606.87 69.91H623.47Q623.47 69.91 623.47 69.91V212Z"></path>
+      <path class="s-color" d="M606.87 67.91V43.56Q606.87 39.56 610.87 39.56H619.47Q623.47 39.56 623.47 43.56V67.91Z"></path>
+      <text class="tick" x="615.1666666666667" y="240" dy="-8" text-anchor="middle"></text>
+    </g><g class="col" tabindex="0" data-month="septiembre 2026" data-mono="44.812" data-color="9.746" data-total="54.558"
+      aria-label="septiembre 2026: B/N 44.812, Color 9.746">
+      <rect class="hit" x="629" y="0" width="27.666666666666668" height="212"></rect>
+      <path class="s-mono" d="M634.53 212V62.63Q634.53 62.63 634.53 62.63H651.13Q651.13 62.63 651.13 62.63V212Z"></path>
+      <path class="s-color" d="M634.53 60.63V34.14Q634.53 30.14 638.53 30.14H647.13Q651.13 30.14 651.13 34.14V60.63Z"></path>
+      <text class="tick" x="642.8333333333334" y="240" dy="-8" text-anchor="middle">sep 26</text>
+    </g><g class="col" tabindex="0" data-month="octubre 2026" data-mono="45.633" data-color="9.695" data-total="55.328"
+      aria-label="octubre 2026: B/N 45.633, Color 9.695">
+      <rect class="hit" x="656.6666666666667" y="0" width="27.666666666666668" height="212"></rect>
+      <path class="s-mono" d="M662.2 212V59.89Q662.2 59.89 662.2 59.89H678.8Q678.8 59.89 678.8 59.89V212Z"></path>
+      <path class="s-color" d="M662.2 57.89V31.57Q662.2 27.57 666.2 27.57H674.8Q678.8 27.57 678.8 31.57V57.89Z"></path>
+      <text class="tick" x="670.5000000000001" y="240" dy="-8" text-anchor="middle"></text>
+    </g><g class="col" tabindex="0" data-month="noviembre 2026" data-mono="4.070" data-color="967" data-total="5.037"
+      aria-label="noviembre 2026: B/N 4.070, Color 967">
+      <rect class="hit" x="684.3333333333334" y="0" width="27.666666666666668" height="212"></rect>
+      <path class="s-mono" d="M689.87 212V198.43Q689.87 198.43 689.87 198.43H706.47Q706.47 198.43 706.47 198.43V212Z"></path>
+      <path class="s-color" d="M689.87 196.43V196.43Q689.87 195.21 691.09 195.21H705.24Q706.47 195.21 706.47 196.43V196.43Z"></path>
+      <text class="tick" x="698.1666666666667" y="240" dy="-8" text-anchor="middle">nov 26</text>
+    </g>
+    <line class="axis" x1="48" x2="712" y1="212" y2="212"></line>
+  </svg>
+  <details class="chart-table">
+    <summary>Ver los datos en tabla</summary>
+    <table class="list">
+      <thead><tr><th>Mes</th><th class="num">B/N</th><th class="num">Color</th><th class="num">Total</th></tr></thead>
+      <tbody><tr>
+        <td>diciembre 2024</td>
+        <td class="muted" colspan="3">sin lecturas</td>
+      </tr><tr>
+        <td>enero 2025</td>
+        <td class="muted" colspan="3">sin lecturas</td>
+      </tr><tr>
+        <td>febrero 2025</td>
+        <td class="muted" colspan="3">sin lecturas</td>
+      </tr><tr>
+        <td>marzo 2025</td>
+        <td class="muted" colspan="3">sin lecturas</td>
+      </tr><tr>
+        <td>abril 2025</td>
+        <td class="muted" colspan="3">sin lecturas</td>
+      </tr><tr>
+        <td>mayo 2025</td>
+        <td class="muted" colspan="3">sin lecturas</td>
+      </tr><tr>
+        <td>junio 2025</td>
+        <td class="muted" colspan="3">sin lecturas</td>
+      </tr><tr>
+        <td>julio 2025</td>
+        <td class="muted" colspan="3">sin lecturas</td>
+      </tr><tr>
+        <td>agosto 2025</td>
+        <td class="muted" colspan="3">sin lecturas</td>
+      </tr><tr>
+        <td>septiembre 2025</td>
+        <td class="muted" colspan="3">sin lecturas</td>
+      </tr><tr>
+        <td>octubre 2025 <span class="muted small">(incompleto: desde la primera lectura)</span></td>
+        <td class="num" data-label="B/N">38.672</td><td class="num" data-label="Color">8.311</td><td class="num" data-label="Total">46.983</td>
+        
+      </tr><tr>
+        <td>noviembre 2025</td>
+        <td class="num" data-label="B/N">43.290</td><td class="num" data-label="Color">9.171</td><td class="num" data-label="Total">52.461</td>
+        
+      </tr><tr>
+        <td>diciembre 2025</td>
+        <td class="num" data-label="B/N">45.682</td><td class="num" data-label="Color">9.517</td><td class="num" data-label="Total">55.199</td>
+        
+      </tr><tr>
+        <td>enero 2026</td>
+        <td class="num" data-label="B/N">46.519</td><td class="num" data-label="Color">9.929</td><td class="num" data-label="Total">56.448</td>
+        
+      </tr><tr>
+        <td>febrero 2026</td>
+        <td class="num" data-label="B/N">40.328</td><td class="num" data-label="Color">8.789</td><td class="num" data-label="Total">49.117</td>
+        
+      </tr><tr>
+        <td>marzo 2026</td>
+        <td class="num" data-label="B/N">42.558</td><td class="num" data-label="Color">9.152</td><td class="num" data-label="Total">51.710</td>
+        
+      </tr><tr>
+        <td>abril 2026</td>
+        <td class="num" data-label="B/N">44.247</td><td class="num" data-label="Color">9.483</td><td class="num" data-label="Total">53.730</td>
+        
+      </tr><tr>
+        <td>mayo 2026</td>
+        <td class="num" data-label="B/N">44.614</td><td class="num" data-label="Color">9.459</td><td class="num" data-label="Total">54.073</td>
+        
+      </tr><tr>
+        <td>junio 2026</td>
+        <td class="num" data-label="B/N">43.369</td><td class="num" data-label="Color">8.907</td><td class="num" data-label="Total">52.276</td>
+        
+      </tr><tr>
+        <td>julio 2026</td>
+        <td class="num" data-label="B/N">47.197</td><td class="num" data-label="Color">10.182</td><td class="num" data-label="Total">57.379</td>
+        
+      </tr><tr>
+        <td>agosto 2026</td>
+        <td class="num" data-label="B/N">42.627</td><td class="num" data-label="Color">9.104</td><td class="num" data-label="Total">51.731</td>
+        
+      </tr><tr>
+        <td>septiembre 2026</td>
+        <td class="num" data-label="B/N">44.812</td><td class="num" data-label="Color">9.746</td><td class="num" data-label="Total">54.558</td>
+        
+      </tr><tr>
+        <td>octubre 2026</td>
+        <td class="num" data-label="B/N">45.633</td><td class="num" data-label="Color">9.695</td><td class="num" data-label="Total">55.328</td>
+        
+      </tr><tr>
+        <td>noviembre 2026 <span class="muted small">(incompleto: desde la primera lectura)</span></td>
+        <td class="num" data-label="B/N">4.070</td><td class="num" data-label="Color">967</td><td class="num" data-label="Total">5.037</td>
+        
+      </tr></tbody>
+    </table>
+  </details>
+  
+</figure>
+
+</section>
+<table class="list counters-list">
+  <thead>
+    <tr><th rowspan="2">Impresora</th><th colspan="2" class="num">Contador</th><th colspan="3" class="num">Impreso en el mes</th></tr>
+    <tr><th class="num">Inicio</th><th class="num">Fin</th><th class="num">Total</th><th class="num">B/N</th><th class="num">Color</th></tr>
+  </thead>
+  <tbody>
+  
+    <tr>
+      <td class="name"><a href="printer_01a1a6ae-bee0-7000-a137-f14180cecfe6.html"><span class="ref">M1001</span>Brother MFC-L5750DW series</a><br><span class="muted small">Asesoría Teide S.L.</span>
+        </td>
+      
+      <td class="num" data-label="Inicio">60.761</td>
+      <td class="num" data-label="Fin">60.918</td>
+      <td class="num" data-label="Impreso en el mes"><strong>157</strong></td>
+      <td class="num" data-label="B/N">157</td>
+      <td class="num" data-label="Color">—</td>
+      
+    </tr>
+  
+    <tr>
+      <td class="name"><a href="printer_01a1a6ae-bee1-7000-8c20-ed94a56c395d.html"><span class="ref">M1002</span>Brother HL-L8360CDW series</a><br><span class="muted small">Asesoría Teide S.L.</span>
+        </td>
+      
+      <td class="num" data-label="Inicio">85.447</td>
+      <td class="num" data-label="Fin">85.541</td>
+      <td class="num" data-label="Impreso en el mes"><strong>94</strong></td>
+      <td class="num" data-label="B/N">62</td>
+      <td class="num" data-label="Color">32</td>
+      
+    </tr>
+  
+    <tr>
+      <td class="name"><a href="printer_01a1a6ae-bee1-7002-9645-8d507edde26d.html"><span class="ref">M1003</span>HP LaserJet MFP M227fdw</a><br><span class="muted small">Asesoría Teide S.L.</span>
+        </td>
+      
+      <td class="num" data-label="Inicio">63.008</td>
+      <td class="num" data-label="Fin">63.096</td>
+      <td class="num" data-label="Impreso en el mes"><strong>88</strong></td>
+      <td class="num" data-label="B/N">88</td>
+      <td class="num" data-label="Color">—</td>
+      
+    </tr>
+  
+    <tr>
+      <td class="name"><a href="printer_01a1a6ae-bee1-7004-9ee6-de4f2d74b122.html"><span class="ref">M1004</span>HP Color LaserJet MFP M477fdw</a><br><span class="muted small">Asesoría Teide S.L.</span>
+        </td>
+      
+      <td class="num" data-label="Inicio">90.078</td>
+      <td class="num" data-label="Fin">90.149</td>
+      <td class="num" data-label="Impreso en el mes"><strong>71</strong></td>
+      <td class="num" data-label="B/N">56</td>
+      <td class="num" data-label="Color">15</td>
+      
+    </tr>
+  
+    <tr>
+      <td class="name"><a href="printer_01a1a6ae-bee1-7006-a359-713c384c811a.html"><span class="ref">M1005</span>HP Color LaserJet MFP M477fdw</a><br><span class="muted small">Asesoría Teide S.L.</span>
+        </td>
+      
+      <td class="num" data-label="Inicio">110.366</td>
+      <td class="num" data-label="Fin">110.511</td>
+      <td class="num" data-label="Impreso en el mes"><strong>145</strong></td>
+      <td class="num" data-label="B/N">95</td>
+      <td class="num" data-label="Color">50</td>
+      
+    </tr>
+  
+    <tr>
+      <td class="name"><a href="printer_01a1a6ae-bee1-7008-9bdb-f03f47ee0da3.html"><span class="ref">M1006</span>Brother MFC-L9570CDW series</a><br><span class="muted small">Asesoría Teide S.L.</span>
+        </td>
+      
+      <td class="num" data-label="Inicio">126.632</td>
+      <td class="num" data-label="Fin">126.906</td>
+      <td class="num" data-label="Impreso en el mes"><strong>274</strong></td>
+      <td class="num" data-label="B/N">194</td>
+      <td class="num" data-label="Color">80</td>
+      
+    </tr>
+  
+    <tr>
+      <td class="name"><a href="printer_01a1a6ae-bee2-7001-81fd-80c2d991fb93.html"><span class="ref">M1007</span>EPSON WF-C5790 Series</a><br><span class="muted small">Asesoría Teide S.L.</span>
+        </td>
+      
+      <td class="num" data-label="Inicio">89.642</td>
+      <td class="num" data-label="Fin">89.820</td>
+      <td class="num" data-label="Impreso en el mes"><strong>178</strong></td>
+      <td class="num" data-label="B/N">134</td>
+      <td class="num" data-label="Color">44</td>
+      
+    </tr>
+  
+    <tr>
+      <td class="name"><a href="printer_01a1a6ae-bee2-7003-a481-e602d64da8ea.html"><span class="ref">M1008</span>Brother MFC-L9570CDW series</a><br><span class="muted small">Asesoría Teide S.L.</span>
+        </td>
+      
+      <td class="num" data-label="Inicio">137.569</td>
+      <td class="num" data-label="Fin">137.983</td>
+      <td class="num" data-label="Impreso en el mes"><strong>414</strong></td>
+      <td class="num" data-label="B/N">294</td>
+      <td class="num" data-label="Color">120</td>
+      
+    </tr>
+  
+    <tr>
+      <td class="name"><a href="printer_01a1a6ae-bee2-7005-bce0-4e069b8f7119.html"><span class="ref">M1009</span>HP LaserJet Pro MFP M428fdw</a><br><span class="muted small">Asesoría Teide S.L.</span>
+        <br><span class="muted small">Instalada durante el mes: cuenta desde su primera lectura.</span></td>
+      
+      <td class="num" data-label="Inicio">68.740</td>
+      <td class="num" data-label="Fin">68.849</td>
+      <td class="num" data-label="Impreso en el mes"><strong>109</strong></td>
+      <td class="num" data-label="B/N">109</td>
+      <td class="num" data-label="Color">—</td>
+      
+    </tr>
+  
+    <tr>
+      <td class="name"><a href="printer_01a1a6ae-bf01-7000-be66-2784dcd358d7.html"><span class="ref">M1010</span>Brother MFC-L9570CDW series</a><br><span class="muted small">Clínica Dental Atlántico</span>
+        </td>
+      
+      <td class="num" data-label="Inicio">105.798</td>
+      <td class="num" data-label="Fin">105.988</td>
+      <td class="num" data-label="Impreso en el mes"><strong>190</strong></td>
+      <td class="num" data-label="B/N">130</td>
+      <td class="num" data-label="Color">60</td>
+      
+    </tr>
+  
+    <tr>
+      <td class="name"><a href="printer_01a1a6ae-bf01-7002-90dc-a1d7b2877ff0.html"><span class="ref">M1011</span>Brother MFC-L5750DW series</a><br><span class="muted small">Clínica Dental Atlántico</span>
+        </td>
+      
+      <td class="num" data-label="Inicio">99.756</td>
+      <td class="num" data-label="Fin">100.028</td>
+      <td class="num" data-label="Impreso en el mes"><strong>272</strong></td>
+      <td class="num" data-label="B/N">272</td>
+      <td class="num" data-label="Color">—</td>
+      
+    </tr>
+  
+    <tr>
+      <td class="name"><a href="printer_01a1a6ae-bf01-7004-ba34-26f39fb8d126.html"><span class="ref">M1012</span>Brother MFC-L9570CDW series</a><br><span class="muted small">Clínica Dental Atlántico</span>
+        </td>
+      
+      <td class="num" data-label="Inicio">98.936</td>
+      <td class="num" data-label="Fin">99.428</td>
+      <td class="num" data-label="Impreso en el mes"><strong>492</strong></td>
+      <td class="num" data-label="B/N">349</td>
+      <td class="num" data-label="Color">143</td>
+      
+    </tr>
+  
+    <tr>
+      <td class="name"><a href="printer_01a1a6ae-bf0d-7000-b6c7-df1d42cc40f7.html"><span class="ref">M1013</span>HP LaserJet MFP M227fdw</a><br><span class="muted small">Impresoras de baja</span>
+        </td>
+      
+      <td class="num" data-label="Inicio">33.438</td>
+      <td class="num" data-label="Fin">33.499</td>
+      <td class="num" data-label="Impreso en el mes"><strong>61</strong></td>
+      <td class="num" data-label="B/N">61</td>
+      <td class="num" data-label="Color">—</td>
+      
+    </tr>
+  
+    <tr>
+      <td class="name"><a href="printer_01a1a6ae-bf0e-7000-b9b7-d6ec28c9d68b.html"><span class="ref">M1014</span>EPSON WF-C5790 Series</a><br><span class="muted small">Construcciones Roque Nublo</span>
+        </td>
+      
+      <td class="num" data-label="Inicio">43.772</td>
+      <td class="num" data-label="Fin">43.836</td>
+      <td class="num" data-label="Impreso en el mes"><strong>64</strong></td>
+      <td class="num" data-label="B/N">47</td>
+      <td class="num" data-label="Color">17</td>
+      
+    </tr>
+  
+    <tr>
+      <td class="name"><a href="printer_01a1a6ae-bf0e-7002-9342-6f82c4d05859.html"><span class="ref">M1015</span>HP LaserJet MFP M227fdw</a><br><span class="muted small">Construcciones Roque Nublo</span>
+        </td>
+      
+      <td class="num" data-label="Inicio">33.272</td>
+      <td class="num" data-label="Fin">33.335</td>
+      <td class="num" data-label="Impreso en el mes"><strong>63</strong></td>
+      <td class="num" data-label="B/N">63</td>
+      <td class="num" data-label="Color">—</td>
+      
+    </tr>
+  
+    <tr>
+      <td class="name"><a href="printer_01a1a6ae-bf0e-7004-b803-d32554334f78.html"><span class="ref">M1016</span>HP Color LaserJet MFP M477fdw</a><br><span class="muted small">Construcciones Roque Nublo</span>
+        </td>
+      
+      <td class="num" data-label="Inicio">68.956</td>
+      <td class="num" data-label="Fin">69.039</td>
+      <td class="num" data-label="Impreso en el mes"><strong>83</strong></td>
+      <td class="num" data-label="B/N">59</td>
+      <td class="num" data-label="Color">24</td>
+      
+    </tr>
+  
+    <tr>
+      <td class="name"><a href="printer_01a1a6ae-bf0e-7006-8f81-42314fad9c4c.html"><span class="ref">M1017</span>HP LaserJet MFP M227fdw</a><br><span class="muted small">Construcciones Roque Nublo</span>
+        <br><span class="muted small">Instalada durante el mes: cuenta desde su primera lectura.</span></td>
+      
+      <td class="num" data-label="Inicio">40.208</td>
+      <td class="num" data-label="Fin">40.208</td>
+      <td class="num" data-label="Impreso en el mes"><strong>0</strong></td>
+      <td class="num" data-label="B/N">0</td>
+      <td class="num" data-label="Color">—</td>
+      
+    </tr>
+  
+    <tr>
+      <td class="name"><a href="printer_01a1a6ae-bf1f-7000-a1f6-0deefb3fd1ae.html"><span class="ref">M1018</span>HP LaserJet MFP M227fdw</a><br><span class="muted small">Colegio San Borondón</span>
+        </td>
+      
+      <td class="num" data-label="Inicio">73.565</td>
+      <td class="num" data-label="Fin">73.656</td>
+      <td class="num" data-label="Impreso en el mes"><strong>91</strong></td>
+      <td class="num" data-label="B/N">91</td>
+      <td class="num" data-label="Color">—</td>
+      
+    </tr>
+  
+    <tr>
+      <td class="name"><a href="printer_01a1a6ae-bf1f-7002-a2ba-c73ae3498954.html"><span class="ref">M1019</span>HP LaserJet Pro MFP M428fdw</a><br><span class="muted small">Colegio San Borondón</span>
+        </td>
+      
+      <td class="num" data-label="Inicio">62.382</td>
+      <td class="num" data-label="Fin">62.382</td>
+      <td class="num" data-label="Impreso en el mes"><strong>0</strong></td>
+      <td class="num" data-label="B/N">0</td>
+      <td class="num" data-label="Color">—</td>
+      
+    </tr>
+  
+    <tr>
+      <td class="name"><a href="printer_01a1a6ae-bf1f-7004-b7c0-8aaab1dbaac7.html"><span class="ref">M1020</span>HP LaserJet Pro MFP M428fdw</a><br><span class="muted small">Colegio San Borondón</span>
+        </td>
+      
+      <td class="num" data-label="Inicio">99.719</td>
+      <td class="num" data-label="Fin">100.009</td>
+      <td class="num" data-label="Impreso en el mes"><strong>290</strong></td>
+      <td class="num" data-label="B/N">290</td>
+      <td class="num" data-label="Color">—</td>
+      
+    </tr>
+  
+    <tr>
+      <td class="name"><a href="printer_01a1a6ae-bf1f-7006-8d72-f297a9dfea2a.html"><span class="ref">M1021</span>HP LaserJet Pro MFP M428fdw</a><br><span class="muted small">Colegio San Borondón</span>
+        </td>
+      
+      <td class="num" data-label="Inicio">98.954</td>
+      <td class="num" data-label="Fin">99.407</td>
+      <td class="num" data-label="Impreso en el mes"><strong>453</strong></td>
+      <td class="num" data-label="B/N">453</td>
+      <td class="num" data-label="Color">—</td>
+      
+    </tr>
+  
+    <tr>
+      <td class="name"><a href="printer_01a1a6ae-bf1f-7008-a13c-bed88055b7d7.html"><span class="ref">M1022</span>Brother MFC-L9570CDW series</a><br><span class="muted small">Colegio San Borondón</span>
+        </td>
+      
+      <td class="num" data-label="Inicio">115.867</td>
+      <td class="num" data-label="Fin">116.152</td>
+      <td class="num" data-label="Impreso en el mes"><strong>285</strong></td>
+      <td class="num" data-label="B/N">209</td>
+      <td class="num" data-label="Color">76</td>
+      
+    </tr>
+  
+    <tr>
+      <td class="name"><a href="printer_01a1a6ae-bf20-7000-b293-219d29334c49.html"><span class="ref">M1023</span>Brother HL-L8360CDW series</a><br><span class="muted small">Colegio San Borondón</span>
+        </td>
+      
+      <td class="num" data-label="Inicio">79.718</td>
+      <td class="num" data-label="Fin">79.913</td>
+      <td class="num" data-label="Impreso en el mes"><strong>195</strong></td>
+      <td class="num" data-label="B/N">127</td>
+      <td class="num" data-label="Color">68</td>
+      
+    </tr>
+  
+    <tr>
+      <td class="name"><a href="printer_01a1a6ae-bf36-7000-acd1-2956ab0bf249.html"><span class="ref">M1024</span>Brother HL-L8360CDW series</a><br><span class="muted small">Hotel Playa Dorada</span>
+        </td>
+      
+      <td class="num" data-label="Inicio">105.616</td>
+      <td class="num" data-label="Fin">105.742</td>
+      <td class="num" data-label="Impreso en el mes"><strong>126</strong></td>
+      <td class="num" data-label="B/N">85</td>
+      <td class="num" data-label="Color">41</td>
+      
+    </tr>
+  
+    <tr>
+      <td class="name"><a href="printer_01a1a6ae-bf36-7002-94a2-e3fb255ccd87.html"><span class="ref">M1025</span>EPSON WF-C5790 Series</a><br><span class="muted small">Hotel Playa Dorada</span>
+        </td>
+      
+      <td class="num" data-label="Inicio">116.728</td>
+      <td class="num" data-label="Fin">116.860</td>
+      <td class="num" data-label="Impreso en el mes"><strong>132</strong></td>
+      <td class="num" data-label="B/N">101</td>
+      <td class="num" data-label="Color">31</td>
+      
+    </tr>
+  
+    <tr>
+      <td class="name"><a href="printer_01a1a6ae-bf36-7004-9b1f-d91df5b9b3d6.html"><span class="ref">M1026</span>Brother HL-L8360CDW series</a><br><span class="muted small">Hotel Playa Dorada</span>
+        </td>
+      
+      <td class="num" data-label="Inicio">77.911</td>
+      <td class="num" data-label="Fin">78.127</td>
+      <td class="num" data-label="Impreso en el mes"><strong>216</strong></td>
+      <td class="num" data-label="B/N">156</td>
+      <td class="num" data-label="Color">60</td>
+      
+    </tr>
+  
+    <tr>
+      <td class="name"><a href="printer_01a1a6ae-bf36-7006-93ec-2d21b15d7d77.html"><span class="ref">M1027</span>Kyocera ECOSYS M5526cdw</a><br><span class="muted small">Hotel Playa Dorada</span>
+        <br><span class="muted small">Instalada durante el mes: cuenta desde su primera lectura.</span></td>
+      
+      <td class="num" data-label="Inicio">66.952</td>
+      <td class="num" data-label="Fin">66.988</td>
+      <td class="num" data-label="Impreso en el mes"><strong>36</strong></td>
+      <td class="num" data-label="B/N">28</td>
+      <td class="num" data-label="Color">8</td>
+      
+    </tr>
+  
+    <tr>
+      <td class="name"><a href="printer_01a1a6ae-bf43-7002-8ebc-21e50b5101ab.html"><span class="ref">M1028</span>Brother MFC-L9570CDW series</a><br><span class="muted small">Ferretería La Orotava</span>
+        </td>
+      
+      <td class="num" data-label="Inicio">85.759</td>
+      <td class="num" data-label="Fin">85.969</td>
+      <td class="num" data-label="Impreso en el mes"><strong>210</strong></td>
+      <td class="num" data-label="B/N">146</td>
+      <td class="num" data-label="Color">64</td>
+      
+    </tr>
+  
+    <tr>
+      <td class="name"><a href="printer_01a1a6ae-bf43-7004-8c7d-d11565b7fd3d.html"><span class="ref">M1029</span>HP LaserJet MFP M227fdw</a><br><span class="muted small">Ferretería La Orotava</span>
+        </td>
+      
+      <td class="num" data-label="Inicio">32.739</td>
+      <td class="num" data-label="Fin">32.807</td>
+      <td class="num" data-label="Impreso en el mes"><strong>68</strong></td>
+      <td class="num" data-label="B/N">68</td>
+      <td class="num" data-label="Color">—</td>
+      
+    </tr>
+  
+    <tr>
+      <td class="name"><a href="printer_01a1a6ae-bf4b-7002-a160-6bb812b4b350.html"><span class="ref">M1030</span>HP LaserJet MFP M227fdw</a><br><span class="muted small">Despacho Jurídico Anaga</span>
+        </td>
+      
+      <td class="num" data-label="Inicio">52.418</td>
+      <td class="num" data-label="Fin">52.473</td>
+      <td class="num" data-label="Impreso en el mes"><strong>55</strong></td>
+      <td class="num" data-label="B/N">55</td>
+      <td class="num" data-label="Color">—</td>
+      
+    </tr>
+  
+    <tr>
+      <td class="name"><a href="printer_01a1a6ae-bf4b-7004-9d72-3d591f26e2ae.html"><span class="ref">M1031</span>HP Color LaserJet MFP M477fdw</a><br><span class="muted small">Despacho Jurídico Anaga</span>
+        </td>
+      
+      <td class="num" data-label="Inicio">98.925</td>
+      <td class="num" data-label="Fin">99.050</td>
+      <td class="num" data-label="Impreso en el mes"><strong>125</strong></td>
+      <td class="num" data-label="B/N">91</td>
+      <td class="num" data-label="Color">34</td>
+      
+    </tr>
+  
+    <tr>
+      <td class="name"><a href="printer_01a1a6ae-bf4c-7001-92b7-0ba9bed91395.html"><span class="ref">M1032</span>HP Color LaserJet MFP M477fdw</a><br><span class="muted small">Despacho Jurídico Anaga</span>
+        <br><span class="muted small">Instalada durante el mes: cuenta desde su primera lectura.</span></td>
+      
+      <td class="num" data-label="Inicio">69.899</td>
+      <td class="num" data-label="Fin">69.899</td>
+      <td class="num" data-label="Impreso en el mes"><strong>0</strong></td>
+      <td class="num" data-label="B/N">0</td>
+      <td class="num" data-label="Color">0</td>
+      
+    </tr>
+  
+  </tbody>
+</table>
+
+</main>
+<footer>NetPrinter demo</footer>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
