@@ -70,7 +70,7 @@
       <a class="theme-dark" href="#" data-demo-off title="Modo oscuro"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-moon"></use></svg><span class="mobile-only">Modo oscuro</span></a>
           <hr>
           <form method="post" action="/logout">
-            <input type="hidden" name="csrf" value="a682d206518ef45c35f7876cbc049ad2">
+            <input type="hidden" name="csrf" value="47be764d0d2c0c80eb8de9decee778f8">
             <button class="link" type="submit"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-logout"></use></svg><span>Cerrar sesión</span></button>
           </form>
         </div>
@@ -91,13 +91,168 @@
   <label>Cliente
     <select name="client" data-autosubmit>
       <option value="">Todos los clientes</option>
-      <option value="01a1b058-e4f1-7000-b103-1a19b6b2c1fb" >Asesoría Teide S.L.</option><option value="01a1b058-e53e-7000-95d9-ae676786dbf1" >Clínica Dental Atlántico</option><option value="01a1b058-e5a2-7003-8a41-5631ce860c62" >Colegio San Borondón</option><option value="01a1b058-e560-7000-8bc1-44529e8d6b48" >Construcciones Roque Nublo</option><option value="01a1b058-e643-7000-9911-6afdcc9f1f66" >Despacho Jurídico Anaga</option><option value="01a1b058-e62d-7000-a731-df665594d645" >Ferretería La Orotava</option><option value="01a1b058-e5fd-7000-807b-3878c4362678" >Hotel Playa Dorada</option>
+      <option value="01a1b05b-9410-7000-b4bd-b91a3366817d" >Asesoría Teide S.L.</option><option value="01a1b05b-9430-7000-9602-da2b4cb04006" >Clínica Dental Atlántico</option><option value="01a1b05b-944d-7001-9a57-f9fb2191e5c0" >Colegio San Borondón</option><option value="01a1b05b-943c-7000-b3d1-22a7d0f371ff" >Construcciones Roque Nublo</option><option value="01a1b05b-9478-7000-9259-38fb84222a73" >Despacho Jurídico Anaga</option><option value="01a1b05b-9470-7000-a26d-bbf0dd3cefbe" >Ferretería La Orotava</option><option value="01a1b05b-9464-7000-8d1a-7c407de5aabf" >Hotel Playa Dorada</option>
     </select></label>
   
   <label>Trimestre
     <select name="quarter" data-autosubmit><option value="2026-10">octubre – diciembre 2026 (en curso)</option><option value="2026-07">julio – septiembre 2026</option><option value="2026-04">abril – junio 2026</option><option value="2026-01" selected>enero – marzo 2026</option><option value="2025-10">octubre – diciembre 2025</option></select></label>
   <noscript><button type="submit">OK</button></noscript>
 </form>
+<section class="panel" id="chart">
+  <h2>Impresiones por mes</h2>
+  
+<nav class="tabs ranges" aria-label="Periodo">
+  <a href="#" data-demo-off>Esta semana</a><a href="#" data-demo-off>Últimos 7 días</a><a href="#" data-demo-off>Últimos 30 días</a><a href="#" data-demo-off aria-current="true">Últimos 12 meses</a><a href="#" data-demo-off>Últimos 24 meses</a><a href="#" data-demo-off>Desde el principio</a>
+</nav>
+<figure class="chart" data-l-mono="B/N" data-l-color="Color" data-l-total="Total" data-l-nodata="sin lecturas">
+  <figcaption>
+    <span class="muted small">Todas las impresoras · Últimos 12 meses</span>
+    <ul class="legend" aria-label="Impresiones por mes">
+      <li><span class="key s-mono"></span>B/N</li>
+      <li><span class="key s-color"></span>Color</li>
+    </ul>
+  </figcaption>
+  
+  <svg class="plot" viewBox="0 0 720 240" role="img" aria-label="Impresiones por mes">
+    <line class="grid" x1="48" x2="712" y1="212" y2="212"></line>
+    <text class="tick" x="48" dx="-8" y="212" dy="4" text-anchor="end">0</text><line class="grid" x1="48" x2="712" y1="145.33333333333334" y2="145.33333333333334"></line>
+    <text class="tick" x="48" dx="-8" y="145.33333333333334" dy="4" text-anchor="end">20K</text><line class="grid" x1="48" x2="712" y1="78.66666666666667" y2="78.66666666666667"></line>
+    <text class="tick" x="48" dx="-8" y="78.66666666666667" dy="4" text-anchor="end">40K</text><line class="grid" x1="48" x2="712" y1="12" y2="12"></line>
+    <text class="tick" x="48" dx="-8" y="12" dy="4" text-anchor="end">60K</text>
+    <g class="col" tabindex="0" data-month="diciembre 2025" data-mono="43.705" data-color="8.215" data-total="51.920"
+      aria-label="diciembre 2025: B/N 43.705, Color 8.215">
+      <rect class="hit" x="48" y="0" width="55.333333333333336" height="212"></rect>
+      <path class="s-mono" d="M63.67 212V66.32Q63.67 66.32 63.67 66.32H87.67Q87.67 66.32 87.67 66.32V212Z"></path>
+      <path class="s-color" d="M63.67 64.32V42.93Q63.67 38.93 67.67 38.93H83.67Q87.67 38.93 87.67 42.93V64.32Z"></path>
+      <text class="tick" x="75.66666666666667" y="240" dy="-8" text-anchor="middle">dic</text>
+    </g><g class="col" tabindex="0" data-month="enero 2026" data-mono="45.304" data-color="8.561" data-total="53.865"
+      aria-label="enero 2026: B/N 45.304, Color 8.561">
+      <rect class="hit" x="103.33333333333334" y="0" width="55.333333333333336" height="212"></rect>
+      <path class="s-mono" d="M119 212V60.99Q119 60.99 119 60.99H143Q143 60.99 143 60.99V212Z"></path>
+      <path class="s-color" d="M119 58.99V36.45Q119 32.45 123 32.45H139Q143 32.45 143 36.45V58.99Z"></path>
+      <text class="tick" x="131" y="240" dy="-8" text-anchor="middle">ene</text>
+    </g><g class="col" tabindex="0" data-month="febrero 2026" data-mono="39.797" data-color="7.929" data-total="47.726"
+      aria-label="febrero 2026: B/N 39.797, Color 7.929">
+      <rect class="hit" x="158.66666666666669" y="0" width="55.333333333333336" height="212"></rect>
+      <path class="s-mono" d="M174.33 212V79.34Q174.33 79.34 174.33 79.34H198.33Q198.33 79.34 198.33 79.34V212Z"></path>
+      <path class="s-color" d="M174.33 77.34V56.91Q174.33 52.91 178.33 52.91H194.33Q198.33 52.91 198.33 56.91V77.34Z"></path>
+      <text class="tick" x="186.33333333333334" y="240" dy="-8" text-anchor="middle">feb</text>
+    </g><g class="col" tabindex="0" data-month="marzo 2026" data-mono="41.621" data-color="8.160" data-total="49.781"
+      aria-label="marzo 2026: B/N 41.621, Color 8.160">
+      <rect class="hit" x="214" y="0" width="55.333333333333336" height="212"></rect>
+      <path class="s-mono" d="M229.67 212V73.26Q229.67 73.26 229.67 73.26H253.67Q253.67 73.26 253.67 73.26V212Z"></path>
+      <path class="s-color" d="M229.67 71.26V50.06Q229.67 46.06 233.67 46.06H249.67Q253.67 46.06 253.67 50.06V71.26Z"></path>
+      <text class="tick" x="241.66666666666666" y="240" dy="-8" text-anchor="middle">mar</text>
+    </g><g class="col" tabindex="0" data-month="abril 2026" data-mono="42.807" data-color="8.300" data-total="51.107"
+      aria-label="abril 2026: B/N 42.807, Color 8.300">
+      <rect class="hit" x="269.33333333333337" y="0" width="55.333333333333336" height="212"></rect>
+      <path class="s-mono" d="M285 212V69.31Q285 69.31 285 69.31H309Q309 69.31 309 69.31V212Z"></path>
+      <path class="s-color" d="M285 67.31V45.64Q285 41.64 289 41.64H305Q309 41.64 309 45.64V67.31Z"></path>
+      <text class="tick" x="297.00000000000006" y="240" dy="-8" text-anchor="middle">abr</text>
+    </g><g class="col" tabindex="0" data-month="mayo 2026" data-mono="43.371" data-color="8.358" data-total="51.729"
+      aria-label="mayo 2026: B/N 43.371, Color 8.358">
+      <rect class="hit" x="324.6666666666667" y="0" width="55.333333333333336" height="212"></rect>
+      <path class="s-mono" d="M340.33 212V67.43Q340.33 67.43 340.33 67.43H364.33Q364.33 67.43 364.33 67.43V212Z"></path>
+      <path class="s-color" d="M340.33 65.43V43.57Q340.33 39.57 344.33 39.57H360.33Q364.33 39.57 364.33 43.57V65.43Z"></path>
+      <text class="tick" x="352.33333333333337" y="240" dy="-8" text-anchor="middle">may</text>
+    </g><g class="col" tabindex="0" data-month="junio 2026" data-mono="41.639" data-color="8.213" data-total="49.852"
+      aria-label="junio 2026: B/N 41.639, Color 8.213">
+      <rect class="hit" x="380" y="0" width="55.333333333333336" height="212"></rect>
+      <path class="s-mono" d="M395.67 212V73.2Q395.67 73.2 395.67 73.2H419.67Q419.67 73.2 419.67 73.2V212Z"></path>
+      <path class="s-color" d="M395.67 71.2V49.83Q395.67 45.83 399.67 45.83H415.67Q419.67 45.83 419.67 49.83V71.2Z"></path>
+      <text class="tick" x="407.6666666666667" y="240" dy="-8" text-anchor="middle">jun</text>
+    </g><g class="col" tabindex="0" data-month="julio 2026" data-mono="44.432" data-color="8.840" data-total="53.272"
+      aria-label="julio 2026: B/N 44.432, Color 8.840">
+      <rect class="hit" x="435.33333333333337" y="0" width="55.333333333333336" height="212"></rect>
+      <path class="s-mono" d="M451 212V63.89Q451 63.89 451 63.89H475Q475 63.89 475 63.89V212Z"></path>
+      <path class="s-color" d="M451 61.89V38.43Q451 34.43 455 34.43H471Q475 34.43 475 38.43V61.89Z"></path>
+      <text class="tick" x="463.00000000000006" y="240" dy="-8" text-anchor="middle">jul</text>
+    </g><g class="col" tabindex="0" data-month="agosto 2026" data-mono="40.809" data-color="8.179" data-total="48.988"
+      aria-label="agosto 2026: B/N 40.809, Color 8.179">
+      <rect class="hit" x="490.6666666666667" y="0" width="55.333333333333336" height="212"></rect>
+      <path class="s-mono" d="M506.33 212V75.97Q506.33 75.97 506.33 75.97H530.33Q530.33 75.97 530.33 75.97V212Z"></path>
+      <path class="s-color" d="M506.33 73.97V52.71Q506.33 48.71 510.33 48.71H526.33Q530.33 48.71 530.33 52.71V73.97Z"></path>
+      <text class="tick" x="518.3333333333334" y="240" dy="-8" text-anchor="middle">ago</text>
+    </g><g class="col" tabindex="0" data-month="septiembre 2026" data-mono="43.046" data-color="8.255" data-total="51.301"
+      aria-label="septiembre 2026: B/N 43.046, Color 8.255">
+      <rect class="hit" x="546" y="0" width="55.333333333333336" height="212"></rect>
+      <path class="s-mono" d="M561.67 212V68.51Q561.67 68.51 561.67 68.51H585.67Q585.67 68.51 585.67 68.51V212Z"></path>
+      <path class="s-color" d="M561.67 66.51V45Q561.67 41 565.67 41H581.67Q585.67 41 585.67 45V66.51Z"></path>
+      <text class="tick" x="573.6666666666666" y="240" dy="-8" text-anchor="middle">sep</text>
+    </g><g class="col" tabindex="0" data-month="octubre 2026" data-mono="46.223" data-color="8.856" data-total="55.079"
+      aria-label="octubre 2026: B/N 46.223, Color 8.856">
+      <rect class="hit" x="601.3333333333334" y="0" width="55.333333333333336" height="212"></rect>
+      <path class="s-mono" d="M617 212V57.92Q617 57.92 617 57.92H641Q641 57.92 641 57.92V212Z"></path>
+      <path class="s-color" d="M617 55.92V32.4Q617 28.4 621 28.4H637Q641 28.4 641 32.4V55.92Z"></path>
+      <text class="tick" x="629" y="240" dy="-8" text-anchor="middle">oct</text>
+    </g><g class="col" tabindex="0" data-month="noviembre 2026" data-mono="7.830" data-color="1.614" data-total="9.444"
+      aria-label="noviembre 2026: B/N 7.830, Color 1.614">
+      <rect class="hit" x="656.6666666666667" y="0" width="55.333333333333336" height="212"></rect>
+      <path class="s-mono" d="M672.33 212V185.9Q672.33 185.9 672.33 185.9H696.33Q696.33 185.9 696.33 185.9V212Z"></path>
+      <path class="s-color" d="M672.33 183.9V183.9Q672.33 180.52 675.71 180.52H692.95Q696.33 180.52 696.33 183.9V183.9Z"></path>
+      <text class="tick" x="684.3333333333334" y="240" dy="-8" text-anchor="middle">nov</text>
+    </g>
+    <line class="axis" x1="48" x2="712" y1="212" y2="212"></line>
+  </svg>
+  <details class="chart-table">
+    <summary>Ver los datos en tabla</summary>
+    <table class="list">
+      <thead><tr><th>Mes</th><th class="num">B/N</th><th class="num">Color</th><th class="num">Total</th></tr></thead>
+      <tbody><tr>
+        <td>diciembre 2025</td>
+        <td class="num" data-label="B/N">43.705</td><td class="num" data-label="Color">8.215</td><td class="num" data-label="Total">51.920</td>
+        
+      </tr><tr>
+        <td>enero 2026</td>
+        <td class="num" data-label="B/N">45.304</td><td class="num" data-label="Color">8.561</td><td class="num" data-label="Total">53.865</td>
+        
+      </tr><tr>
+        <td>febrero 2026</td>
+        <td class="num" data-label="B/N">39.797</td><td class="num" data-label="Color">7.929</td><td class="num" data-label="Total">47.726</td>
+        
+      </tr><tr>
+        <td>marzo 2026</td>
+        <td class="num" data-label="B/N">41.621</td><td class="num" data-label="Color">8.160</td><td class="num" data-label="Total">49.781</td>
+        
+      </tr><tr>
+        <td>abril 2026</td>
+        <td class="num" data-label="B/N">42.807</td><td class="num" data-label="Color">8.300</td><td class="num" data-label="Total">51.107</td>
+        
+      </tr><tr>
+        <td>mayo 2026</td>
+        <td class="num" data-label="B/N">43.371</td><td class="num" data-label="Color">8.358</td><td class="num" data-label="Total">51.729</td>
+        
+      </tr><tr>
+        <td>junio 2026</td>
+        <td class="num" data-label="B/N">41.639</td><td class="num" data-label="Color">8.213</td><td class="num" data-label="Total">49.852</td>
+        
+      </tr><tr>
+        <td>julio 2026</td>
+        <td class="num" data-label="B/N">44.432</td><td class="num" data-label="Color">8.840</td><td class="num" data-label="Total">53.272</td>
+        
+      </tr><tr>
+        <td>agosto 2026</td>
+        <td class="num" data-label="B/N">40.809</td><td class="num" data-label="Color">8.179</td><td class="num" data-label="Total">48.988</td>
+        
+      </tr><tr>
+        <td>septiembre 2026</td>
+        <td class="num" data-label="B/N">43.046</td><td class="num" data-label="Color">8.255</td><td class="num" data-label="Total">51.301</td>
+        
+      </tr><tr>
+        <td>octubre 2026</td>
+        <td class="num" data-label="B/N">46.223</td><td class="num" data-label="Color">8.856</td><td class="num" data-label="Total">55.079</td>
+        
+      </tr><tr>
+        <td>noviembre 2026 <span class="muted small">(incompleto: desde la primera lectura)</span></td>
+        <td class="num" data-label="B/N">7.830</td><td class="num" data-label="Color">1.614</td><td class="num" data-label="Total">9.444</td>
+        
+      </tr></tbody>
+    </table>
+  </details>
+  
+</figure>
+
+</section>
 
 <p class="hint">Las copias, las incluidas y los excesos se calculan por trimestre natural, como en la facturación. Estimación con los contadores leídos; la factura definitiva puede variar.</p>
 
@@ -116,8 +271,8 @@
   
   
     <tr>
-      <td class="ref-cell"><a href="printer_01a1b058-e4f5-7004-9ed9-0a782728a54b.html" class="ref">M1003</a></td>
-      <td data-label="Modelo"><span><a href="printer_01a1b058-e4f5-7004-9ed9-0a782728a54b.html">Brother MFC-L9570CDW series</a></span></td>
+      <td class="ref-cell"><a href="printer_01a1b05b-9412-7004-83e8-f1715465c726.html" class="ref">M1003</a></td>
+      <td data-label="Modelo"><span><a href="printer_01a1b05b-9412-7004-83e8-f1715465c726.html">Brother MFC-L9570CDW series</a></span></td>
       <td class="num" data-label="Cuota mensual">40,00 €</td>
       <td class="num" data-label="Impresas · Negro">4.007</td>
       <td class="num" data-label="Incluidas · Negro">4.500</td>
@@ -129,8 +284,8 @@
     </tr>
   
     <tr>
-      <td class="ref-cell"><a href="printer_01a1b058-e4f6-7004-86cc-f89d92b64b90.html" class="ref">M1006</a></td>
-      <td data-label="Modelo"><span><a href="printer_01a1b058-e4f6-7004-86cc-f89d92b64b90.html">Brother MFC-L5750DW series</a></span></td>
+      <td class="ref-cell"><a href="printer_01a1b05b-9413-7002-ab2f-b9f8ddfbe840.html" class="ref">M1006</a></td>
+      <td data-label="Modelo"><span><a href="printer_01a1b05b-9413-7002-ab2f-b9f8ddfbe840.html">Brother MFC-L5750DW series</a></span></td>
       <td class="num" data-label="Cuota mensual">40,00 €</td>
       <td class="num" data-label="Impresas · Negro">5.178</td>
       <td class="num" data-label="Incluidas · Negro">4.500</td>
@@ -142,8 +297,8 @@
     </tr>
   
     <tr>
-      <td class="ref-cell"><a href="printer_01a1b058-e4f7-7002-88ec-d2bf851ac348.html" class="ref">M1009</a></td>
-      <td data-label="Modelo"><span><a href="printer_01a1b058-e4f7-7002-88ec-d2bf851ac348.html">Brother MFC-L9570CDW series</a></span></td>
+      <td class="ref-cell"><a href="printer_01a1b05b-9414-7000-a4b5-b8032fbf7c5d.html" class="ref">M1009</a></td>
+      <td data-label="Modelo"><span><a href="printer_01a1b05b-9414-7000-a4b5-b8032fbf7c5d.html">Brother MFC-L9570CDW series</a></span></td>
       <td class="num" data-label="Cuota mensual">0,00 €</td>
       <td class="num" data-label="Impresas · Negro">Sin datos</td>
       <td class="num" data-label="Incluidas · Negro">0</td>
@@ -155,8 +310,8 @@
     </tr>
   
     <tr>
-      <td class="ref-cell"><a href="printer_01a1b058-e4f5-7002-b340-0c2ff2eab21c.html" class="ref">M1002</a></td>
-      <td data-label="Modelo"><span><a href="printer_01a1b058-e4f5-7002-b340-0c2ff2eab21c.html">HP LaserJet MFP M227fdw</a></span></td>
+      <td class="ref-cell"><a href="printer_01a1b05b-9412-7002-97f7-17d34eb0a65a.html" class="ref">M1002</a></td>
+      <td data-label="Modelo"><span><a href="printer_01a1b05b-9412-7002-97f7-17d34eb0a65a.html">HP LaserJet MFP M227fdw</a></span></td>
       <td class="num" data-label="Cuota mensual">75,00 €</td>
       <td class="num" data-label="Impresas · Negro">1.954</td>
       <td class="num" data-label="Incluidas · Negro">1.500</td>
@@ -168,8 +323,8 @@
     </tr>
   
     <tr>
-      <td class="ref-cell"><a href="printer_01a1b058-e4f6-7002-8d05-1e8c3db458b5.html" class="ref">M1005</a></td>
-      <td data-label="Modelo"><span><a href="printer_01a1b058-e4f6-7002-8d05-1e8c3db458b5.html">Brother HL-L8360CDW series</a></span></td>
+      <td class="ref-cell"><a href="printer_01a1b05b-9413-7000-94cb-66933c3e119b.html" class="ref">M1005</a></td>
+      <td data-label="Modelo"><span><a href="printer_01a1b05b-9413-7000-94cb-66933c3e119b.html">Brother HL-L8360CDW series</a></span></td>
       <td class="num" data-label="Cuota mensual">40,00 €</td>
       <td class="num" data-label="Impresas · Negro">4.913</td>
       <td class="num" data-label="Incluidas · Negro">6.000</td>
@@ -181,8 +336,8 @@
     </tr>
   
     <tr>
-      <td class="ref-cell"><a href="printer_01a1b058-e4f7-7000-abd2-a5fd62257634.html" class="ref">M1008</a></td>
-      <td data-label="Modelo"><span><a href="printer_01a1b058-e4f7-7000-abd2-a5fd62257634.html">Kyocera ECOSYS M5526cdw</a></span></td>
+      <td class="ref-cell"><a href="printer_01a1b05b-9413-7006-adbd-4be9e49e31a2.html" class="ref">M1008</a></td>
+      <td data-label="Modelo"><span><a href="printer_01a1b05b-9413-7006-adbd-4be9e49e31a2.html">Kyocera ECOSYS M5526cdw</a></span></td>
       <td class="num" data-label="Cuota mensual">85,00 €</td>
       <td class="num" data-label="Impresas · Negro">3.150</td>
       <td class="num" data-label="Incluidas · Negro">4.500</td>
@@ -194,8 +349,8 @@
     </tr>
   
     <tr>
-      <td class="ref-cell"><a href="printer_01a1b058-e4f5-7000-9b7b-dfaed37573c0.html" class="ref">M1001</a></td>
-      <td data-label="Modelo"><span><a href="printer_01a1b058-e4f5-7000-9b7b-dfaed37573c0.html">Brother MFC-L5750DW series</a></span></td>
+      <td class="ref-cell"><a href="printer_01a1b05b-9412-7000-8c8f-48b0dd4f8480.html" class="ref">M1001</a></td>
+      <td data-label="Modelo"><span><a href="printer_01a1b05b-9412-7000-8c8f-48b0dd4f8480.html">Brother MFC-L5750DW series</a></span></td>
       <td class="num" data-label="Cuota mensual">65,00 €</td>
       <td class="num" data-label="Impresas · Negro">4.978</td>
       <td class="num" data-label="Incluidas · Negro">4.500</td>
@@ -207,8 +362,8 @@
     </tr>
   
     <tr>
-      <td class="ref-cell"><a href="printer_01a1b058-e4f6-7000-892f-3dd3b2b11312.html" class="ref">M1004</a></td>
-      <td data-label="Modelo"><span><a href="printer_01a1b058-e4f6-7000-892f-3dd3b2b11312.html">HP LaserJet Pro MFP M428fdw</a></span></td>
+      <td class="ref-cell"><a href="printer_01a1b05b-9412-7006-9916-dbdc43c2274b.html" class="ref">M1004</a></td>
+      <td data-label="Modelo"><span><a href="printer_01a1b05b-9412-7006-9916-dbdc43c2274b.html">HP LaserJet Pro MFP M428fdw</a></span></td>
       <td class="num" data-label="Cuota mensual">70,00 €</td>
       <td class="num" data-label="Impresas · Negro">7.453</td>
       <td class="num" data-label="Incluidas · Negro">6.000</td>
@@ -220,8 +375,8 @@
     </tr>
   
     <tr>
-      <td class="ref-cell"><a href="printer_01a1b058-e4f6-7006-8af8-a93e9cf44a3f.html" class="ref">M1007</a></td>
-      <td data-label="Modelo"><span><a href="printer_01a1b058-e4f6-7006-8af8-a93e9cf44a3f.html">HP LaserJet Pro MFP M428fdw</a></span></td>
+      <td class="ref-cell"><a href="printer_01a1b05b-9413-7004-b181-1ef7b477e31b.html" class="ref">M1007</a></td>
+      <td data-label="Modelo"><span><a href="printer_01a1b05b-9413-7004-b181-1ef7b477e31b.html">HP LaserJet Pro MFP M428fdw</a></span></td>
       <td class="num" data-label="Cuota mensual">30,00 €</td>
       <td class="num" data-label="Impresas · Negro">10.886</td>
       <td class="num" data-label="Incluidas · Negro">7.500</td>
@@ -251,8 +406,8 @@
   
   
     <tr class="todo">
-      <td class="ref-cell"><a href="printer_01a1b058-e540-7000-8b41-f0b1c72d4acb.html" class="ref">M1010</a></td>
-      <td data-label="Modelo"><span><a href="printer_01a1b058-e540-7000-8b41-f0b1c72d4acb.html">Kyocera ECOSYS M5526cdw</a><br><span class="warn small">Sin contrato.</span> · <a class="small" href="printer_01a1b058-e540-7000-8b41-f0b1c72d4acb__tab-settings.html#contract">Indicar el contrato</a></span></td>
+      <td class="ref-cell"><a href="printer_01a1b05b-9431-7000-ad4d-45d9f864d819.html" class="ref">M1010</a></td>
+      <td data-label="Modelo"><span><a href="printer_01a1b05b-9431-7000-ad4d-45d9f864d819.html">Kyocera ECOSYS M5526cdw</a><br><span class="warn small">Sin contrato.</span> · <a class="small" href="printer_01a1b05b-9431-7000-ad4d-45d9f864d819__tab-settings.html#contract">Indicar el contrato</a></span></td>
       <td class="num" data-label="Cuota mensual">—</td>
       <td class="num" data-label="Impresas · Negro">3.453</td>
       <td class="num" data-label="Incluidas · Negro">—</td>
@@ -264,8 +419,8 @@
     </tr>
   
     <tr>
-      <td class="ref-cell"><a href="printer_01a1b058-e541-7000-99ab-18f880ad81e6.html" class="ref">M1011</a></td>
-      <td data-label="Modelo"><span><a href="printer_01a1b058-e541-7000-99ab-18f880ad81e6.html">EPSON WF-C5790 Series</a></span></td>
+      <td class="ref-cell"><a href="printer_01a1b05b-9431-7002-9a63-90388e477e83.html" class="ref">M1011</a></td>
+      <td data-label="Modelo"><span><a href="printer_01a1b05b-9431-7002-9a63-90388e477e83.html">EPSON WF-C5790 Series</a></span></td>
       <td class="num" data-label="Cuota mensual">40,00 €</td>
       <td class="num" data-label="Impresas · Negro">4.213</td>
       <td class="num" data-label="Incluidas · Negro">4.500</td>
@@ -277,8 +432,8 @@
     </tr>
   
     <tr>
-      <td class="ref-cell"><a href="printer_01a1b058-e542-7000-bb07-2cfd3027859a.html" class="ref">M1012</a></td>
-      <td data-label="Modelo"><span><a href="printer_01a1b058-e542-7000-bb07-2cfd3027859a.html">Brother MFC-L5750DW series</a></span></td>
+      <td class="ref-cell"><a href="printer_01a1b05b-9431-7004-8050-83163a5c2523.html" class="ref">M1012</a></td>
+      <td data-label="Modelo"><span><a href="printer_01a1b05b-9431-7004-8050-83163a5c2523.html">Brother MFC-L5750DW series</a></span></td>
       <td class="num" data-label="Cuota mensual">30,00 €</td>
       <td class="num" data-label="Impresas · Negro">4.915</td>
       <td class="num" data-label="Incluidas · Negro">4.500</td>
@@ -308,8 +463,8 @@
   
   
     <tr>
-      <td class="ref-cell"><a href="printer_01a1b058-e5b2-7000-9b92-9bb747d62b8a.html" class="ref">M1018</a></td>
-      <td data-label="Modelo"><span><a href="printer_01a1b058-e5b2-7000-9b92-9bb747d62b8a.html">Kyocera ECOSYS M5526cdw</a></span></td>
+      <td class="ref-cell"><a href="printer_01a1b05b-944d-7003-bb88-cc2e76dd6ccb.html" class="ref">M1018</a></td>
+      <td data-label="Modelo"><span><a href="printer_01a1b05b-944d-7003-bb88-cc2e76dd6ccb.html">Kyocera ECOSYS M5526cdw</a></span></td>
       <td class="num" data-label="Cuota mensual">70,00 €</td>
       <td class="num" data-label="Impresas · Negro">2.362</td>
       <td class="num" data-label="Incluidas · Negro">3.000</td>
@@ -321,8 +476,8 @@
     </tr>
   
     <tr>
-      <td class="ref-cell"><a href="printer_01a1b058-e5b3-7000-bd43-ae9b03daa572.html" class="ref">M1019</a></td>
-      <td data-label="Modelo"><span><a href="printer_01a1b058-e5b3-7000-bd43-ae9b03daa572.html">Brother MFC-L9570CDW series</a></span></td>
+      <td class="ref-cell"><a href="printer_01a1b05b-944e-7000-b3e0-dc30dd9710b5.html" class="ref">M1019</a></td>
+      <td data-label="Modelo"><span><a href="printer_01a1b05b-944e-7000-b3e0-dc30dd9710b5.html">Brother MFC-L9570CDW series</a></span></td>
       <td class="num" data-label="Cuota mensual">35,00 €</td>
       <td class="num" data-label="Impresas · Negro">8.456</td>
       <td class="num" data-label="Incluidas · Negro">9.000</td>
@@ -334,8 +489,8 @@
     </tr>
   
     <tr>
-      <td class="ref-cell"><a href="printer_01a1b058-e5b3-7002-886b-99a14462a8b8.html" class="ref">M1020</a></td>
-      <td data-label="Modelo"><span><a href="printer_01a1b058-e5b3-7002-886b-99a14462a8b8.html">HP LaserJet MFP M227fdw</a></span></td>
+      <td class="ref-cell"><a href="printer_01a1b05b-944e-7002-8e49-50de50ff6b11.html" class="ref">M1020</a></td>
+      <td data-label="Modelo"><span><a href="printer_01a1b05b-944e-7002-8e49-50de50ff6b11.html">HP LaserJet MFP M227fdw</a></span></td>
       <td class="num" data-label="Cuota mensual">50,00 €</td>
       <td class="num" data-label="Impresas · Negro">2.163</td>
       <td class="num" data-label="Incluidas · Negro">1.500</td>
@@ -347,8 +502,8 @@
     </tr>
   
     <tr>
-      <td class="ref-cell"><a href="printer_01a1b058-e5b4-7000-8a5a-f86bedbe2d01.html" class="ref">M1021</a></td>
-      <td data-label="Modelo"><span><a href="printer_01a1b058-e5b4-7000-8a5a-f86bedbe2d01.html">Kyocera ECOSYS M5526cdw</a></span></td>
+      <td class="ref-cell"><a href="printer_01a1b05b-944e-7004-8ed0-30c5d9a89367.html" class="ref">M1021</a></td>
+      <td data-label="Modelo"><span><a href="printer_01a1b05b-944e-7004-8ed0-30c5d9a89367.html">Kyocera ECOSYS M5526cdw</a></span></td>
       <td class="num" data-label="Cuota mensual">55,00 €</td>
       <td class="num" data-label="Impresas · Negro">3.723</td>
       <td class="num" data-label="Incluidas · Negro">4.500</td>
@@ -360,8 +515,8 @@
     </tr>
   
     <tr>
-      <td class="ref-cell"><a href="printer_01a1b058-e5b5-7000-8b6b-c9c844425612.html" class="ref">M1022</a></td>
-      <td data-label="Modelo"><span><a href="printer_01a1b058-e5b5-7000-8b6b-c9c844425612.html">Brother MFC-L9570CDW series</a></span></td>
+      <td class="ref-cell"><a href="printer_01a1b05b-944e-7006-9173-2bdea660eeaf.html" class="ref">M1022</a></td>
+      <td data-label="Modelo"><span><a href="printer_01a1b05b-944e-7006-9173-2bdea660eeaf.html">Brother MFC-L9570CDW series</a></span></td>
       <td class="num" data-label="Cuota mensual">30,00 €</td>
       <td class="num" data-label="Impresas · Negro">3.395</td>
       <td class="num" data-label="Incluidas · Negro">3.000</td>
@@ -373,8 +528,8 @@
     </tr>
   
     <tr>
-      <td class="ref-cell"><a href="printer_01a1b058-e5b5-7002-b366-c60aeb6deb72.html" class="ref">M1023</a></td>
-      <td data-label="Modelo"><span><a href="printer_01a1b058-e5b5-7002-b366-c60aeb6deb72.html">HP Color LaserJet MFP M477fdw</a></span></td>
+      <td class="ref-cell"><a href="printer_01a1b05b-944f-7000-a1f5-9f8bc5a7d8dc.html" class="ref">M1023</a></td>
+      <td data-label="Modelo"><span><a href="printer_01a1b05b-944f-7000-a1f5-9f8bc5a7d8dc.html">HP Color LaserJet MFP M477fdw</a></span></td>
       <td class="num" data-label="Cuota mensual">40,00 €</td>
       <td class="num" data-label="Impresas · Negro">3.001</td>
       <td class="num" data-label="Incluidas · Negro">3.000</td>
@@ -404,8 +559,8 @@
   
   
     <tr>
-      <td class="ref-cell"><a href="printer_01a1b058-e563-7000-9c03-f5b095d28fca.html" class="ref">M1014</a></td>
-      <td data-label="Modelo"><span><a href="printer_01a1b058-e563-7000-9c03-f5b095d28fca.html">EPSON WF-C5790 Series</a></span></td>
+      <td class="ref-cell"><a href="printer_01a1b05b-943d-7002-bb7c-d096b2932166.html" class="ref">M1014</a></td>
+      <td data-label="Modelo"><span><a href="printer_01a1b05b-943d-7002-bb7c-d096b2932166.html">EPSON WF-C5790 Series</a></span></td>
       <td class="num" data-label="Cuota mensual">60,00 €</td>
       <td class="num" data-label="Impresas · Negro">4.736</td>
       <td class="num" data-label="Incluidas · Negro">4.500</td>
@@ -417,8 +572,8 @@
     </tr>
   
     <tr>
-      <td class="ref-cell"><a href="printer_01a1b058-e564-7001-bee6-71134e3c9f08.html" class="ref">M1016</a></td>
-      <td data-label="Modelo"><span><a href="printer_01a1b058-e564-7001-bee6-71134e3c9f08.html">Brother MFC-L9570CDW series</a></span></td>
+      <td class="ref-cell"><a href="printer_01a1b05b-943d-7006-a350-0d0e8aded495.html" class="ref">M1016</a></td>
+      <td data-label="Modelo"><span><a href="printer_01a1b05b-943d-7006-a350-0d0e8aded495.html">Brother MFC-L9570CDW series</a></span></td>
       <td class="num" data-label="Cuota mensual">35,00 €</td>
       <td class="num" data-label="Impresas · Negro">3.207</td>
       <td class="num" data-label="Incluidas · Negro">3.000</td>
@@ -430,8 +585,8 @@
     </tr>
   
     <tr>
-      <td class="ref-cell"><a href="printer_01a1b058-e563-7002-bcd4-d7f29542fda9.html" class="ref">M1015</a></td>
-      <td data-label="Modelo"><span><a href="printer_01a1b058-e563-7002-bcd4-d7f29542fda9.html">HP LaserJet MFP M227fdw</a></span></td>
+      <td class="ref-cell"><a href="printer_01a1b05b-943d-7004-b9c2-0a77e57abaf8.html" class="ref">M1015</a></td>
+      <td data-label="Modelo"><span><a href="printer_01a1b05b-943d-7004-b9c2-0a77e57abaf8.html">HP LaserJet MFP M227fdw</a></span></td>
       <td class="num" data-label="Cuota mensual">35,00 €</td>
       <td class="num" data-label="Impresas · Negro">4.104</td>
       <td class="num" data-label="Incluidas · Negro">3.000</td>
@@ -443,8 +598,8 @@
     </tr>
   
     <tr>
-      <td class="ref-cell"><a href="printer_01a1b058-e564-7003-927b-b2e347dd21d7.html" class="ref">M1017</a></td>
-      <td data-label="Modelo"><span><a href="printer_01a1b058-e564-7003-927b-b2e347dd21d7.html">HP Color LaserJet MFP M477fdw</a></span></td>
+      <td class="ref-cell"><a href="printer_01a1b05b-943e-7000-90f5-ff5e6c8d6a00.html" class="ref">M1017</a></td>
+      <td data-label="Modelo"><span><a href="printer_01a1b05b-943e-7000-90f5-ff5e6c8d6a00.html">HP Color LaserJet MFP M477fdw</a></span></td>
       <td class="num" data-label="Cuota mensual">0,00 €</td>
       <td class="num" data-label="Impresas · Negro">Sin datos</td>
       <td class="num" data-label="Incluidas · Negro">0</td>
@@ -474,8 +629,8 @@
   
   
     <tr>
-      <td class="ref-cell"><a href="printer_01a1b058-e645-7000-9ddb-17b43f6ce7fb.html" class="ref">M1030</a></td>
-      <td data-label="Modelo"><span><a href="printer_01a1b058-e645-7000-9ddb-17b43f6ce7fb.html">HP Color LaserJet MFP M477fdw</a></span></td>
+      <td class="ref-cell"><a href="printer_01a1b05b-9479-7000-a585-3acb07e59976.html" class="ref">M1030</a></td>
+      <td data-label="Modelo"><span><a href="printer_01a1b05b-9479-7000-a585-3acb07e59976.html">HP Color LaserJet MFP M477fdw</a></span></td>
       <td class="num" data-label="Cuota mensual">75,00 €</td>
       <td class="num" data-label="Impresas · Negro">2.228</td>
       <td class="num" data-label="Incluidas · Negro">3.000</td>
@@ -487,8 +642,8 @@
     </tr>
   
     <tr>
-      <td class="ref-cell"><a href="printer_01a1b058-e646-7000-b8cb-83bd9f3ce8d1.html" class="ref">M1031</a></td>
-      <td data-label="Modelo"><span><a href="printer_01a1b058-e646-7000-b8cb-83bd9f3ce8d1.html">Brother MFC-L9570CDW series</a></span></td>
+      <td class="ref-cell"><a href="printer_01a1b05b-9479-7002-b78f-60a4bd6dc3a8.html" class="ref">M1031</a></td>
+      <td data-label="Modelo"><span><a href="printer_01a1b05b-9479-7002-b78f-60a4bd6dc3a8.html">Brother MFC-L9570CDW series</a></span></td>
       <td class="num" data-label="Cuota mensual">25,00 €</td>
       <td class="num" data-label="Impresas · Negro">5.146</td>
       <td class="num" data-label="Incluidas · Negro">6.000</td>
@@ -500,8 +655,8 @@
     </tr>
   
     <tr>
-      <td class="ref-cell"><a href="printer_01a1b058-e647-7001-8162-788b1eaaa21f.html" class="ref">M1032</a></td>
-      <td data-label="Modelo"><span><a href="printer_01a1b058-e647-7001-8162-788b1eaaa21f.html">Brother MFC-L9570CDW series</a></span></td>
+      <td class="ref-cell"><a href="printer_01a1b05b-9479-7004-b8b5-d9d93cbd171a.html" class="ref">M1032</a></td>
+      <td data-label="Modelo"><span><a href="printer_01a1b05b-9479-7004-b8b5-d9d93cbd171a.html">Brother MFC-L9570CDW series</a></span></td>
       <td class="num" data-label="Cuota mensual">0,00 €</td>
       <td class="num" data-label="Impresas · Negro">Sin datos</td>
       <td class="num" data-label="Incluidas · Negro">0</td>
@@ -531,8 +686,8 @@
   
   
     <tr>
-      <td class="ref-cell"><a href="printer_01a1b058-e62f-7000-9ac7-a698a1478cdf.html" class="ref">M1028</a></td>
-      <td data-label="Modelo"><span><a href="printer_01a1b058-e62f-7000-9ac7-a698a1478cdf.html">HP Color LaserJet MFP M477fdw</a></span></td>
+      <td class="ref-cell"><a href="printer_01a1b05b-9471-7000-9cad-6404d571eb53.html" class="ref">M1028</a></td>
+      <td data-label="Modelo"><span><a href="printer_01a1b05b-9471-7000-9cad-6404d571eb53.html">HP Color LaserJet MFP M477fdw</a></span></td>
       <td class="num" data-label="Cuota mensual">45,00 €</td>
       <td class="num" data-label="Impresas · Negro">2.799</td>
       <td class="num" data-label="Incluidas · Negro">3.000</td>
@@ -544,8 +699,8 @@
     </tr>
   
     <tr>
-      <td class="ref-cell"><a href="printer_01a1b058-e630-7000-a787-c9da1d069d6e.html" class="ref">M1029</a></td>
-      <td data-label="Modelo"><span><a href="printer_01a1b058-e630-7000-a787-c9da1d069d6e.html">HP LaserJet Pro MFP M428fdw</a></span></td>
+      <td class="ref-cell"><a href="printer_01a1b05b-9471-7002-9ad1-0b655ed43984.html" class="ref">M1029</a></td>
+      <td data-label="Modelo"><span><a href="printer_01a1b05b-9471-7002-9ad1-0b655ed43984.html">HP LaserJet Pro MFP M428fdw</a></span></td>
       <td class="num" data-label="Cuota mensual">85,00 €</td>
       <td class="num" data-label="Impresas · Negro">9.764</td>
       <td class="num" data-label="Incluidas · Negro">7.500</td>
@@ -575,8 +730,8 @@
   
   
     <tr>
-      <td class="ref-cell"><a href="printer_01a1b058-e5ff-7000-8699-e08602174dc9.html" class="ref">M1024</a></td>
-      <td data-label="Modelo"><span><a href="printer_01a1b058-e5ff-7000-8699-e08602174dc9.html">HP LaserJet MFP M227fdw</a></span></td>
+      <td class="ref-cell"><a href="printer_01a1b05b-9464-7002-9737-1dc26db7f79e.html" class="ref">M1024</a></td>
+      <td data-label="Modelo"><span><a href="printer_01a1b05b-9464-7002-9737-1dc26db7f79e.html">HP LaserJet MFP M227fdw</a></span></td>
       <td class="num" data-label="Cuota mensual">25,00 €</td>
       <td class="num" data-label="Impresas · Negro">3.913</td>
       <td class="num" data-label="Incluidas · Negro">3.000</td>
@@ -588,8 +743,8 @@
     </tr>
   
     <tr>
-      <td class="ref-cell"><a href="printer_01a1b058-e600-7000-94d2-bea2ef2d0d2d.html" class="ref">M1025</a></td>
-      <td data-label="Modelo"><span><a href="printer_01a1b058-e600-7000-94d2-bea2ef2d0d2d.html">HP LaserJet Pro MFP M428fdw</a></span></td>
+      <td class="ref-cell"><a href="printer_01a1b05b-9465-7000-b530-41814605f8fc.html" class="ref">M1025</a></td>
+      <td data-label="Modelo"><span><a href="printer_01a1b05b-9465-7000-b530-41814605f8fc.html">HP LaserJet Pro MFP M428fdw</a></span></td>
       <td class="num" data-label="Cuota mensual">40,00 €</td>
       <td class="num" data-label="Impresas · Negro">5.389</td>
       <td class="num" data-label="Incluidas · Negro">4.500</td>
@@ -601,8 +756,8 @@
     </tr>
   
     <tr>
-      <td class="ref-cell"><a href="printer_01a1b058-e600-7002-a1f0-86871e98961c.html" class="ref">M1026</a></td>
-      <td data-label="Modelo"><span><a href="printer_01a1b058-e600-7002-a1f0-86871e98961c.html">EPSON WF-C5790 Series</a></span></td>
+      <td class="ref-cell"><a href="printer_01a1b05b-9465-7002-9429-344cb375b465.html" class="ref">M1026</a></td>
+      <td data-label="Modelo"><span><a href="printer_01a1b05b-9465-7002-9429-344cb375b465.html">EPSON WF-C5790 Series</a></span></td>
       <td class="num" data-label="Cuota mensual">60,00 €</td>
       <td class="num" data-label="Impresas · Negro">5.555</td>
       <td class="num" data-label="Incluidas · Negro">6.000</td>
@@ -614,8 +769,8 @@
     </tr>
   
     <tr>
-      <td class="ref-cell"><a href="printer_01a1b058-e601-7000-b944-c0fd135a609e.html" class="ref">M1027</a></td>
-      <td data-label="Modelo"><span><a href="printer_01a1b058-e601-7000-b944-c0fd135a609e.html">Kyocera ECOSYS M5526cdw</a></span></td>
+      <td class="ref-cell"><a href="printer_01a1b05b-9465-7004-914a-9cdbeb2c5221.html" class="ref">M1027</a></td>
+      <td data-label="Modelo"><span><a href="printer_01a1b05b-9465-7004-914a-9cdbeb2c5221.html">Kyocera ECOSYS M5526cdw</a></span></td>
       <td class="num" data-label="Cuota mensual">0,00 €</td>
       <td class="num" data-label="Impresas · Negro">Sin datos</td>
       <td class="num" data-label="Incluidas · Negro">0</td>

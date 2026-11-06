@@ -70,7 +70,7 @@
       <a class="theme-dark" href="#" data-demo-off title="Modo oscuro"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-moon"></use></svg><span class="mobile-only">Modo oscuro</span></a>
           <hr>
           <form method="post" action="/logout">
-            <input type="hidden" name="csrf" value="a682d206518ef45c35f7876cbc049ad2">
+            <input type="hidden" name="csrf" value="47be764d0d2c0c80eb8de9decee778f8">
             <button class="link" type="submit"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-logout"></use></svg><span>Cerrar sesión</span></button>
           </form>
         </div>
@@ -94,7 +94,7 @@
   <details class="newclient">
     <summary class="button"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-plus"></use></svg>Nuevo usuario</summary>
     <form method="post" action="/users" class="settings popover">
-      <input type="hidden" name="csrf" value="a682d206518ef45c35f7876cbc049ad2">
+      <input type="hidden" name="csrf" value="47be764d0d2c0c80eb8de9decee778f8">
       <label>Usuario <input name="username" autocapitalize="none" required></label>
       <label>Nombre <input name="name"></label>
       <label>Correo <input name="email" type="email"><span class="hint">Recibe los avisos por correo.</span></label>
@@ -121,8 +121,8 @@
     <details class="edit-dates">
       <summary><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-settings"></use></svg>Editar usuario</summary>
       <div class="grid">
-        <form method="post" action="/users/01a1b058-e486-7000-a8e3-fe01dc2adc9e/edit" class="settings">
-          <input type="hidden" name="csrf" value="a682d206518ef45c35f7876cbc049ad2">
+        <form method="post" action="/users/01a1b05b-93c0-7000-bd26-1c759fab8663/edit" class="settings">
+          <input type="hidden" name="csrf" value="47be764d0d2c0c80eb8de9decee778f8">
           <label>Usuario <input name="username" value="demo" autocapitalize="none" required>
             <span class="hint">Con el que entra en Central. Sin espacios.</span></label>
           <label>Nombre <input name="name" value="Usuario de demostración"></label>
@@ -135,8 +135,8 @@
           <label class="check"><input type="checkbox" name="notify" value="1" checked> Recibir avisos</label>
           <button type="submit">Guardar</button>
         </form>
-        <form method="post" action="/users/01a1b058-e486-7000-a8e3-fe01dc2adc9e/password" class="settings">
-          <input type="hidden" name="csrf" value="a682d206518ef45c35f7876cbc049ad2">
+        <form method="post" action="/users/01a1b05b-93c0-7000-bd26-1c759fab8663/password" class="settings">
+          <input type="hidden" name="csrf" value="47be764d0d2c0c80eb8de9decee778f8">
           <label>Nueva contraseña <input name="password" type="password" minlength="8" autocomplete="new-password" required>
             <span class="hint">Al menos 8 caracteres.</span></label>
           <button type="submit" class="secondary">Cambiar contraseña</button>

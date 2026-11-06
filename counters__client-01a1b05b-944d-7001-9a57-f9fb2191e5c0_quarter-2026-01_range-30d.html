@@ -1,0 +1,559 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>Contadores · NetPrinter</title>
+<link rel="stylesheet" href="static/style.css">
+<link rel="icon" href="static/icon.svg" type="image/svg+xml">
+<script src="static/app.js"></script>
+<link rel="stylesheet" href="static/demo.css"><script src="static/demo.js"></script></head>
+<body class="central"><div class="demo-banner" role="note">Demo de NetPrinter con datos inventados · Los cambios no se guardan</div>
+<svg class="sprite" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg">
+<symbol id="i-printer" viewBox="0 0 24 24"><path d="M6 9V3h12v6"/><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><path d="M6 14h12v7H6z"/></symbol>
+<symbol id="i-building" viewBox="0 0 24 24"><rect x="4" y="3" width="16" height="18" rx="1.5"/><path d="M9 21v-4h6v4"/><path d="M9 7h.01"/><path d="M15 7h.01"/><path d="M9 12h.01"/><path d="M15 12h.01"/></symbol>
+<symbol id="i-pin" viewBox="0 0 24 24"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0z"/><circle cx="12" cy="10" r="3"/></symbol>
+<symbol id="i-monitor" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="12" rx="2"/><path d="M8 20h8"/><path d="M12 16v4"/></symbol>
+<symbol id="i-receipt" viewBox="0 0 24 24"><path d="M5 3v18l2.5-1.5L10 21l2-1.5L14 21l2.5-1.5L19 21V3l-2.5 1.5L14 3l-2 1.5L10 3 7.5 4.5z"/><path d="M9 9h6"/><path d="M9 13h6"/></symbol>
+<symbol id="i-upload" viewBox="0 0 24 24"><path d="M12 15V3"/><path d="M7 8l5-5 5 5"/><path d="M4 21h16"/></symbol>
+<symbol id="i-plus" viewBox="0 0 24 24"><path d="M12 5v14"/><path d="M5 12h14"/></symbol>
+<symbol id="i-home" viewBox="0 0 24 24"><path d="M3 10.5 12 3l9 7.5"/><path d="M5 9.5V21h5v-6h4v6h5V9.5"/></symbol>
+<symbol id="i-drop" viewBox="0 0 24 24"><path d="M12 2.5s-6.5 7.2-6.5 11.8a6.5 6.5 0 0 0 13 0C18.5 9.7 12 2.5 12 2.5z"/><path d="M9 15a3 3 0 0 0 3 3"/></symbol>
+<symbol id="i-chart" viewBox="0 0 24 24"><path d="M3 3v18h18"/><path d="M7 16v-4"/><path d="M12 16V8"/><path d="M17 16v-7"/></symbol>
+<symbol id="i-settings" viewBox="0 0 24 24"><path d="M4 6h10"/><path d="M18 6h2"/><circle cx="16" cy="6" r="2"/><path d="M4 12h3"/><path d="M11 12h9"/><circle cx="9" cy="12" r="2"/><path d="M4 18h12"/><path d="M20 18h0"/><circle cx="18" cy="18" r="2"/></symbol>
+<symbol id="i-wrench" viewBox="0 0 24 24"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></symbol>
+<symbol id="i-globe" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M3 12h18"/><path d="M12 3a14 14 0 0 1 0 18"/><path d="M12 3a14 14 0 0 0 0 18"/></symbol>
+<symbol id="i-logout" viewBox="0 0 24 24"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><path d="M16 17l5-5-5-5"/><path d="M21 12H9"/></symbol>
+<symbol id="i-menu" viewBox="0 0 24 24"><path d="M4 6h16"/><path d="M4 12h16"/><path d="M4 18h16"/></symbol>
+<symbol id="i-close" viewBox="0 0 24 24"><path d="M6 6l12 12"/><path d="M18 6 6 18"/></symbol>
+<symbol id="i-lock" viewBox="0 0 24 24"><rect x="4" y="11" width="16" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></symbol>
+<symbol id="i-back" viewBox="0 0 24 24"><path d="M15 18l-6-6 6-6"/></symbol>
+<symbol id="i-refresh" viewBox="0 0 24 24"><path d="M21 12a9 9 0 1 1-2.6-6.4"/><path d="M21 3v6h-6"/></symbol>
+<symbol id="i-download" viewBox="0 0 24 24"><path d="M12 3v12"/><path d="M7 10l5 5 5-5"/><path d="M4 21h16"/></symbol>
+<symbol id="i-bell" viewBox="0 0 24 24"><path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"/><path d="M10.3 21a1.94 1.94 0 0 0 3.4 0"/></symbol>
+<symbol id="i-users" viewBox="0 0 24 24"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></symbol>
+<symbol id="i-user" viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/></symbol>
+<symbol id="i-key" viewBox="0 0 24 24"><circle cx="7.5" cy="15.5" r="5.5"/><path d="m21 2-9.6 9.6"/><path d="m15.5 7.5 3 3L22 7l-3-3"/></symbol>
+<symbol id="i-check" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></symbol>
+<symbol id="i-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v2"/><path d="M12 20v2"/><path d="m4.93 4.93 1.41 1.41"/><path d="m17.66 17.66 1.41 1.41"/><path d="M2 12h2"/><path d="M20 12h2"/><path d="m6.34 17.66-1.41 1.41"/><path d="m19.07 4.93-1.41 1.41"/></symbol>
+<symbol id="i-moon" viewBox="0 0 24 24"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></symbol>
+<symbol id="i-edit" viewBox="0 0 24 24"><path d="M12 20h9"/><path d="M16.5 3.5a2.12 2.12 0 0 1 3 3L7 19l-4 1 1-4z"/></symbol>
+<symbol id="i-simple" viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="16" rx="2"/><path d="M8 12h8"/></symbol>
+<symbol id="i-detail" viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="16" rx="2"/><path d="M8 9h8"/><path d="M8 13h8"/><path d="M8 17h5"/></symbol>
+<symbol id="i-cards" viewBox="0 0 24 24"><rect x="4" y="4" width="7" height="7" rx="1.5"/><rect x="13" y="4" width="7" height="7" rx="1.5"/><rect x="4" y="13" width="7" height="7" rx="1.5"/><rect x="13" y="13" width="7" height="7" rx="1.5"/></symbol>
+<symbol id="i-table" viewBox="0 0 24 24"><rect x="4" y="5" width="16" height="14" rx="1.5"/><path d="M4 10h16"/><path d="M4 14.5h16"/><path d="M9 10v9"/></symbol>
+<symbol id="i-search" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="M21 21l-5-5"/></symbol>
+<symbol id="i-alert" viewBox="0 0 24 24"><path d="M10.3 3.9 1.8 18a2 2 0 0 0 1.7 3h17a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0z"/><path d="M12 9v4"/><path d="M12 17h.01"/></symbol>
+</svg>
+<header class="top" id="top">
+  <a class="brand" href="index.html">NetPrinter <span class="brand-sub">Central</span></a>
+  <button class="menu-toggle" type="button" aria-controls="menu" aria-expanded="false" aria-label="Menú">
+    <span class="open-icon"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-menu"></use></svg></span><span class="close-icon"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-close"></use></svg></span>
+  </button>
+  <div class="menu" id="menu">
+    
+    <nav aria-label="Menú">
+      <a href="index.html" ><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-user"></use></svg><span>Acuerdos</span></a>
+      <a href="alerts.html" ><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-bell"></use></svg><span>Avisos</span><span class="count">10</span></a>
+      <a href="counters.html" aria-current="page"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-chart"></use></svg><span>Contadores</span></a>
+      <a href="settings.html" ><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-settings"></use></svg><span>Ajustes</span></a>
+    </nav>
+    <div class="tools">
+      
+      <details class="user-menu">
+        <summary title="Técnico"><span class="avatar tech"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-wrench"></use></svg></span><span>Usuario de demostración</span><span class="visually-hidden">Técnico</span></summary>
+        <div class="user-menu-list">
+          <a class="view-toggle" href="#" data-demo-off title="Mostrar también los datos técnicos: IP, avisos, piezas, historial"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-detail"></use></svg><span>Vista detallada</span></a>
+      <a href="#" data-demo-off lang="en" title="English"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-globe"></use></svg><span>EN</span></a>
+      <a class="theme-light" href="#" data-demo-off title="Modo claro"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-sun"></use></svg><span class="mobile-only">Modo claro</span></a>
+      <a class="theme-dark" href="#" data-demo-off title="Modo oscuro"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-moon"></use></svg><span class="mobile-only">Modo oscuro</span></a>
+          <hr>
+          <form method="post" action="/logout">
+            <input type="hidden" name="csrf" value="47be764d0d2c0c80eb8de9decee778f8">
+            <button class="link" type="submit"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-logout"></use></svg><span>Cerrar sesión</span></button>
+          </form>
+        </div>
+      </details>
+      
+    </div>
+    
+  </div>
+</header>
+<main>
+
+
+<div class="head">
+  <h1 class="page-title">Contadores</h1>
+  <a class="button secondary" href="counters__client-01a1b05b-944d-7001-9a57-f9fb2191e5c0_quarter-2026-01.csv"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-download"></use></svg>Descargar CSV</a>
+</div>
+<form method="get" action="/counters" class="month billing-tools">
+  <label>Cliente
+    <select name="client" data-autosubmit>
+      <option value="">Todos los clientes</option>
+      <option value="01a1b05b-9410-7000-b4bd-b91a3366817d" >Asesoría Teide S.L.</option><option value="01a1b05b-9430-7000-9602-da2b4cb04006" >Clínica Dental Atlántico</option><option value="01a1b05b-944d-7001-9a57-f9fb2191e5c0" selected>Colegio San Borondón</option><option value="01a1b05b-943c-7000-b3d1-22a7d0f371ff" >Construcciones Roque Nublo</option><option value="01a1b05b-9478-7000-9259-38fb84222a73" >Despacho Jurídico Anaga</option><option value="01a1b05b-9470-7000-a26d-bbf0dd3cefbe" >Ferretería La Orotava</option><option value="01a1b05b-9464-7000-8d1a-7c407de5aabf" >Hotel Playa Dorada</option>
+    </select></label>
+  
+  <label>Trimestre
+    <select name="quarter" data-autosubmit><option value="2026-10">octubre – diciembre 2026 (en curso)</option><option value="2026-07">julio – septiembre 2026</option><option value="2026-04">abril – junio 2026</option><option value="2026-01" selected>enero – marzo 2026</option><option value="2025-10">octubre – diciembre 2025</option></select></label>
+  <noscript><button type="submit">OK</button></noscript>
+</form>
+<section class="panel" id="chart">
+  <h2>Impresiones por día</h2>
+  
+<nav class="tabs ranges" aria-label="Periodo">
+  <a href="counters__client-01a1b05b-944d-7001-9a57-f9fb2191e5c0_quarter-2026-01_range-week.html#chart">Esta semana</a><a href="counters__client-01a1b05b-944d-7001-9a57-f9fb2191e5c0_quarter-2026-01_range-7d.html#chart">Últimos 7 días</a><a href="counters__client-01a1b05b-944d-7001-9a57-f9fb2191e5c0_quarter-2026-01_range-30d.html#chart" aria-current="true">Últimos 30 días</a><a href="counters__client-01a1b05b-944d-7001-9a57-f9fb2191e5c0_quarter-2026-01_range-12m.html#chart">Últimos 12 meses</a><a href="counters__client-01a1b05b-944d-7001-9a57-f9fb2191e5c0_quarter-2026-01_range-24m.html#chart">Últimos 24 meses</a><a href="counters__client-01a1b05b-944d-7001-9a57-f9fb2191e5c0_quarter-2026-01_range-all.html#chart">Desde el principio</a>
+</nav>
+<figure class="chart" data-l-mono="B/N" data-l-color="Color" data-l-total="Total" data-l-nodata="sin lecturas">
+  <figcaption>
+    <span class="muted small">Todas las impresoras · Últimos 30 días</span>
+    <ul class="legend" aria-label="Impresiones por mes">
+      <li><span class="key s-mono"></span>B/N</li>
+      <li><span class="key s-color"></span>Color</li>
+    </ul>
+  </figcaption>
+  
+  <svg class="plot" viewBox="0 0 720 240" role="img" aria-label="Impresiones por mes">
+    <line class="grid" x1="48" x2="712" y1="212" y2="212"></line>
+    <text class="tick" x="48" dx="-8" y="212" dy="4" text-anchor="end">0</text><line class="grid" x1="48" x2="712" y1="162" y2="162"></line>
+    <text class="tick" x="48" dx="-8" y="162" dy="4" text-anchor="end">200</text><line class="grid" x1="48" x2="712" y1="112" y2="112"></line>
+    <text class="tick" x="48" dx="-8" y="112" dy="4" text-anchor="end">400</text><line class="grid" x1="48" x2="712" y1="62" y2="62"></line>
+    <text class="tick" x="48" dx="-8" y="62" dy="4" text-anchor="end">600</text><line class="grid" x1="48" x2="712" y1="12" y2="12"></line>
+    <text class="tick" x="48" dx="-8" y="12" dy="4" text-anchor="end">800</text>
+    <g class="col" tabindex="0" data-month="jueves 08/10/2026" data-mono="374" data-color="117" data-total="491"
+      aria-label="jueves 08/10/2026: B/N 374, Color 117">
+      <rect class="hit" x="48" y="0" width="22.133333333333333" height="212"></rect>
+      <path class="s-mono" d="M52.43 212V118.5Q52.43 118.5 52.43 118.5H65.71Q65.71 118.5 65.71 118.5V212Z"></path>
+      <path class="s-color" d="M52.43 116.5V93.25Q52.43 89.25 56.43 89.25H61.71Q65.71 89.25 65.71 93.25V116.5Z"></path>
+      <text class="tick" x="59.06666666666666" y="240" dy="-8" text-anchor="middle"></text>
+    </g><g class="col" tabindex="0" data-month="viernes 09/10/2026" data-mono="276" data-color="126" data-total="402"
+      aria-label="viernes 09/10/2026: B/N 276, Color 126">
+      <rect class="hit" x="70.13333333333333" y="0" width="22.133333333333333" height="212"></rect>
+      <path class="s-mono" d="M74.56 212V143Q74.56 143 74.56 143H87.84Q87.84 143 87.84 143V212Z"></path>
+      <path class="s-color" d="M74.56 141V115.5Q74.56 111.5 78.56 111.5H83.84Q87.84 111.5 87.84 115.5V141Z"></path>
+      <text class="tick" x="81.19999999999999" y="240" dy="-8" text-anchor="middle"></text>
+    </g><g class="col" tabindex="0" data-month="sábado 10/10/2026" data-mono="419" data-color="139" data-total="558"
+      aria-label="sábado 10/10/2026: B/N 419, Color 139">
+      <rect class="hit" x="92.26666666666667" y="0" width="22.133333333333333" height="212"></rect>
+      <path class="s-mono" d="M96.69 212V107.25Q96.69 107.25 96.69 107.25H109.97Q109.97 107.25 109.97 107.25V212Z"></path>
+      <path class="s-color" d="M96.69 105.25V76.5Q96.69 72.5 100.69 72.5H105.97Q109.97 72.5 109.97 76.5V105.25Z"></path>
+      <text class="tick" x="103.33333333333333" y="240" dy="-8" text-anchor="middle">sáb 10</text>
+    </g><g class="col" tabindex="0" data-month="domingo 11/10/2026" data-mono="0" data-color="0" data-total="0"
+      aria-label="domingo 11/10/2026: B/N 0, Color 0">
+      <rect class="hit" x="114.4" y="0" width="22.133333333333333" height="212"></rect>
+      
+      
+      <text class="tick" x="125.46666666666667" y="240" dy="-8" text-anchor="middle"></text>
+    </g><g class="col" tabindex="0" data-month="lunes 12/10/2026" data-mono="0" data-color="0" data-total="0"
+      aria-label="lunes 12/10/2026: B/N 0, Color 0">
+      <rect class="hit" x="136.53333333333333" y="0" width="22.133333333333333" height="212"></rect>
+      
+      
+      <text class="tick" x="147.6" y="240" dy="-8" text-anchor="middle"></text>
+    </g><g class="col" tabindex="0" data-month="martes 13/10/2026" data-mono="383" data-color="139" data-total="522"
+      aria-label="martes 13/10/2026: B/N 383, Color 139">
+      <rect class="hit" x="158.66666666666666" y="0" width="22.133333333333333" height="212"></rect>
+      <path class="s-mono" d="M163.09 212V116.25Q163.09 116.25 163.09 116.25H176.37Q176.37 116.25 176.37 116.25V212Z"></path>
+      <path class="s-color" d="M163.09 114.25V85.5Q163.09 81.5 167.09 81.5H172.37Q176.37 81.5 176.37 85.5V114.25Z"></path>
+      <text class="tick" x="169.73333333333332" y="240" dy="-8" text-anchor="middle">mar 13</text>
+    </g><g class="col" tabindex="0" data-month="miércoles 14/10/2026" data-mono="322" data-color="158" data-total="480"
+      aria-label="miércoles 14/10/2026: B/N 322, Color 158">
+      <rect class="hit" x="180.8" y="0" width="22.133333333333333" height="212"></rect>
+      <path class="s-mono" d="M185.23 212V131.5Q185.23 131.5 185.23 131.5H198.51Q198.51 131.5 198.51 131.5V212Z"></path>
+      <path class="s-color" d="M185.23 129.5V96Q185.23 92 189.23 92H194.51Q198.51 92 198.51 96V129.5Z"></path>
+      <text class="tick" x="191.86666666666667" y="240" dy="-8" text-anchor="middle"></text>
+    </g><g class="col" tabindex="0" data-month="jueves 15/10/2026" data-mono="464" data-color="124" data-total="588"
+      aria-label="jueves 15/10/2026: B/N 464, Color 124">
+      <rect class="hit" x="202.93333333333334" y="0" width="22.133333333333333" height="212"></rect>
+      <path class="s-mono" d="M207.36 212V96Q207.36 96 207.36 96H220.64Q220.64 96 220.64 96V212Z"></path>
+      <path class="s-color" d="M207.36 94V69Q207.36 65 211.36 65H216.64Q220.64 65 220.64 69V94Z"></path>
+      <text class="tick" x="214" y="240" dy="-8" text-anchor="middle"></text>
+    </g><g class="col" tabindex="0" data-month="viernes 16/10/2026" data-mono="445" data-color="139" data-total="584"
+      aria-label="viernes 16/10/2026: B/N 445, Color 139">
+      <rect class="hit" x="225.06666666666666" y="0" width="22.133333333333333" height="212"></rect>
+      <path class="s-mono" d="M229.49 212V100.75Q229.49 100.75 229.49 100.75H242.77Q242.77 100.75 242.77 100.75V212Z"></path>
+      <path class="s-color" d="M229.49 98.75V70Q229.49 66 233.49 66H238.77Q242.77 66 242.77 70V98.75Z"></path>
+      <text class="tick" x="236.13333333333333" y="240" dy="-8" text-anchor="middle">vie 16</text>
+    </g><g class="col" tabindex="0" data-month="sábado 17/10/2026" data-mono="363" data-color="152" data-total="515"
+      aria-label="sábado 17/10/2026: B/N 363, Color 152">
+      <rect class="hit" x="247.2" y="0" width="22.133333333333333" height="212"></rect>
+      <path class="s-mono" d="M251.63 212V121.25Q251.63 121.25 251.63 121.25H264.91Q264.91 121.25 264.91 121.25V212Z"></path>
+      <path class="s-color" d="M251.63 119.25V87.25Q251.63 83.25 255.63 83.25H260.91Q264.91 83.25 264.91 87.25V119.25Z"></path>
+      <text class="tick" x="258.26666666666665" y="240" dy="-8" text-anchor="middle"></text>
+    </g><g class="col" tabindex="0" data-month="domingo 18/10/2026" data-mono="0" data-color="0" data-total="0"
+      aria-label="domingo 18/10/2026: B/N 0, Color 0">
+      <rect class="hit" x="269.3333333333333" y="0" width="22.133333333333333" height="212"></rect>
+      
+      
+      <text class="tick" x="280.4" y="240" dy="-8" text-anchor="middle"></text>
+    </g><g class="col" tabindex="0" data-month="lunes 19/10/2026" data-mono="0" data-color="0" data-total="0"
+      aria-label="lunes 19/10/2026: B/N 0, Color 0">
+      <rect class="hit" x="291.46666666666664" y="0" width="22.133333333333333" height="212"></rect>
+      
+      
+      <text class="tick" x="302.5333333333333" y="240" dy="-8" text-anchor="middle">lun 19</text>
+    </g><g class="col" tabindex="0" data-month="martes 20/10/2026" data-mono="328" data-color="126" data-total="454"
+      aria-label="martes 20/10/2026: B/N 328, Color 126">
+      <rect class="hit" x="313.6" y="0" width="22.133333333333333" height="212"></rect>
+      <path class="s-mono" d="M318.03 212V130Q318.03 130 318.03 130H331.31Q331.31 130 331.31 130V212Z"></path>
+      <path class="s-color" d="M318.03 128V102.5Q318.03 98.5 322.03 98.5H327.31Q331.31 98.5 331.31 102.5V128Z"></path>
+      <text class="tick" x="324.6666666666667" y="240" dy="-8" text-anchor="middle"></text>
+    </g><g class="col" tabindex="0" data-month="miércoles 21/10/2026" data-mono="316" data-color="130" data-total="446"
+      aria-label="miércoles 21/10/2026: B/N 316, Color 130">
+      <rect class="hit" x="335.73333333333335" y="0" width="22.133333333333333" height="212"></rect>
+      <path class="s-mono" d="M340.16 212V133Q340.16 133 340.16 133H353.44Q353.44 133 353.44 133V212Z"></path>
+      <path class="s-color" d="M340.16 131V104.5Q340.16 100.5 344.16 100.5H349.44Q353.44 100.5 353.44 104.5V131Z"></path>
+      <text class="tick" x="346.8" y="240" dy="-8" text-anchor="middle"></text>
+    </g><g class="col" tabindex="0" data-month="jueves 22/10/2026" data-mono="475" data-color="130" data-total="605"
+      aria-label="jueves 22/10/2026: B/N 475, Color 130">
+      <rect class="hit" x="357.8666666666667" y="0" width="22.133333333333333" height="212"></rect>
+      <path class="s-mono" d="M362.29 212V93.25Q362.29 93.25 362.29 93.25H375.57Q375.57 93.25 375.57 93.25V212Z"></path>
+      <path class="s-color" d="M362.29 91.25V64.75Q362.29 60.75 366.29 60.75H371.57Q375.57 60.75 375.57 64.75V91.25Z"></path>
+      <text class="tick" x="368.93333333333334" y="240" dy="-8" text-anchor="middle">jue 22</text>
+    </g><g class="col" tabindex="0" data-month="viernes 23/10/2026" data-mono="319" data-color="155" data-total="474"
+      aria-label="viernes 23/10/2026: B/N 319, Color 155">
+      <rect class="hit" x="380" y="0" width="22.133333333333333" height="212"></rect>
+      <path class="s-mono" d="M384.43 212V132.25Q384.43 132.25 384.43 132.25H397.71Q397.71 132.25 397.71 132.25V212Z"></path>
+      <path class="s-color" d="M384.43 130.25V97.5Q384.43 93.5 388.43 93.5H393.71Q397.71 93.5 397.71 97.5V130.25Z"></path>
+      <text class="tick" x="391.06666666666666" y="240" dy="-8" text-anchor="middle"></text>
+    </g><g class="col" tabindex="0" data-month="sábado 24/10/2026" data-mono="365" data-color="139" data-total="504"
+      aria-label="sábado 24/10/2026: B/N 365, Color 139">
+      <rect class="hit" x="402.1333333333333" y="0" width="22.133333333333333" height="212"></rect>
+      <path class="s-mono" d="M406.56 212V120.75Q406.56 120.75 406.56 120.75H419.84Q419.84 120.75 419.84 120.75V212Z"></path>
+      <path class="s-color" d="M406.56 118.75V90Q406.56 86 410.56 86H415.84Q419.84 86 419.84 90V118.75Z"></path>
+      <text class="tick" x="413.2" y="240" dy="-8" text-anchor="middle"></text>
+    </g><g class="col" tabindex="0" data-month="domingo 25/10/2026" data-mono="0" data-color="0" data-total="0"
+      aria-label="domingo 25/10/2026: B/N 0, Color 0">
+      <rect class="hit" x="424.26666666666665" y="0" width="22.133333333333333" height="212"></rect>
+      
+      
+      <text class="tick" x="435.3333333333333" y="240" dy="-8" text-anchor="middle">dom 25</text>
+    </g><g class="col" tabindex="0" data-month="lunes 26/10/2026" data-mono="0" data-color="0" data-total="0"
+      aria-label="lunes 26/10/2026: B/N 0, Color 0">
+      <rect class="hit" x="446.4" y="0" width="22.133333333333333" height="212"></rect>
+      
+      
+      <text class="tick" x="457.46666666666664" y="240" dy="-8" text-anchor="middle"></text>
+    </g><g class="col" tabindex="0" data-month="martes 27/10/2026" data-mono="331" data-color="136" data-total="467"
+      aria-label="martes 27/10/2026: B/N 331, Color 136">
+      <rect class="hit" x="468.5333333333333" y="0" width="22.133333333333333" height="212"></rect>
+      <path class="s-mono" d="M472.96 212V129.25Q472.96 129.25 472.96 129.25H486.24Q486.24 129.25 486.24 129.25V212Z"></path>
+      <path class="s-color" d="M472.96 127.25V99.25Q472.96 95.25 476.96 95.25H482.24Q486.24 95.25 486.24 99.25V127.25Z"></path>
+      <text class="tick" x="479.59999999999997" y="240" dy="-8" text-anchor="middle"></text>
+    </g><g class="col" tabindex="0" data-month="miércoles 28/10/2026" data-mono="277" data-color="95" data-total="372"
+      aria-label="miércoles 28/10/2026: B/N 277, Color 95">
+      <rect class="hit" x="490.66666666666663" y="0" width="22.133333333333333" height="212"></rect>
+      <path class="s-mono" d="M495.09 212V142.75Q495.09 142.75 495.09 142.75H508.37Q508.37 142.75 508.37 142.75V212Z"></path>
+      <path class="s-color" d="M495.09 140.75V123Q495.09 119 499.09 119H504.37Q508.37 119 508.37 123V140.75Z"></path>
+      <text class="tick" x="501.7333333333333" y="240" dy="-8" text-anchor="middle">mié 28</text>
+    </g><g class="col" tabindex="0" data-month="jueves 29/10/2026" data-mono="431" data-color="125" data-total="556"
+      aria-label="jueves 29/10/2026: B/N 431, Color 125">
+      <rect class="hit" x="512.8" y="0" width="22.133333333333333" height="212"></rect>
+      <path class="s-mono" d="M517.23 212V104.25Q517.23 104.25 517.23 104.25H530.51Q530.51 104.25 530.51 104.25V212Z"></path>
+      <path class="s-color" d="M517.23 102.25V77Q517.23 73 521.23 73H526.51Q530.51 73 530.51 77V102.25Z"></path>
+      <text class="tick" x="523.8666666666667" y="240" dy="-8" text-anchor="middle"></text>
+    </g><g class="col" tabindex="0" data-month="viernes 30/10/2026" data-mono="246" data-color="83" data-total="329"
+      aria-label="viernes 30/10/2026: B/N 246, Color 83">
+      <rect class="hit" x="534.9333333333333" y="0" width="22.133333333333333" height="212"></rect>
+      <path class="s-mono" d="M539.36 212V150.5Q539.36 150.5 539.36 150.5H552.64Q552.64 150.5 552.64 150.5V212Z"></path>
+      <path class="s-color" d="M539.36 148.5V133.75Q539.36 129.75 543.36 129.75H548.64Q552.64 129.75 552.64 133.75V148.5Z"></path>
+      <text class="tick" x="546" y="240" dy="-8" text-anchor="middle"></text>
+    </g><g class="col" tabindex="0" data-month="sábado 31/10/2026" data-mono="265" data-color="99" data-total="364"
+      aria-label="sábado 31/10/2026: B/N 265, Color 99">
+      <rect class="hit" x="557.0666666666666" y="0" width="22.133333333333333" height="212"></rect>
+      <path class="s-mono" d="M561.49 212V145.75Q561.49 145.75 561.49 145.75H574.77Q574.77 145.75 574.77 145.75V212Z"></path>
+      <path class="s-color" d="M561.49 143.75V125Q561.49 121 565.49 121H570.77Q574.77 121 574.77 125V143.75Z"></path>
+      <text class="tick" x="568.1333333333333" y="240" dy="-8" text-anchor="middle">sáb 31</text>
+    </g><g class="col" tabindex="0" data-month="domingo 01/11/2026" data-mono="0" data-color="0" data-total="0"
+      aria-label="domingo 01/11/2026: B/N 0, Color 0">
+      <rect class="hit" x="579.2" y="0" width="22.133333333333333" height="212"></rect>
+      
+      
+      <text class="tick" x="590.2666666666668" y="240" dy="-8" text-anchor="middle"></text>
+    </g><g class="col" tabindex="0" data-month="lunes 02/11/2026" data-mono="0" data-color="0" data-total="0"
+      aria-label="lunes 02/11/2026: B/N 0, Color 0">
+      <rect class="hit" x="601.3333333333334" y="0" width="22.133333333333333" height="212"></rect>
+      
+      
+      <text class="tick" x="612.4000000000001" y="240" dy="-8" text-anchor="middle"></text>
+    </g><g class="col" tabindex="0" data-month="martes 03/11/2026" data-mono="237" data-color="94" data-total="331"
+      aria-label="martes 03/11/2026: B/N 237, Color 94">
+      <rect class="hit" x="623.4666666666667" y="0" width="22.133333333333333" height="212"></rect>
+      <path class="s-mono" d="M627.89 212V152.75Q627.89 152.75 627.89 152.75H641.17Q641.17 152.75 641.17 152.75V212Z"></path>
+      <path class="s-color" d="M627.89 150.75V133.25Q627.89 129.25 631.89 129.25H637.17Q641.17 129.25 641.17 133.25V150.75Z"></path>
+      <text class="tick" x="634.5333333333334" y="240" dy="-8" text-anchor="middle">mar 3</text>
+    </g><g class="col" tabindex="0" data-month="miércoles 04/11/2026" data-mono="237" data-color="53" data-total="290"
+      aria-label="miércoles 04/11/2026: B/N 237, Color 53">
+      <rect class="hit" x="645.6" y="0" width="22.133333333333333" height="212"></rect>
+      <path class="s-mono" d="M650.03 212V152.75Q650.03 152.75 650.03 152.75H663.31Q663.31 152.75 663.31 152.75V212Z"></path>
+      <path class="s-color" d="M650.03 150.75V143.5Q650.03 139.5 654.03 139.5H659.31Q663.31 139.5 663.31 143.5V150.75Z"></path>
+      <text class="tick" x="656.6666666666667" y="240" dy="-8" text-anchor="middle"></text>
+    </g><g class="col" tabindex="0" data-month="jueves 05/11/2026" data-mono="264" data-color="95" data-total="359"
+      aria-label="jueves 05/11/2026: B/N 264, Color 95">
+      <rect class="hit" x="667.7333333333333" y="0" width="22.133333333333333" height="212"></rect>
+      <path class="s-mono" d="M672.16 212V146Q672.16 146 672.16 146H685.44Q685.44 146 685.44 146V212Z"></path>
+      <path class="s-color" d="M672.16 144V126.25Q672.16 122.25 676.16 122.25H681.44Q685.44 122.25 685.44 126.25V144Z"></path>
+      <text class="tick" x="678.8000000000001" y="240" dy="-8" text-anchor="middle"></text>
+    </g><g class="col" tabindex="0" data-month="viernes 06/11/2026" data-mono="156" data-color="48" data-total="204"
+      aria-label="viernes 06/11/2026: B/N 156, Color 48">
+      <rect class="hit" x="689.8666666666667" y="0" width="22.133333333333333" height="212"></rect>
+      <path class="s-mono" d="M694.29 212V173Q694.29 173 694.29 173H707.57Q707.57 173 707.57 173V212Z"></path>
+      <path class="s-color" d="M694.29 171V165Q694.29 161 698.29 161H703.57Q707.57 161 707.57 165V171Z"></path>
+      <text class="tick" x="700.9333333333334" y="240" dy="-8" text-anchor="middle">vie 6</text>
+    </g>
+    <line class="axis" x1="48" x2="712" y1="212" y2="212"></line>
+  </svg>
+  <details class="chart-table">
+    <summary>Ver los datos en tabla</summary>
+    <table class="list">
+      <thead><tr><th>Día</th><th class="num">B/N</th><th class="num">Color</th><th class="num">Total</th></tr></thead>
+      <tbody><tr>
+        <td>jueves 08/10/2026</td>
+        <td class="num" data-label="B/N">374</td><td class="num" data-label="Color">117</td><td class="num" data-label="Total">491</td>
+        
+      </tr><tr>
+        <td>viernes 09/10/2026</td>
+        <td class="num" data-label="B/N">276</td><td class="num" data-label="Color">126</td><td class="num" data-label="Total">402</td>
+        
+      </tr><tr>
+        <td>sábado 10/10/2026</td>
+        <td class="num" data-label="B/N">419</td><td class="num" data-label="Color">139</td><td class="num" data-label="Total">558</td>
+        
+      </tr><tr>
+        <td>domingo 11/10/2026</td>
+        <td class="num" data-label="B/N">0</td><td class="num" data-label="Color">0</td><td class="num" data-label="Total">0</td>
+        
+      </tr><tr>
+        <td>lunes 12/10/2026</td>
+        <td class="num" data-label="B/N">0</td><td class="num" data-label="Color">0</td><td class="num" data-label="Total">0</td>
+        
+      </tr><tr>
+        <td>martes 13/10/2026</td>
+        <td class="num" data-label="B/N">383</td><td class="num" data-label="Color">139</td><td class="num" data-label="Total">522</td>
+        
+      </tr><tr>
+        <td>miércoles 14/10/2026</td>
+        <td class="num" data-label="B/N">322</td><td class="num" data-label="Color">158</td><td class="num" data-label="Total">480</td>
+        
+      </tr><tr>
+        <td>jueves 15/10/2026</td>
+        <td class="num" data-label="B/N">464</td><td class="num" data-label="Color">124</td><td class="num" data-label="Total">588</td>
+        
+      </tr><tr>
+        <td>viernes 16/10/2026</td>
+        <td class="num" data-label="B/N">445</td><td class="num" data-label="Color">139</td><td class="num" data-label="Total">584</td>
+        
+      </tr><tr>
+        <td>sábado 17/10/2026</td>
+        <td class="num" data-label="B/N">363</td><td class="num" data-label="Color">152</td><td class="num" data-label="Total">515</td>
+        
+      </tr><tr>
+        <td>domingo 18/10/2026</td>
+        <td class="num" data-label="B/N">0</td><td class="num" data-label="Color">0</td><td class="num" data-label="Total">0</td>
+        
+      </tr><tr>
+        <td>lunes 19/10/2026</td>
+        <td class="num" data-label="B/N">0</td><td class="num" data-label="Color">0</td><td class="num" data-label="Total">0</td>
+        
+      </tr><tr>
+        <td>martes 20/10/2026</td>
+        <td class="num" data-label="B/N">328</td><td class="num" data-label="Color">126</td><td class="num" data-label="Total">454</td>
+        
+      </tr><tr>
+        <td>miércoles 21/10/2026</td>
+        <td class="num" data-label="B/N">316</td><td class="num" data-label="Color">130</td><td class="num" data-label="Total">446</td>
+        
+      </tr><tr>
+        <td>jueves 22/10/2026</td>
+        <td class="num" data-label="B/N">475</td><td class="num" data-label="Color">130</td><td class="num" data-label="Total">605</td>
+        
+      </tr><tr>
+        <td>viernes 23/10/2026</td>
+        <td class="num" data-label="B/N">319</td><td class="num" data-label="Color">155</td><td class="num" data-label="Total">474</td>
+        
+      </tr><tr>
+        <td>sábado 24/10/2026</td>
+        <td class="num" data-label="B/N">365</td><td class="num" data-label="Color">139</td><td class="num" data-label="Total">504</td>
+        
+      </tr><tr>
+        <td>domingo 25/10/2026</td>
+        <td class="num" data-label="B/N">0</td><td class="num" data-label="Color">0</td><td class="num" data-label="Total">0</td>
+        
+      </tr><tr>
+        <td>lunes 26/10/2026</td>
+        <td class="num" data-label="B/N">0</td><td class="num" data-label="Color">0</td><td class="num" data-label="Total">0</td>
+        
+      </tr><tr>
+        <td>martes 27/10/2026</td>
+        <td class="num" data-label="B/N">331</td><td class="num" data-label="Color">136</td><td class="num" data-label="Total">467</td>
+        
+      </tr><tr>
+        <td>miércoles 28/10/2026</td>
+        <td class="num" data-label="B/N">277</td><td class="num" data-label="Color">95</td><td class="num" data-label="Total">372</td>
+        
+      </tr><tr>
+        <td>jueves 29/10/2026</td>
+        <td class="num" data-label="B/N">431</td><td class="num" data-label="Color">125</td><td class="num" data-label="Total">556</td>
+        
+      </tr><tr>
+        <td>viernes 30/10/2026</td>
+        <td class="num" data-label="B/N">246</td><td class="num" data-label="Color">83</td><td class="num" data-label="Total">329</td>
+        
+      </tr><tr>
+        <td>sábado 31/10/2026</td>
+        <td class="num" data-label="B/N">265</td><td class="num" data-label="Color">99</td><td class="num" data-label="Total">364</td>
+        
+      </tr><tr>
+        <td>domingo 01/11/2026</td>
+        <td class="num" data-label="B/N">0</td><td class="num" data-label="Color">0</td><td class="num" data-label="Total">0</td>
+        
+      </tr><tr>
+        <td>lunes 02/11/2026</td>
+        <td class="num" data-label="B/N">0</td><td class="num" data-label="Color">0</td><td class="num" data-label="Total">0</td>
+        
+      </tr><tr>
+        <td>martes 03/11/2026</td>
+        <td class="num" data-label="B/N">237</td><td class="num" data-label="Color">94</td><td class="num" data-label="Total">331</td>
+        
+      </tr><tr>
+        <td>miércoles 04/11/2026</td>
+        <td class="num" data-label="B/N">237</td><td class="num" data-label="Color">53</td><td class="num" data-label="Total">290</td>
+        
+      </tr><tr>
+        <td>jueves 05/11/2026</td>
+        <td class="num" data-label="B/N">264</td><td class="num" data-label="Color">95</td><td class="num" data-label="Total">359</td>
+        
+      </tr><tr>
+        <td>viernes 06/11/2026</td>
+        <td class="num" data-label="B/N">156</td><td class="num" data-label="Color">48</td><td class="num" data-label="Total">204</td>
+        
+      </tr></tbody>
+    </table>
+  </details>
+  
+</figure>
+
+</section>
+
+<p class="hint">Las copias, las incluidas y los excesos se calculan por trimestre natural, como en la facturación. Estimación con los contadores leídos; la factura definitiva puede variar.</p>
+
+
+
+
+<table class="list billing quarterly">
+  <thead>
+    <tr><th rowspan="2">Número</th><th rowspan="2">Modelo</th><th rowspan="2" class="num">Cuota mensual</th>
+      <th colspan="3" class="group mono">Negro</th><th colspan="3" class="group color">Color</th>
+      <th rowspan="2" class="num">Total</th></tr>
+    <tr><th class="num">Impresas</th><th class="num">Incluidas</th><th class="num">Excesos</th>
+      <th class="num">Impresas</th><th class="num">Incluidas</th><th class="num">Excesos</th></tr>
+  </thead>
+  <tbody>
+  
+  
+    <tr>
+      <td class="ref-cell"><a href="printer_01a1b05b-944d-7003-bb88-cc2e76dd6ccb.html" class="ref">M1018</a></td>
+      <td data-label="Modelo"><span><a href="printer_01a1b05b-944d-7003-bb88-cc2e76dd6ccb.html">Kyocera ECOSYS M5526cdw</a></span></td>
+      <td class="num" data-label="Cuota mensual">70,00 €</td>
+      <td class="num" data-label="Impresas · Negro">2.362</td>
+      <td class="num" data-label="Incluidas · Negro">3.000</td>
+      <td class="num" data-label="Excesos · Negro">0,00 €</td>
+      <td class="num" data-label="Impresas · Color">944</td>
+      <td class="num" data-label="Incluidas · Color">600</td>
+      <td class="num" data-label="Excesos · Color"><strong>18,92 €</strong></td>
+      <td class="num" data-label="Total"><strong>88,92 €</strong></td>
+    </tr>
+  
+    <tr>
+      <td class="ref-cell"><a href="printer_01a1b05b-944e-7000-b3e0-dc30dd9710b5.html" class="ref">M1019</a></td>
+      <td data-label="Modelo"><span><a href="printer_01a1b05b-944e-7000-b3e0-dc30dd9710b5.html">Brother MFC-L9570CDW series</a></span></td>
+      <td class="num" data-label="Cuota mensual">35,00 €</td>
+      <td class="num" data-label="Impresas · Negro">8.456</td>
+      <td class="num" data-label="Incluidas · Negro">9.000</td>
+      <td class="num" data-label="Excesos · Negro">0,00 €</td>
+      <td class="num" data-label="Impresas · Color">3.065</td>
+      <td class="num" data-label="Incluidas · Color">1.800</td>
+      <td class="num" data-label="Excesos · Color"><strong>69,58 €</strong></td>
+      <td class="num" data-label="Total"><strong>104,58 €</strong></td>
+    </tr>
+  
+    <tr>
+      <td class="ref-cell"><a href="printer_01a1b05b-944e-7002-8e49-50de50ff6b11.html" class="ref">M1020</a></td>
+      <td data-label="Modelo"><span><a href="printer_01a1b05b-944e-7002-8e49-50de50ff6b11.html">HP LaserJet MFP M227fdw</a></span></td>
+      <td class="num" data-label="Cuota mensual">50,00 €</td>
+      <td class="num" data-label="Impresas · Negro">2.163</td>
+      <td class="num" data-label="Incluidas · Negro">1.500</td>
+      <td class="num" data-label="Excesos · Negro"><strong>6,63 €</strong></td>
+      <td class="num" data-label="Impresas · Color">—</td>
+      <td class="num" data-label="Incluidas · Color">—</td>
+      <td class="num" data-label="Excesos · Color">—</td>
+      <td class="num" data-label="Total"><strong>56,63 €</strong></td>
+    </tr>
+  
+    <tr>
+      <td class="ref-cell"><a href="printer_01a1b05b-944e-7004-8ed0-30c5d9a89367.html" class="ref">M1021</a></td>
+      <td data-label="Modelo"><span><a href="printer_01a1b05b-944e-7004-8ed0-30c5d9a89367.html">Kyocera ECOSYS M5526cdw</a></span></td>
+      <td class="num" data-label="Cuota mensual">55,00 €</td>
+      <td class="num" data-label="Impresas · Negro">3.723</td>
+      <td class="num" data-label="Incluidas · Negro">4.500</td>
+      <td class="num" data-label="Excesos · Negro">0,00 €</td>
+      <td class="num" data-label="Impresas · Color">1.488</td>
+      <td class="num" data-label="Incluidas · Color">900</td>
+      <td class="num" data-label="Excesos · Color"><strong>32,34 €</strong></td>
+      <td class="num" data-label="Total"><strong>87,34 €</strong></td>
+    </tr>
+  
+    <tr>
+      <td class="ref-cell"><a href="printer_01a1b05b-944e-7006-9173-2bdea660eeaf.html" class="ref">M1022</a></td>
+      <td data-label="Modelo"><span><a href="printer_01a1b05b-944e-7006-9173-2bdea660eeaf.html">Brother MFC-L9570CDW series</a></span></td>
+      <td class="num" data-label="Cuota mensual">30,00 €</td>
+      <td class="num" data-label="Impresas · Negro">3.395</td>
+      <td class="num" data-label="Incluidas · Negro">3.000</td>
+      <td class="num" data-label="Excesos · Negro"><strong>3,56 €</strong></td>
+      <td class="num" data-label="Impresas · Color">1.292</td>
+      <td class="num" data-label="Incluidas · Color">600</td>
+      <td class="num" data-label="Excesos · Color"><strong>34,60 €</strong></td>
+      <td class="num" data-label="Total"><strong>68,16 €</strong></td>
+    </tr>
+  
+    <tr>
+      <td class="ref-cell"><a href="printer_01a1b05b-944f-7000-a1f5-9f8bc5a7d8dc.html" class="ref">M1023</a></td>
+      <td data-label="Modelo"><span><a href="printer_01a1b05b-944f-7000-a1f5-9f8bc5a7d8dc.html">HP Color LaserJet MFP M477fdw</a></span></td>
+      <td class="num" data-label="Cuota mensual">40,00 €</td>
+      <td class="num" data-label="Impresas · Negro">3.001</td>
+      <td class="num" data-label="Incluidas · Negro">3.000</td>
+      <td class="num" data-label="Excesos · Negro"><strong>0,01 €</strong></td>
+      <td class="num" data-label="Impresas · Color">1.102</td>
+      <td class="num" data-label="Incluidas · Color">600</td>
+      <td class="num" data-label="Excesos · Color"><strong>35,14 €</strong></td>
+      <td class="num" data-label="Total"><strong>75,15 €</strong></td>
+    </tr>
+  
+    <tr class="total"><td></td><td colspan="8"><strong>Total</strong></td>
+      <td class="num" data-label="Total"><strong>480,78 €</strong></td></tr>
+  </tbody>
+</table>
+
+
+
+
+
+
+</main>
+<footer>NetPrinter demo</footer>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
