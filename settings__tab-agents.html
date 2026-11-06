@@ -54,7 +54,7 @@
   <div class="menu" id="menu">
     
     <nav aria-label="Menú">
-      <a href="index.html" ><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-building"></use></svg><span>Clientes</span></a>
+      <a href="index.html" ><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-user"></use></svg><span>Acuerdos</span></a>
       <a href="alerts.html" ><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-bell"></use></svg><span>Avisos</span><span class="count">10</span></a>
       <a href="counters.html" ><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-chart"></use></svg><span>Contadores</span></a>
       <a href="settings.html" aria-current="page"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-settings"></use></svg><span>Ajustes</span></a>
@@ -62,7 +62,7 @@
     <div class="tools">
       
       <details class="user-menu">
-        <summary><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-user"></use></svg><span>Usuario de demostración</span><span class="role muted small">Técnico</span></summary>
+        <summary title="Técnico"><span class="avatar tech"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-wrench"></use></svg></span><span>Usuario de demostración</span><span class="visually-hidden">Técnico</span></summary>
         <div class="user-menu-list">
           <a class="view-toggle" href="#" data-demo-off title="Mostrar también los datos técnicos: IP, avisos, piezas, historial"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-detail"></use></svg><span>Vista detallada</span></a>
       <a href="#" data-demo-off lang="en" title="English"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-globe"></use></svg><span>EN</span></a>
@@ -70,7 +70,7 @@
       <a class="theme-dark" href="#" data-demo-off title="Modo oscuro"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-moon"></use></svg><span class="mobile-only">Modo oscuro</span></a>
           <hr>
           <form method="post" action="/logout">
-            <input type="hidden" name="csrf" value="36cd8b276d8adf91b939f834da9a6e52">
+            <input type="hidden" name="csrf" value="a682d206518ef45c35f7876cbc049ad2">
             <button class="link" type="submit"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-logout"></use></svg><span>Cerrar sesión</span></button>
           </form>
         </div>
@@ -102,7 +102,7 @@
   <h3>Dirección de Central para los agentes</h3>
   <p class="hint">Solo hace falta si Central cambia de servidor, de dirección o de certificado. Los agentes la reciben en su próxima sincronización y solo se cambian a ella cuando consiguen sincronizar allí; mientras tanto siguen con la anterior. Deja ambos servidores en marcha hasta que todos se hayan pasado.</p>
   <form method="post" action="/settings/agents/address" class="settings">
-    <input type="hidden" name="csrf" value="36cd8b276d8adf91b939f834da9a6e52">
+    <input type="hidden" name="csrf" value="a682d206518ef45c35f7876cbc049ad2">
     <label>Dirección (https://…) <input name="url" value="" placeholder="https://central.tuempresa.com:8443">
       <span class="hint">Vacía: los agentes siguen con la que tienen. Actual: <code>https://central.example.com</code></span></label>
     <label>Huellas del certificado aceptadas <textarea name="pins" rows="3"></textarea>
@@ -118,6 +118,7 @@
 <footer>NetPrinter demo</footer>
 </body>
 </html>
+
 
 
 

@@ -54,7 +54,7 @@
   <div class="menu" id="menu">
     
     <nav aria-label="Menú">
-      <a href="index.html" ><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-building"></use></svg><span>Clientes</span></a>
+      <a href="index.html" ><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-user"></use></svg><span>Acuerdos</span></a>
       <a href="alerts.html" ><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-bell"></use></svg><span>Avisos</span><span class="count">10</span></a>
       <a href="counters.html" ><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-chart"></use></svg><span>Contadores</span></a>
       <a href="settings.html" aria-current="page"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-settings"></use></svg><span>Ajustes</span></a>
@@ -62,7 +62,7 @@
     <div class="tools">
       
       <details class="user-menu">
-        <summary><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-user"></use></svg><span>Usuario de demostración</span><span class="role muted small">Técnico</span></summary>
+        <summary title="Técnico"><span class="avatar tech"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-wrench"></use></svg></span><span>Usuario de demostración</span><span class="visually-hidden">Técnico</span></summary>
         <div class="user-menu-list">
           <a class="view-toggle" href="#" data-demo-off title="Mostrar también los datos técnicos: IP, avisos, piezas, historial"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-detail"></use></svg><span>Vista detallada</span></a>
       <a href="#" data-demo-off lang="en" title="English"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-globe"></use></svg><span>EN</span></a>
@@ -70,7 +70,7 @@
       <a class="theme-dark" href="#" data-demo-off title="Modo oscuro"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-moon"></use></svg><span class="mobile-only">Modo oscuro</span></a>
           <hr>
           <form method="post" action="/logout">
-            <input type="hidden" name="csrf" value="36cd8b276d8adf91b939f834da9a6e52">
+            <input type="hidden" name="csrf" value="a682d206518ef45c35f7876cbc049ad2">
             <button class="link" type="submit"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-logout"></use></svg><span>Cerrar sesión</span></button>
           </form>
         </div>
@@ -93,7 +93,7 @@
 <section class="panel">
   <h2>Avisos</h2>
   <form method="post" action="/settings" class="settings">
-    <input type="hidden" name="csrf" value="36cd8b276d8adf91b939f834da9a6e52">
+    <input type="hidden" name="csrf" value="a682d206518ef45c35f7876cbc049ad2">
     <label>Avisar de un agente sin conexión tras (días) <input name="agent_days" type="number" min="1" max="365" value="7" required>
       <span class="hint">Vacaciones o un PC apagado no deben llenar la lista de avisos.</span></label>
     <label>Avisar de una impresora sin conexión tras (días) <input name="printer_days" type="number" min="1" max="365" value="7" required></label>
@@ -107,7 +107,7 @@
   <p class="muted">Cada aviso nuevo se envía al momento por correo a los usuarios que lo tienen activado.
     <span class="warn">Ningún usuario tiene correo para avisos: añádelo en Usuarios.</span></p>
   <form method="post" action="/settings/mail" class="settings">
-    <input type="hidden" name="csrf" value="36cd8b276d8adf91b939f834da9a6e52">
+    <input type="hidden" name="csrf" value="a682d206518ef45c35f7876cbc049ad2">
     <label>Servidor de correo (SMTP) <input name="host" value="" placeholder="mail.tuempresa.com"></label>
     <label>Puerto <input name="port" type="number" min="1" max="65535" value="465">
       <span class="hint">465 con SSL; 587 con STARTTLS.</span></label>
@@ -124,13 +124,13 @@
   <p class="hint">Encabeza los avisos que reciben los clientes. PNG o JPEG, de al menos 560 píxeles de ancho y hasta 300 KB; se muestra a 280 píxeles.</p>
   <p class="logo-preview"><img src="settings_logo.png" alt="Logo de los correos a clientes" width="280"></p>
   <form method="post" action="/settings/logo" enctype="multipart/form-data" class="logo-form">
-    <input type="hidden" name="csrf" value="36cd8b276d8adf91b939f834da9a6e52">
+    <input type="hidden" name="csrf" value="a682d206518ef45c35f7876cbc049ad2">
     <label>Nuevo logo <input type="file" name="logo" accept="image/png,image/jpeg" required></label>
     <button type="submit" class="secondary"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-upload"></use></svg>Subir logo</button>
   </form>
   
   <form method="post" action="/settings/mail/test">
-    <input type="hidden" name="csrf" value="36cd8b276d8adf91b939f834da9a6e52">
+    <input type="hidden" name="csrf" value="a682d206518ef45c35f7876cbc049ad2">
     <button type="submit" class="secondary" disabled><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-bell"></use></svg>Enviar correo de prueba</button>
   </form>
 </section>
@@ -152,6 +152,7 @@
 <footer>NetPrinter demo</footer>
 </body>
 </html>
+
 
 
 

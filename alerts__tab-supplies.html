@@ -54,7 +54,7 @@
   <div class="menu" id="menu">
     
     <nav aria-label="Menú">
-      <a href="index.html" ><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-building"></use></svg><span>Clientes</span></a>
+      <a href="index.html" ><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-user"></use></svg><span>Acuerdos</span></a>
       <a href="alerts.html" aria-current="page"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-bell"></use></svg><span>Avisos</span><span class="count">10</span></a>
       <a href="counters.html" ><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-chart"></use></svg><span>Contadores</span></a>
       <a href="settings.html" ><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-settings"></use></svg><span>Ajustes</span></a>
@@ -62,7 +62,7 @@
     <div class="tools">
       
       <details class="user-menu">
-        <summary><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-user"></use></svg><span>Usuario de demostración</span><span class="role muted small">Técnico</span></summary>
+        <summary title="Técnico"><span class="avatar tech"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-wrench"></use></svg></span><span>Usuario de demostración</span><span class="visually-hidden">Técnico</span></summary>
         <div class="user-menu-list">
           <a class="view-toggle" href="#" data-demo-off title="Mostrar también los datos técnicos: IP, avisos, piezas, historial"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-detail"></use></svg><span>Vista detallada</span></a>
       <a href="#" data-demo-off lang="en" title="English"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-globe"></use></svg><span>EN</span></a>
@@ -70,7 +70,7 @@
       <a class="theme-dark" href="#" data-demo-off title="Modo oscuro"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-moon"></use></svg><span class="mobile-only">Modo oscuro</span></a>
           <hr>
           <form method="post" action="/logout">
-            <input type="hidden" name="csrf" value="36cd8b276d8adf91b939f834da9a6e52">
+            <input type="hidden" name="csrf" value="a682d206518ef45c35f7876cbc049ad2">
             <button class="link" type="submit"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-logout"></use></svg><span>Cerrar sesión</span></button>
           </form>
         </div>
@@ -84,9 +84,10 @@
 
 
 <h1 class="page-title">Avisos</h1>
+
 <nav class="tabs alert-tabs" aria-label="Avisos">
+  <a href="alerts.html" aria-current="page"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-drop"></use></svg>Consumibles y piezas <span class="count">7</span></a>
   <a href="alerts__tab-tech.html" ><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-wrench"></use></svg>Avisos técnicos <span class="count">3</span></a>
-  <a href="alerts__tab-supplies.html" aria-current="page"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-drop"></use></svg>Consumibles y piezas <span class="count">7</span></a>
   <a href="alerts__tab-history.html" >Historial</a>
 </nav>
 
@@ -98,7 +99,7 @@
 
 
 <form method="post" action="/alerts/all/read" class="readall">
-  <input type="hidden" name="csrf" value="36cd8b276d8adf91b939f834da9a6e52">
+  <input type="hidden" name="csrf" value="a682d206518ef45c35f7876cbc049ad2">
   <input type="hidden" name="tab" value="supplies">
   <button type="submit" class="secondary"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-check"></use></svg>Marcar todos como leídos</button>
 </form>
@@ -116,17 +117,17 @@
   <tbody>
   
     <tr class="unread">
-      <td class="ref-cell"><a href="printer_01a1a6ae-bee0-7000-a137-f14180cecfe6.html" class="ref">M1001</a></td>
-      <td data-label="Impresora"><a href="printer_01a1a6ae-bee0-7000-a137-f14180cecfe6.html">Brother MFC-L5750DW series</a></td>
-      <td data-label="Cliente"><a href="clients_01a1a6ae-bedf-7000-8f4a-ed1696e8b7b4.html">Asesoría Teide S.L.</a></td>
+      <td class="ref-cell"><a href="printer_01a1b058-e4f5-7000-9b7b-dfaed37573c0.html" class="ref">M1001</a></td>
+      <td data-label="Impresora"><a href="printer_01a1b058-e4f5-7000-9b7b-dfaed37573c0.html">Brother MFC-L5750DW series</a></td>
+      <td data-label="Cliente"><a href="clients_01a1b058-e4f1-7000-b103-1a19b6b2c1fb.html">Asesoría Teide S.L.</a></td>
       <td data-label="Aviso" class="what">Consumible bajo: Tóner negro (4 %)
         <span class="bar"><span class="fill empty w5"></span></span></td>
-      <td class="num" data-label="Abierto">13:10</td>
+      <td class="num" data-label="Abierto">10:12</td>
       
       <td data-label="Leído">
         
-        <form method="post" action="/alerts/01a1a6ae-bf55-7002-8742-f46bc5115b0e/read" class="inline">
-          <input type="hidden" name="csrf" value="36cd8b276d8adf91b939f834da9a6e52">
+        <form method="post" action="/alerts/01a1b058-e657-7003-a770-e40881927080/read" class="inline">
+          <input type="hidden" name="csrf" value="a682d206518ef45c35f7876cbc049ad2">
           <input type="hidden" name="tab" value="supplies">
           <button type="submit" class="link"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-check"></use></svg>Marcar como leído</button>
         </form>
@@ -135,55 +136,17 @@
     </tr>
   
     <tr class="unread">
-      <td class="ref-cell"><a href="printer_01a1a6ae-bee1-7008-9bdb-f03f47ee0da3.html" class="ref">M1006</a></td>
-      <td data-label="Impresora"><a href="printer_01a1a6ae-bee1-7008-9bdb-f03f47ee0da3.html">Brother MFC-L9570CDW series</a></td>
-      <td data-label="Cliente"><a href="clients_01a1a6ae-bedf-7000-8f4a-ed1696e8b7b4.html">Asesoría Teide S.L.</a></td>
-      <td data-label="Aviso" class="what">Consumible bajo: Tóner amarillo (4 %)
-        <span class="bar"><span class="fill empty w5"></span></span></td>
-      <td class="num" data-label="Abierto">13:10</td>
-      
-      <td data-label="Leído">
-        
-        <form method="post" action="/alerts/01a1a6ae-bf55-7003-bd6c-0aaf3a43fbdb/read" class="inline">
-          <input type="hidden" name="csrf" value="36cd8b276d8adf91b939f834da9a6e52">
-          <input type="hidden" name="tab" value="supplies">
-          <button type="submit" class="link"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-check"></use></svg>Marcar como leído</button>
-        </form>
-        
-      </td>
-    </tr>
-  
-    <tr class="unread">
-      <td class="ref-cell"><a href="printer_01a1a6ae-bf0e-7004-b803-d32554334f78.html" class="ref">M1016</a></td>
-      <td data-label="Impresora"><a href="printer_01a1a6ae-bf0e-7004-b803-d32554334f78.html">HP Color LaserJet MFP M477fdw</a></td>
-      <td data-label="Cliente"><a href="clients_01a1a6ae-bf0c-7000-a39d-2c1152069a4b.html">Construcciones Roque Nublo</a></td>
-      <td data-label="Aviso" class="what">Consumible bajo: Tóner amarillo (4 %)
-        <span class="bar"><span class="fill empty w5"></span></span></td>
-      <td class="num" data-label="Abierto">13:10</td>
-      
-      <td data-label="Leído">
-        
-        <form method="post" action="/alerts/01a1a6ae-bf55-7004-bed5-745c18642bb3/read" class="inline">
-          <input type="hidden" name="csrf" value="36cd8b276d8adf91b939f834da9a6e52">
-          <input type="hidden" name="tab" value="supplies">
-          <button type="submit" class="link"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-check"></use></svg>Marcar como leído</button>
-        </form>
-        
-      </td>
-    </tr>
-  
-    <tr class="unread">
-      <td class="ref-cell"><a href="printer_01a1a6ae-bf1f-7004-b7c0-8aaab1dbaac7.html" class="ref">M1020</a></td>
-      <td data-label="Impresora"><a href="printer_01a1a6ae-bf1f-7004-b7c0-8aaab1dbaac7.html">HP LaserJet Pro MFP M428fdw</a></td>
-      <td data-label="Cliente"><a href="clients_01a1a6ae-bf1d-7003-a9f4-be2b12de3be4.html">Colegio San Borondón</a></td>
+      <td class="ref-cell"><a href="printer_01a1b058-e4f6-7004-86cc-f89d92b64b90.html" class="ref">M1006</a></td>
+      <td data-label="Impresora"><a href="printer_01a1b058-e4f6-7004-86cc-f89d92b64b90.html">Brother MFC-L5750DW series</a></td>
+      <td data-label="Cliente"><a href="clients_01a1b058-e4f1-7000-b103-1a19b6b2c1fb.html">Asesoría Teide S.L.</a></td>
       <td data-label="Aviso" class="what">Consumible bajo: Tóner negro (4 %)
         <span class="bar"><span class="fill empty w5"></span></span></td>
-      <td class="num" data-label="Abierto">13:10</td>
+      <td class="num" data-label="Abierto">10:12</td>
       
       <td data-label="Leído">
         
-        <form method="post" action="/alerts/01a1a6ae-bf55-7005-884d-53e1f2fafe2f/read" class="inline">
-          <input type="hidden" name="csrf" value="36cd8b276d8adf91b939f834da9a6e52">
+        <form method="post" action="/alerts/01a1b058-e657-7004-b1c1-ed464e08efa8/read" class="inline">
+          <input type="hidden" name="csrf" value="a682d206518ef45c35f7876cbc049ad2">
           <input type="hidden" name="tab" value="supplies">
           <button type="submit" class="link"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-check"></use></svg>Marcar como leído</button>
         </form>
@@ -192,17 +155,55 @@
     </tr>
   
     <tr class="unread">
-      <td class="ref-cell"><a href="printer_01a1a6ae-bf36-7000-acd1-2956ab0bf249.html" class="ref">M1024</a></td>
-      <td data-label="Impresora"><a href="printer_01a1a6ae-bf36-7000-acd1-2956ab0bf249.html">Brother HL-L8360CDW series</a></td>
-      <td data-label="Cliente"><a href="clients_01a1a6ae-bf35-7000-a59b-19043c761a39.html">Hotel Playa Dorada</a></td>
+      <td class="ref-cell"><a href="printer_01a1b058-e564-7001-bee6-71134e3c9f08.html" class="ref">M1016</a></td>
+      <td data-label="Impresora"><a href="printer_01a1b058-e564-7001-bee6-71134e3c9f08.html">Brother MFC-L9570CDW series</a></td>
+      <td data-label="Cliente"><a href="clients_01a1b058-e560-7000-8bc1-44529e8d6b48.html">Construcciones Roque Nublo</a></td>
+      <td data-label="Aviso" class="what">Consumible bajo: Tóner amarillo (4 %)
+        <span class="bar"><span class="fill empty w5"></span></span></td>
+      <td class="num" data-label="Abierto">10:12</td>
+      
+      <td data-label="Leído">
+        
+        <form method="post" action="/alerts/01a1b058-e657-7005-bb18-7a6a8b5f6c25/read" class="inline">
+          <input type="hidden" name="csrf" value="a682d206518ef45c35f7876cbc049ad2">
+          <input type="hidden" name="tab" value="supplies">
+          <button type="submit" class="link"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-check"></use></svg>Marcar como leído</button>
+        </form>
+        
+      </td>
+    </tr>
+  
+    <tr class="unread">
+      <td class="ref-cell"><a href="printer_01a1b058-e5b3-7002-886b-99a14462a8b8.html" class="ref">M1020</a></td>
+      <td data-label="Impresora"><a href="printer_01a1b058-e5b3-7002-886b-99a14462a8b8.html">HP LaserJet MFP M227fdw</a></td>
+      <td data-label="Cliente"><a href="clients_01a1b058-e5a2-7003-8a41-5631ce860c62.html">Colegio San Borondón</a></td>
+      <td data-label="Aviso" class="what">Consumible bajo: Tóner negro (4 %)
+        <span class="bar"><span class="fill empty w5"></span></span></td>
+      <td class="num" data-label="Abierto">10:12</td>
+      
+      <td data-label="Leído">
+        
+        <form method="post" action="/alerts/01a1b058-e657-7006-af64-202a009219f3/read" class="inline">
+          <input type="hidden" name="csrf" value="a682d206518ef45c35f7876cbc049ad2">
+          <input type="hidden" name="tab" value="supplies">
+          <button type="submit" class="link"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-check"></use></svg>Marcar como leído</button>
+        </form>
+        
+      </td>
+    </tr>
+  
+    <tr class="unread">
+      <td class="ref-cell"><a href="printer_01a1b058-e5ff-7000-8699-e08602174dc9.html" class="ref">M1024</a></td>
+      <td data-label="Impresora"><a href="printer_01a1b058-e5ff-7000-8699-e08602174dc9.html">HP LaserJet MFP M227fdw</a></td>
+      <td data-label="Cliente"><a href="clients_01a1b058-e5fd-7000-807b-3878c4362678.html">Hotel Playa Dorada</a></td>
       <td data-label="Aviso" class="what">Consumible bajo: Tóner negro (0 %)
         <span class="bar"><span class="fill empty w0"></span></span></td>
-      <td class="num" data-label="Abierto">13:10</td>
+      <td class="num" data-label="Abierto">10:12</td>
       
       <td data-label="Leído">
         
-        <form method="post" action="/alerts/01a1a6ae-bf55-7006-b564-3763281ce0a0/read" class="inline">
-          <input type="hidden" name="csrf" value="36cd8b276d8adf91b939f834da9a6e52">
+        <form method="post" action="/alerts/01a1b058-e657-7007-89d7-a88de52cbbfc/read" class="inline">
+          <input type="hidden" name="csrf" value="a682d206518ef45c35f7876cbc049ad2">
           <input type="hidden" name="tab" value="supplies">
           <button type="submit" class="link"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-check"></use></svg>Marcar como leído</button>
         </form>
@@ -211,17 +212,17 @@
     </tr>
   
     <tr class="unread">
-      <td class="ref-cell"><a href="printer_01a1a6ae-bf36-7002-94a2-e3fb255ccd87.html" class="ref">M1025</a></td>
-      <td data-label="Impresora"><a href="printer_01a1a6ae-bf36-7002-94a2-e3fb255ccd87.html">EPSON WF-C5790 Series</a></td>
-      <td data-label="Cliente"><a href="clients_01a1a6ae-bf35-7000-a59b-19043c761a39.html">Hotel Playa Dorada</a></td>
-      <td data-label="Aviso" class="what">Consumible bajo: Tinta amarillo (4 %)
+      <td class="ref-cell"><a href="printer_01a1b058-e600-7000-94d2-bea2ef2d0d2d.html" class="ref">M1025</a></td>
+      <td data-label="Impresora"><a href="printer_01a1b058-e600-7000-94d2-bea2ef2d0d2d.html">HP LaserJet Pro MFP M428fdw</a></td>
+      <td data-label="Cliente"><a href="clients_01a1b058-e5fd-7000-807b-3878c4362678.html">Hotel Playa Dorada</a></td>
+      <td data-label="Aviso" class="what">Consumible bajo: Tóner negro (4 %)
         <span class="bar"><span class="fill empty w5"></span></span></td>
-      <td class="num" data-label="Abierto">13:10</td>
+      <td class="num" data-label="Abierto">10:12</td>
       
       <td data-label="Leído">
         
-        <form method="post" action="/alerts/01a1a6ae-bf55-7007-8bfd-274091fea5ee/read" class="inline">
-          <input type="hidden" name="csrf" value="36cd8b276d8adf91b939f834da9a6e52">
+        <form method="post" action="/alerts/01a1b058-e657-7008-80db-cc788d53360b/read" class="inline">
+          <input type="hidden" name="csrf" value="a682d206518ef45c35f7876cbc049ad2">
           <input type="hidden" name="tab" value="supplies">
           <button type="submit" class="link"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-check"></use></svg>Marcar como leído</button>
         </form>
@@ -230,17 +231,17 @@
     </tr>
   
     <tr class="unread">
-      <td class="ref-cell"><a href="printer_01a1a6ae-bf43-7002-8ebc-21e50b5101ab.html" class="ref">M1028</a></td>
-      <td data-label="Impresora"><a href="printer_01a1a6ae-bf43-7002-8ebc-21e50b5101ab.html">Brother MFC-L9570CDW series</a></td>
-      <td data-label="Cliente"><a href="clients_01a1a6ae-bf43-7000-ac3d-00eeef80df0a.html">Ferretería La Orotava</a></td>
+      <td class="ref-cell"><a href="printer_01a1b058-e62f-7000-9ac7-a698a1478cdf.html" class="ref">M1028</a></td>
+      <td data-label="Impresora"><a href="printer_01a1b058-e62f-7000-9ac7-a698a1478cdf.html">HP Color LaserJet MFP M477fdw</a></td>
+      <td data-label="Cliente"><a href="clients_01a1b058-e62d-7000-a731-df665594d645.html">Ferretería La Orotava</a></td>
       <td data-label="Aviso" class="what">Consumible bajo: Tóner amarillo (4 %)
         <span class="bar"><span class="fill empty w5"></span></span></td>
-      <td class="num" data-label="Abierto">13:10</td>
+      <td class="num" data-label="Abierto">10:12</td>
       
       <td data-label="Leído">
         
-        <form method="post" action="/alerts/01a1a6ae-bf55-7008-ac4a-71968182aef4/read" class="inline">
-          <input type="hidden" name="csrf" value="36cd8b276d8adf91b939f834da9a6e52">
+        <form method="post" action="/alerts/01a1b058-e657-7009-9dc8-30c104d6ae6c/read" class="inline">
+          <input type="hidden" name="csrf" value="a682d206518ef45c35f7876cbc049ad2">
           <input type="hidden" name="tab" value="supplies">
           <button type="submit" class="link"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-check"></use></svg>Marcar como leído</button>
         </form>
@@ -256,6 +257,7 @@
 <footer>NetPrinter demo</footer>
 </body>
 </html>
+
 
 
 

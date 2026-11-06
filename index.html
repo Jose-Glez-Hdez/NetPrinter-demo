@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<title>Clientes · NetPrinter</title>
+<title>Acuerdos · NetPrinter</title>
 <link rel="stylesheet" href="static/style.css">
 <link rel="icon" href="static/icon.svg" type="image/svg+xml">
 <script src="static/app.js"></script>
@@ -54,7 +54,7 @@
   <div class="menu" id="menu">
     
     <nav aria-label="Menú">
-      <a href="index.html" aria-current="page"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-building"></use></svg><span>Clientes</span></a>
+      <a href="index.html" aria-current="page"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-user"></use></svg><span>Acuerdos</span></a>
       <a href="alerts.html" ><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-bell"></use></svg><span>Avisos</span><span class="count">10</span></a>
       <a href="counters.html" ><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-chart"></use></svg><span>Contadores</span></a>
       <a href="settings.html" ><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-settings"></use></svg><span>Ajustes</span></a>
@@ -62,7 +62,7 @@
     <div class="tools">
       
       <details class="user-menu">
-        <summary><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-user"></use></svg><span>Usuario de demostración</span><span class="role muted small">Técnico</span></summary>
+        <summary title="Técnico"><span class="avatar tech"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-wrench"></use></svg></span><span>Usuario de demostración</span><span class="visually-hidden">Técnico</span></summary>
         <div class="user-menu-list">
           <a class="view-toggle" href="#" data-demo-off title="Mostrar también los datos técnicos: IP, avisos, piezas, historial"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-detail"></use></svg><span>Vista detallada</span></a>
       <a href="#" data-demo-off lang="en" title="English"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-globe"></use></svg><span>EN</span></a>
@@ -70,7 +70,7 @@
       <a class="theme-dark" href="#" data-demo-off title="Modo oscuro"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-moon"></use></svg><span class="mobile-only">Modo oscuro</span></a>
           <hr>
           <form method="post" action="/logout">
-            <input type="hidden" name="csrf" value="36cd8b276d8adf91b939f834da9a6e52">
+            <input type="hidden" name="csrf" value="a682d206518ef45c35f7876cbc049ad2">
             <button class="link" type="submit"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-logout"></use></svg><span>Cerrar sesión</span></button>
           </form>
         </div>
@@ -84,11 +84,11 @@
 
 
 <div class="head">
-  <h1 class="page-title">Clientes</h1>
+  <h1 class="page-title">Acuerdos</h1>
   <details class="newclient">
     <summary class="button"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-plus"></use></svg>Nuevo cliente</summary>
     <form method="post" action="/clients" class="edit popover">
-      <input type="hidden" name="csrf" value="36cd8b276d8adf91b939f834da9a6e52">
+      <input type="hidden" name="csrf" value="a682d206518ef45c35f7876cbc049ad2">
       <label>Nombre del cliente <input name="name" maxlength="120" required></label>
       <button type="submit">Crear y generar licencia</button>
     </form>
@@ -111,7 +111,7 @@
   <tbody>
   
     <tr>
-      <td class="name"><a href="clients_01a1a6ae-bedf-7000-8f4a-ed1696e8b7b4.html">Asesoría Teide S.L.</a></td>
+      <td class="name"><a href="clients_01a1b058-e4f1-7000-b103-1a19b6b2c1fb.html">Asesoría Teide S.L.</a></td>
       <td class="num" data-label="impresoras">9</td>
       <td data-label="Estado">
         <span class="dot error">1 con error</span> 
@@ -119,11 +119,11 @@
         <span class="warn">2 consumibles bajos</span>
         
       </td>
-      <td data-label="Último contacto">13:10</td>
+      <td data-label="Último contacto">10:12</td>
     </tr>
   
     <tr>
-      <td class="name"><a href="clients_01a1a6ae-bf00-7000-a230-20db28a8e34d.html">Clínica Dental Atlántico</a></td>
+      <td class="name"><a href="clients_01a1b058-e53e-7000-95d9-ae676786dbf1.html">Clínica Dental Atlántico</a></td>
       <td class="num" data-label="impresoras">3</td>
       <td data-label="Estado">
         
@@ -131,11 +131,11 @@
         
         <span class="dot online">Todo bien</span>
       </td>
-      <td data-label="Último contacto">13:10</td>
+      <td data-label="Último contacto">10:12</td>
     </tr>
   
     <tr>
-      <td class="name"><a href="clients_01a1a6ae-bf1d-7003-a9f4-be2b12de3be4.html">Colegio San Borondón</a></td>
+      <td class="name"><a href="clients_01a1b058-e5a2-7003-8a41-5631ce860c62.html">Colegio San Borondón</a></td>
       <td class="num" data-label="impresoras">6</td>
       <td data-label="Estado">
         
@@ -143,11 +143,11 @@
         <span class="warn">1 consumibles bajos</span>
         
       </td>
-      <td data-label="Último contacto">13:10</td>
+      <td data-label="Último contacto">10:12</td>
     </tr>
   
     <tr>
-      <td class="name"><a href="clients_01a1a6ae-bf0c-7000-a39d-2c1152069a4b.html">Construcciones Roque Nublo</a></td>
+      <td class="name"><a href="clients_01a1b058-e560-7000-8bc1-44529e8d6b48.html">Construcciones Roque Nublo</a></td>
       <td class="num" data-label="impresoras">4</td>
       <td data-label="Estado">
         
@@ -155,11 +155,11 @@
         <span class="warn">1 consumibles bajos</span>
         
       </td>
-      <td data-label="Último contacto">13:10</td>
+      <td data-label="Último contacto">10:12</td>
     </tr>
   
     <tr>
-      <td class="name"><a href="clients_01a1a6ae-bf4b-7000-abcd-97033b88e241.html">Despacho Jurídico Anaga</a></td>
+      <td class="name"><a href="clients_01a1b058-e643-7000-9911-6afdcc9f1f66.html">Despacho Jurídico Anaga</a></td>
       <td class="num" data-label="impresoras">3</td>
       <td data-label="Estado">
         
@@ -167,11 +167,11 @@
         
         <span class="dot online">Todo bien</span>
       </td>
-      <td data-label="Último contacto">13:10</td>
+      <td data-label="Último contacto">10:12</td>
     </tr>
   
     <tr>
-      <td class="name"><a href="clients_01a1a6ae-bf43-7000-ac3d-00eeef80df0a.html">Ferretería La Orotava</a></td>
+      <td class="name"><a href="clients_01a1b058-e62d-7000-a731-df665594d645.html">Ferretería La Orotava</a></td>
       <td class="num" data-label="impresoras">2</td>
       <td data-label="Estado">
         
@@ -179,11 +179,11 @@
         <span class="warn">1 consumibles bajos</span>
         
       </td>
-      <td data-label="Último contacto">13:10</td>
+      <td data-label="Último contacto">10:12</td>
     </tr>
   
     <tr>
-      <td class="name"><a href="clients_01a1a6ae-bf35-7000-a59b-19043c761a39.html">Hotel Playa Dorada</a></td>
+      <td class="name"><a href="clients_01a1b058-e5fd-7000-807b-3878c4362678.html">Hotel Playa Dorada</a></td>
       <td class="num" data-label="impresoras">4</td>
       <td data-label="Estado">
         
@@ -191,11 +191,11 @@
         <span class="warn">2 consumibles bajos</span>
         
       </td>
-      <td data-label="Último contacto">13:10</td>
+      <td data-label="Último contacto">10:12</td>
     </tr>
   
     <tr class="system">
-      <td class="name"><a href="clients_01a1a6ae-bf1d-7000-a88a-199e1b6a07b4.html">Impresoras de baja</a></td>
+      <td class="name"><a href="clients_01a1b058-e5a2-7000-94ff-fc5485c5a7ff.html">Impresoras de baja</a></td>
       <td class="num" data-label="impresoras">1</td>
       <td data-label="Estado">
         
@@ -214,6 +214,7 @@
 <footer>NetPrinter demo</footer>
 </body>
 </html>
+
 
 
 

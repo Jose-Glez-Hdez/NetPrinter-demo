@@ -1,0 +1,33 @@
+﻿Número interno;Cliente;Modelo;Número de serie;IP;Inicio Total;Fin Total;Total;B/N;Color;
+M1001;Asesoría Teide S.L.;Brother MFC-L5750DW series;DEMO000001;192.168.10.20;38316;43431;5115;5115;;Instalada durante el mes: cuenta desde su primera lectura.
+M1002;Asesoría Teide S.L.;HP LaserJet MFP M227fdw;DEMO000002;192.168.10.21;23183;25011;1828;1828;;Instalada durante el mes: cuenta desde su primera lectura.
+M1003;Asesoría Teide S.L.;Brother MFC-L9570CDW series;DEMO000003;192.168.10.22;52904;57708;4804;3538;1266;Instalada durante el mes: cuenta desde su primera lectura.
+M1004;Asesoría Teide S.L.;HP LaserJet Pro MFP M428fdw;DEMO000004;192.168.10.23;46774;53439;6665;6665;;Instalada durante el mes: cuenta desde su primera lectura.
+M1005;Asesoría Teide S.L.;Brother HL-L8360CDW series;DEMO000005;192.168.10.24;46239;52244;6005;4322;1683;Instalada durante el mes: cuenta desde su primera lectura.
+M1006;Asesoría Teide S.L.;Brother MFC-L5750DW series;DEMO000006;192.168.10.25;36540;41703;5163;5163;;Instalada durante el mes: cuenta desde su primera lectura.
+M1007;Asesoría Teide S.L.;HP LaserJet Pro MFP M428fdw;DEMO000007;192.168.10.26;64126;74294;10168;10168;;Instalada durante el mes: cuenta desde su primera lectura.
+M1008;Asesoría Teide S.L.;Kyocera ECOSYS M5526cdw;DEMO000008;192.168.10.27;72750;77276;4526;3360;1166;Instalada durante el mes: cuenta desde su primera lectura.
+M1009;Asesoría Teide S.L.;Brother MFC-L9570CDW series;DEMO000009;192.168.10.28;;;;;;
+M1010;Clínica Dental Atlántico;Kyocera ECOSYS M5526cdw;DEMO000010;192.168.11.20;61149;65560;4411;3294;1117;Instalada durante el mes: cuenta desde su primera lectura.
+M1011;Clínica Dental Atlántico;EPSON WF-C5790 Series;DEMO000011;192.168.11.21;58521;63994;5473;3935;1538;Instalada durante el mes: cuenta desde su primera lectura.
+M1012;Clínica Dental Atlántico;Brother MFC-L5750DW series;DEMO000012;192.168.11.22;62283;67217;4934;4934;;Instalada durante el mes: cuenta desde su primera lectura.
+M1013;Impresoras de baja;HP LaserJet MFP M227fdw;DEMO000013;192.168.12.20;24475;26143;1668;1668;;Instalada durante el mes: cuenta desde su primera lectura.
+M1014;Construcciones Roque Nublo;EPSON WF-C5790 Series;DEMO000014;192.168.12.21;92231;98095;5864;4168;1696;Instalada durante el mes: cuenta desde su primera lectura.
+M1015;Construcciones Roque Nublo;HP LaserJet MFP M227fdw;DEMO000015;192.168.12.22;21017;24920;3903;3903;;Instalada durante el mes: cuenta desde su primera lectura.
+M1016;Construcciones Roque Nublo;Brother MFC-L9570CDW series;DEMO000016;192.168.12.23;69723;74087;4364;3062;1302;Instalada durante el mes: cuenta desde su primera lectura.
+M1017;Construcciones Roque Nublo;HP Color LaserJet MFP M477fdw;DEMO000017;192.168.12.24;;;;;;
+M1018;Colegio San Borondón;Kyocera ECOSYS M5526cdw;DEMO000018;192.168.13.20;38838;41954;3116;2291;825;Instalada durante el mes: cuenta desde su primera lectura.
+M1019;Colegio San Borondón;Brother MFC-L9570CDW series;DEMO000019;192.168.13.21;74203;84560;10357;7498;2859;Instalada durante el mes: cuenta desde su primera lectura.
+M1020;Colegio San Borondón;HP LaserJet MFP M227fdw;DEMO000020;192.168.13.22;53670;55798;2128;2128;;Instalada durante el mes: cuenta desde su primera lectura.
+M1021;Colegio San Borondón;Kyocera ECOSYS M5526cdw;DEMO000021;192.168.13.23;59779;64667;4888;3488;1400;Instalada durante el mes: cuenta desde su primera lectura.
+M1022;Colegio San Borondón;Brother MFC-L9570CDW series;DEMO000022;192.168.13.24;48900;53296;4396;3191;1205;Instalada durante el mes: cuenta desde su primera lectura.
+M1023;Colegio San Borondón;HP Color LaserJet MFP M477fdw;DEMO000023;192.168.13.25;48574;52341;3767;2706;1061;Instalada durante el mes: cuenta desde su primera lectura.
+M1024;Hotel Playa Dorada;HP LaserJet MFP M227fdw;DEMO000024;192.168.14.20;60825;64449;3624;3624;;Instalada durante el mes: cuenta desde su primera lectura.
+M1025;Hotel Playa Dorada;HP LaserJet Pro MFP M428fdw;DEMO000025;192.168.14.21;59587;64593;5006;5006;;Instalada durante el mes: cuenta desde su primera lectura.
+M1026;Hotel Playa Dorada;EPSON WF-C5790 Series;DEMO000026;192.168.14.22;54899;61993;7094;5087;2007;Instalada durante el mes: cuenta desde su primera lectura.
+M1027;Hotel Playa Dorada;Kyocera ECOSYS M5526cdw;DEMO000027;192.168.14.23;;;;;;
+M1028;Ferretería La Orotava;HP Color LaserJet MFP M477fdw;DEMO000028;192.168.15.20;58228;62023;3795;2748;1047;Instalada durante el mes: cuenta desde su primera lectura.
+M1029;Ferretería La Orotava;HP LaserJet Pro MFP M428fdw;DEMO000029;192.168.15.21;78830;88821;9991;9991;;Instalada durante el mes: cuenta desde su primera lectura.
+M1030;Despacho Jurídico Anaga;HP Color LaserJet MFP M477fdw;DEMO000030;192.168.16.20;86763;89472;2709;1961;748;Instalada durante el mes: cuenta desde su primera lectura.
+M1031;Despacho Jurídico Anaga;Brother MFC-L9570CDW series;DEMO000031;192.168.16.21;69668;76308;6640;4779;1861;Instalada durante el mes: cuenta desde su primera lectura.
+M1032;Despacho Jurídico Anaga;Brother MFC-L9570CDW series;DEMO000032;192.168.16.22;;;;;;

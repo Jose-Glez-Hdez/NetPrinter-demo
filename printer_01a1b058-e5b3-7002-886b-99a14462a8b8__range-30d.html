@@ -1,0 +1,521 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>HP LaserJet MFP M227fdw · NetPrinter</title>
+<link rel="stylesheet" href="static/style.css">
+<link rel="icon" href="static/icon.svg" type="image/svg+xml">
+<script src="static/app.js"></script>
+<link rel="stylesheet" href="static/demo.css"><script src="static/demo.js"></script></head>
+<body class="central"><div class="demo-banner" role="note">Demo de NetPrinter con datos inventados · Los cambios no se guardan</div>
+<svg class="sprite" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg">
+<symbol id="i-printer" viewBox="0 0 24 24"><path d="M6 9V3h12v6"/><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><path d="M6 14h12v7H6z"/></symbol>
+<symbol id="i-building" viewBox="0 0 24 24"><rect x="4" y="3" width="16" height="18" rx="1.5"/><path d="M9 21v-4h6v4"/><path d="M9 7h.01"/><path d="M15 7h.01"/><path d="M9 12h.01"/><path d="M15 12h.01"/></symbol>
+<symbol id="i-pin" viewBox="0 0 24 24"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0z"/><circle cx="12" cy="10" r="3"/></symbol>
+<symbol id="i-monitor" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="12" rx="2"/><path d="M8 20h8"/><path d="M12 16v4"/></symbol>
+<symbol id="i-receipt" viewBox="0 0 24 24"><path d="M5 3v18l2.5-1.5L10 21l2-1.5L14 21l2.5-1.5L19 21V3l-2.5 1.5L14 3l-2 1.5L10 3 7.5 4.5z"/><path d="M9 9h6"/><path d="M9 13h6"/></symbol>
+<symbol id="i-upload" viewBox="0 0 24 24"><path d="M12 15V3"/><path d="M7 8l5-5 5 5"/><path d="M4 21h16"/></symbol>
+<symbol id="i-plus" viewBox="0 0 24 24"><path d="M12 5v14"/><path d="M5 12h14"/></symbol>
+<symbol id="i-home" viewBox="0 0 24 24"><path d="M3 10.5 12 3l9 7.5"/><path d="M5 9.5V21h5v-6h4v6h5V9.5"/></symbol>
+<symbol id="i-drop" viewBox="0 0 24 24"><path d="M12 2.5s-6.5 7.2-6.5 11.8a6.5 6.5 0 0 0 13 0C18.5 9.7 12 2.5 12 2.5z"/><path d="M9 15a3 3 0 0 0 3 3"/></symbol>
+<symbol id="i-chart" viewBox="0 0 24 24"><path d="M3 3v18h18"/><path d="M7 16v-4"/><path d="M12 16V8"/><path d="M17 16v-7"/></symbol>
+<symbol id="i-settings" viewBox="0 0 24 24"><path d="M4 6h10"/><path d="M18 6h2"/><circle cx="16" cy="6" r="2"/><path d="M4 12h3"/><path d="M11 12h9"/><circle cx="9" cy="12" r="2"/><path d="M4 18h12"/><path d="M20 18h0"/><circle cx="18" cy="18" r="2"/></symbol>
+<symbol id="i-wrench" viewBox="0 0 24 24"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></symbol>
+<symbol id="i-globe" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M3 12h18"/><path d="M12 3a14 14 0 0 1 0 18"/><path d="M12 3a14 14 0 0 0 0 18"/></symbol>
+<symbol id="i-logout" viewBox="0 0 24 24"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><path d="M16 17l5-5-5-5"/><path d="M21 12H9"/></symbol>
+<symbol id="i-menu" viewBox="0 0 24 24"><path d="M4 6h16"/><path d="M4 12h16"/><path d="M4 18h16"/></symbol>
+<symbol id="i-close" viewBox="0 0 24 24"><path d="M6 6l12 12"/><path d="M18 6 6 18"/></symbol>
+<symbol id="i-lock" viewBox="0 0 24 24"><rect x="4" y="11" width="16" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></symbol>
+<symbol id="i-back" viewBox="0 0 24 24"><path d="M15 18l-6-6 6-6"/></symbol>
+<symbol id="i-refresh" viewBox="0 0 24 24"><path d="M21 12a9 9 0 1 1-2.6-6.4"/><path d="M21 3v6h-6"/></symbol>
+<symbol id="i-download" viewBox="0 0 24 24"><path d="M12 3v12"/><path d="M7 10l5 5 5-5"/><path d="M4 21h16"/></symbol>
+<symbol id="i-bell" viewBox="0 0 24 24"><path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"/><path d="M10.3 21a1.94 1.94 0 0 0 3.4 0"/></symbol>
+<symbol id="i-users" viewBox="0 0 24 24"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></symbol>
+<symbol id="i-user" viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/></symbol>
+<symbol id="i-key" viewBox="0 0 24 24"><circle cx="7.5" cy="15.5" r="5.5"/><path d="m21 2-9.6 9.6"/><path d="m15.5 7.5 3 3L22 7l-3-3"/></symbol>
+<symbol id="i-check" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></symbol>
+<symbol id="i-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v2"/><path d="M12 20v2"/><path d="m4.93 4.93 1.41 1.41"/><path d="m17.66 17.66 1.41 1.41"/><path d="M2 12h2"/><path d="M20 12h2"/><path d="m6.34 17.66-1.41 1.41"/><path d="m19.07 4.93-1.41 1.41"/></symbol>
+<symbol id="i-moon" viewBox="0 0 24 24"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></symbol>
+<symbol id="i-edit" viewBox="0 0 24 24"><path d="M12 20h9"/><path d="M16.5 3.5a2.12 2.12 0 0 1 3 3L7 19l-4 1 1-4z"/></symbol>
+<symbol id="i-simple" viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="16" rx="2"/><path d="M8 12h8"/></symbol>
+<symbol id="i-detail" viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="16" rx="2"/><path d="M8 9h8"/><path d="M8 13h8"/><path d="M8 17h5"/></symbol>
+<symbol id="i-cards" viewBox="0 0 24 24"><rect x="4" y="4" width="7" height="7" rx="1.5"/><rect x="13" y="4" width="7" height="7" rx="1.5"/><rect x="4" y="13" width="7" height="7" rx="1.5"/><rect x="13" y="13" width="7" height="7" rx="1.5"/></symbol>
+<symbol id="i-table" viewBox="0 0 24 24"><rect x="4" y="5" width="16" height="14" rx="1.5"/><path d="M4 10h16"/><path d="M4 14.5h16"/><path d="M9 10v9"/></symbol>
+<symbol id="i-search" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="M21 21l-5-5"/></symbol>
+<symbol id="i-alert" viewBox="0 0 24 24"><path d="M10.3 3.9 1.8 18a2 2 0 0 0 1.7 3h17a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0z"/><path d="M12 9v4"/><path d="M12 17h.01"/></symbol>
+</svg>
+<header class="top" id="top">
+  <a class="brand" href="index.html">NetPrinter <span class="brand-sub">Central</span></a>
+  <button class="menu-toggle" type="button" aria-controls="menu" aria-expanded="false" aria-label="Menú">
+    <span class="open-icon"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-menu"></use></svg></span><span class="close-icon"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-close"></use></svg></span>
+  </button>
+  <div class="menu" id="menu">
+    
+    <nav aria-label="Menú">
+      <a href="index.html" aria-current="page"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-user"></use></svg><span>Acuerdos</span></a>
+      <a href="alerts.html" ><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-bell"></use></svg><span>Avisos</span><span class="count">10</span></a>
+      <a href="counters.html" ><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-chart"></use></svg><span>Contadores</span></a>
+      <a href="settings.html" ><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-settings"></use></svg><span>Ajustes</span></a>
+    </nav>
+    <div class="tools">
+      
+      <details class="user-menu">
+        <summary title="Técnico"><span class="avatar tech"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-wrench"></use></svg></span><span>Usuario de demostración</span><span class="visually-hidden">Técnico</span></summary>
+        <div class="user-menu-list">
+          <a class="view-toggle" href="#" data-demo-off title="Mostrar también los datos técnicos: IP, avisos, piezas, historial"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-detail"></use></svg><span>Vista detallada</span></a>
+      <a href="#" data-demo-off lang="en" title="English"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-globe"></use></svg><span>EN</span></a>
+      <a class="theme-light" href="#" data-demo-off title="Modo claro"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-sun"></use></svg><span class="mobile-only">Modo claro</span></a>
+      <a class="theme-dark" href="#" data-demo-off title="Modo oscuro"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-moon"></use></svg><span class="mobile-only">Modo oscuro</span></a>
+          <hr>
+          <form method="post" action="/logout">
+            <input type="hidden" name="csrf" value="a682d206518ef45c35f7876cbc049ad2">
+            <button class="link" type="submit"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-logout"></use></svg><span>Cerrar sesión</span></button>
+          </form>
+        </div>
+      </details>
+      
+    </div>
+    
+  </div>
+</header>
+<main>
+
+
+<nav class="crumbs" aria-label="Estás en"><a href="index.html">Acuerdos</a><span aria-hidden="true">›</span><a href="clients_01a1b058-e5a2-7003-8a41-5631ce860c62.html">Colegio San Borondón</a><span aria-hidden="true">›</span><span aria-current="page">M1020</span></nav>
+
+<div class="head">
+  <div>
+    <h1 class="page-title"><span class="ref">M1020</span>HP LaserJet MFP M227fdw</h1>
+    <p class="sub">Colegio San Borondón</p>
+    <p class="state-line"><span class="pill online">En línea</span><span class="muted small">desde 06/10/2025 10:12</span></p>
+  </div>
+  
+</div>
+
+
+
+<nav class="tabs page-tabs" aria-label="HP LaserJet MFP M227fdw">
+  <a href="printer_01a1b058-e5b3-7002-886b-99a14462a8b8.html" aria-current="page">Resumen</a>
+  
+  <a href="printer_01a1b058-e5b3-7002-886b-99a14462a8b8__tab-settings.html" ><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-settings"></use></svg>Ajustes</a>
+</nav>
+
+
+
+
+
+
+<div class="notices">
+  
+  
+  
+  
+</div>
+<div class="grid">
+<section class="panel">
+  <h2>Contadores</h2>
+  
+  <dl class="counters">
+    <dt>Total</dt><dd>63.418</dd>
+    <dt>B/N</dt><dd>63.418</dd>
+    
+  </dl>
+  
+  
+  <p class="muted small">Última lectura: 07/11/2026 03:12</p>
+</section>
+
+<section class="panel" id="levels">
+  <h2>Niveles de consumibles</h2>
+  
+  <table class="supplies">
+  
+    <tr>
+      <th scope="row"><span class="sw black"></span>Tóner negro</th>
+      <td class="barcell"><span class="bar"><span class="fill low w5"></span></span></td>
+      <td class="num level">4 %</td>
+    </tr>
+  
+  </table>
+  
+</section>
+</div>
+
+
+<section class="panel contract">
+  <h2>Contrato</h2>
+  
+  <div class="contract-grid">
+    <dl class="kv">
+      <dt>Cuota mensual</dt><dd>50,00 €</dd>
+      <dt>Copias incluidas al mes</dt><dd>500 B/N</dd>
+      <dt>Copia adicional</dt><dd>0,010000 € B/N</dd>
+    </dl>
+    <div class="estimate">
+      <p class="muted small">Estimación de este mes (noviembre 2026)</p>
+      <p class="amount">50,00 €</p>
+      <p class="muted small">137 B/N</p>
+    </div>
+  </div>
+  
+</section>
+
+
+<section class="panel" id="chart">
+  <h2>Impresiones por día</h2>
+  
+<nav class="tabs ranges" aria-label="Periodo">
+  <a href="printer_01a1b058-e5b3-7002-886b-99a14462a8b8__range-week.html#chart">Esta semana</a><a href="printer_01a1b058-e5b3-7002-886b-99a14462a8b8__range-7d.html#chart">Últimos 7 días</a><a href="printer_01a1b058-e5b3-7002-886b-99a14462a8b8__range-30d.html#chart" aria-current="true">Últimos 30 días</a><a href="printer_01a1b058-e5b3-7002-886b-99a14462a8b8__range-12m.html#chart">Últimos 12 meses</a><a href="printer_01a1b058-e5b3-7002-886b-99a14462a8b8__range-24m.html#chart">Últimos 24 meses</a><a href="printer_01a1b058-e5b3-7002-886b-99a14462a8b8__range-all.html#chart">Desde el principio</a>
+</nav>
+<figure class="chart" data-l-mono="B/N" data-l-color="Color" data-l-total="Total" data-l-nodata="sin lecturas">
+  <figcaption>
+    <span class="muted small">Últimos 30 días</span>
+    
+  </figcaption>
+  
+  <svg class="plot" viewBox="0 0 720 240" role="img" aria-label="Impresiones por mes">
+    <line class="grid" x1="48" x2="712" y1="212" y2="212"></line>
+    <text class="tick" x="48" dx="-8" y="212" dy="4" text-anchor="end">0</text><line class="grid" x1="48" x2="712" y1="145.33333333333334" y2="145.33333333333334"></line>
+    <text class="tick" x="48" dx="-8" y="145.33333333333334" dy="4" text-anchor="end">20</text><line class="grid" x1="48" x2="712" y1="78.66666666666667" y2="78.66666666666667"></line>
+    <text class="tick" x="48" dx="-8" y="78.66666666666667" dy="4" text-anchor="end">40</text><line class="grid" x1="48" x2="712" y1="12" y2="12"></line>
+    <text class="tick" x="48" dx="-8" y="12" dy="4" text-anchor="end">60</text>
+    <g class="col" tabindex="0" data-month="jueves 08/10/2026" data-mono="23" data-color="" data-total="23"
+      aria-label="jueves 08/10/2026: B/N 23">
+      <rect class="hit" x="48" y="0" width="22.133333333333333" height="212"></rect>
+      <path class="s-mono" d="M52.43 212V139.33Q52.43 135.33 56.43 135.33H61.71Q65.71 135.33 65.71 139.33V212Z"></path>
+      
+      <text class="tick" x="59.06666666666666" y="240" dy="-8" text-anchor="middle"></text>
+    </g><g class="col" tabindex="0" data-month="viernes 09/10/2026" data-mono="48" data-color="" data-total="48"
+      aria-label="viernes 09/10/2026: B/N 48">
+      <rect class="hit" x="70.13333333333333" y="0" width="22.133333333333333" height="212"></rect>
+      <path class="s-mono" d="M74.56 212V56Q74.56 52 78.56 52H83.84Q87.84 52 87.84 56V212Z"></path>
+      
+      <text class="tick" x="81.19999999999999" y="240" dy="-8" text-anchor="middle"></text>
+    </g><g class="col" tabindex="0" data-month="sábado 10/10/2026" data-mono="26" data-color="" data-total="26"
+      aria-label="sábado 10/10/2026: B/N 26">
+      <rect class="hit" x="92.26666666666667" y="0" width="22.133333333333333" height="212"></rect>
+      <path class="s-mono" d="M96.69 212V129.33Q96.69 125.33 100.69 125.33H105.97Q109.97 125.33 109.97 129.33V212Z"></path>
+      
+      <text class="tick" x="103.33333333333333" y="240" dy="-8" text-anchor="middle">sáb 10</text>
+    </g><g class="col" tabindex="0" data-month="domingo 11/10/2026" data-mono="0" data-color="" data-total="0"
+      aria-label="domingo 11/10/2026: B/N 0">
+      <rect class="hit" x="114.4" y="0" width="22.133333333333333" height="212"></rect>
+      
+      
+      <text class="tick" x="125.46666666666667" y="240" dy="-8" text-anchor="middle"></text>
+    </g><g class="col" tabindex="0" data-month="lunes 12/10/2026" data-mono="0" data-color="" data-total="0"
+      aria-label="lunes 12/10/2026: B/N 0">
+      <rect class="hit" x="136.53333333333333" y="0" width="22.133333333333333" height="212"></rect>
+      
+      
+      <text class="tick" x="147.6" y="240" dy="-8" text-anchor="middle"></text>
+    </g><g class="col" tabindex="0" data-month="martes 13/10/2026" data-mono="35" data-color="" data-total="35"
+      aria-label="martes 13/10/2026: B/N 35">
+      <rect class="hit" x="158.66666666666666" y="0" width="22.133333333333333" height="212"></rect>
+      <path class="s-mono" d="M163.09 212V99.33Q163.09 95.33 167.09 95.33H172.37Q176.37 95.33 176.37 99.33V212Z"></path>
+      
+      <text class="tick" x="169.73333333333332" y="240" dy="-8" text-anchor="middle">mar 13</text>
+    </g><g class="col" tabindex="0" data-month="miércoles 14/10/2026" data-mono="28" data-color="" data-total="28"
+      aria-label="miércoles 14/10/2026: B/N 28">
+      <rect class="hit" x="180.8" y="0" width="22.133333333333333" height="212"></rect>
+      <path class="s-mono" d="M185.23 212V122.67Q185.23 118.67 189.23 118.67H194.51Q198.51 118.67 198.51 122.67V212Z"></path>
+      
+      <text class="tick" x="191.86666666666667" y="240" dy="-8" text-anchor="middle"></text>
+    </g><g class="col" tabindex="0" data-month="jueves 15/10/2026" data-mono="43" data-color="" data-total="43"
+      aria-label="jueves 15/10/2026: B/N 43">
+      <rect class="hit" x="202.93333333333334" y="0" width="22.133333333333333" height="212"></rect>
+      <path class="s-mono" d="M207.36 212V72.67Q207.36 68.67 211.36 68.67H216.64Q220.64 68.67 220.64 72.67V212Z"></path>
+      
+      <text class="tick" x="214" y="240" dy="-8" text-anchor="middle"></text>
+    </g><g class="col" tabindex="0" data-month="viernes 16/10/2026" data-mono="42" data-color="" data-total="42"
+      aria-label="viernes 16/10/2026: B/N 42">
+      <rect class="hit" x="225.06666666666666" y="0" width="22.133333333333333" height="212"></rect>
+      <path class="s-mono" d="M229.49 212V76Q229.49 72 233.49 72H238.77Q242.77 72 242.77 76V212Z"></path>
+      
+      <text class="tick" x="236.13333333333333" y="240" dy="-8" text-anchor="middle">vie 16</text>
+    </g><g class="col" tabindex="0" data-month="sábado 17/10/2026" data-mono="38" data-color="" data-total="38"
+      aria-label="sábado 17/10/2026: B/N 38">
+      <rect class="hit" x="247.2" y="0" width="22.133333333333333" height="212"></rect>
+      <path class="s-mono" d="M251.63 212V89.33Q251.63 85.33 255.63 85.33H260.91Q264.91 85.33 264.91 89.33V212Z"></path>
+      
+      <text class="tick" x="258.26666666666665" y="240" dy="-8" text-anchor="middle"></text>
+    </g><g class="col" tabindex="0" data-month="domingo 18/10/2026" data-mono="0" data-color="" data-total="0"
+      aria-label="domingo 18/10/2026: B/N 0">
+      <rect class="hit" x="269.3333333333333" y="0" width="22.133333333333333" height="212"></rect>
+      
+      
+      <text class="tick" x="280.4" y="240" dy="-8" text-anchor="middle"></text>
+    </g><g class="col" tabindex="0" data-month="lunes 19/10/2026" data-mono="0" data-color="" data-total="0"
+      aria-label="lunes 19/10/2026: B/N 0">
+      <rect class="hit" x="291.46666666666664" y="0" width="22.133333333333333" height="212"></rect>
+      
+      
+      <text class="tick" x="302.5333333333333" y="240" dy="-8" text-anchor="middle">lun 19</text>
+    </g><g class="col" tabindex="0" data-month="martes 20/10/2026" data-mono="47" data-color="" data-total="47"
+      aria-label="martes 20/10/2026: B/N 47">
+      <rect class="hit" x="313.6" y="0" width="22.133333333333333" height="212"></rect>
+      <path class="s-mono" d="M318.03 212V59.33Q318.03 55.33 322.03 55.33H327.31Q331.31 55.33 331.31 59.33V212Z"></path>
+      
+      <text class="tick" x="324.6666666666667" y="240" dy="-8" text-anchor="middle"></text>
+    </g><g class="col" tabindex="0" data-month="miércoles 21/10/2026" data-mono="41" data-color="" data-total="41"
+      aria-label="miércoles 21/10/2026: B/N 41">
+      <rect class="hit" x="335.73333333333335" y="0" width="22.133333333333333" height="212"></rect>
+      <path class="s-mono" d="M340.16 212V79.33Q340.16 75.33 344.16 75.33H349.44Q353.44 75.33 353.44 79.33V212Z"></path>
+      
+      <text class="tick" x="346.8" y="240" dy="-8" text-anchor="middle"></text>
+    </g><g class="col" tabindex="0" data-month="jueves 22/10/2026" data-mono="43" data-color="" data-total="43"
+      aria-label="jueves 22/10/2026: B/N 43">
+      <rect class="hit" x="357.8666666666667" y="0" width="22.133333333333333" height="212"></rect>
+      <path class="s-mono" d="M362.29 212V72.67Q362.29 68.67 366.29 68.67H371.57Q375.57 68.67 375.57 72.67V212Z"></path>
+      
+      <text class="tick" x="368.93333333333334" y="240" dy="-8" text-anchor="middle">jue 22</text>
+    </g><g class="col" tabindex="0" data-month="viernes 23/10/2026" data-mono="43" data-color="" data-total="43"
+      aria-label="viernes 23/10/2026: B/N 43">
+      <rect class="hit" x="380" y="0" width="22.133333333333333" height="212"></rect>
+      <path class="s-mono" d="M384.43 212V72.67Q384.43 68.67 388.43 68.67H393.71Q397.71 68.67 397.71 72.67V212Z"></path>
+      
+      <text class="tick" x="391.06666666666666" y="240" dy="-8" text-anchor="middle"></text>
+    </g><g class="col" tabindex="0" data-month="sábado 24/10/2026" data-mono="26" data-color="" data-total="26"
+      aria-label="sábado 24/10/2026: B/N 26">
+      <rect class="hit" x="402.1333333333333" y="0" width="22.133333333333333" height="212"></rect>
+      <path class="s-mono" d="M406.56 212V129.33Q406.56 125.33 410.56 125.33H415.84Q419.84 125.33 419.84 129.33V212Z"></path>
+      
+      <text class="tick" x="413.2" y="240" dy="-8" text-anchor="middle"></text>
+    </g><g class="col" tabindex="0" data-month="domingo 25/10/2026" data-mono="0" data-color="" data-total="0"
+      aria-label="domingo 25/10/2026: B/N 0">
+      <rect class="hit" x="424.26666666666665" y="0" width="22.133333333333333" height="212"></rect>
+      
+      
+      <text class="tick" x="435.3333333333333" y="240" dy="-8" text-anchor="middle">dom 25</text>
+    </g><g class="col" tabindex="0" data-month="lunes 26/10/2026" data-mono="0" data-color="" data-total="0"
+      aria-label="lunes 26/10/2026: B/N 0">
+      <rect class="hit" x="446.4" y="0" width="22.133333333333333" height="212"></rect>
+      
+      
+      <text class="tick" x="457.46666666666664" y="240" dy="-8" text-anchor="middle"></text>
+    </g><g class="col" tabindex="0" data-month="martes 27/10/2026" data-mono="33" data-color="" data-total="33"
+      aria-label="martes 27/10/2026: B/N 33">
+      <rect class="hit" x="468.5333333333333" y="0" width="22.133333333333333" height="212"></rect>
+      <path class="s-mono" d="M472.96 212V106Q472.96 102 476.96 102H482.24Q486.24 102 486.24 106V212Z"></path>
+      
+      <text class="tick" x="479.59999999999997" y="240" dy="-8" text-anchor="middle"></text>
+    </g><g class="col" tabindex="0" data-month="miércoles 28/10/2026" data-mono="20" data-color="" data-total="20"
+      aria-label="miércoles 28/10/2026: B/N 20">
+      <rect class="hit" x="490.66666666666663" y="0" width="22.133333333333333" height="212"></rect>
+      <path class="s-mono" d="M495.09 212V149.33Q495.09 145.33 499.09 145.33H504.37Q508.37 145.33 508.37 149.33V212Z"></path>
+      
+      <text class="tick" x="501.7333333333333" y="240" dy="-8" text-anchor="middle">mié 28</text>
+    </g><g class="col" tabindex="0" data-month="jueves 29/10/2026" data-mono="47" data-color="" data-total="47"
+      aria-label="jueves 29/10/2026: B/N 47">
+      <rect class="hit" x="512.8" y="0" width="22.133333333333333" height="212"></rect>
+      <path class="s-mono" d="M517.23 212V59.33Q517.23 55.33 521.23 55.33H526.51Q530.51 55.33 530.51 59.33V212Z"></path>
+      
+      <text class="tick" x="523.8666666666667" y="240" dy="-8" text-anchor="middle"></text>
+    </g><g class="col" tabindex="0" data-month="viernes 30/10/2026" data-mono="40" data-color="" data-total="40"
+      aria-label="viernes 30/10/2026: B/N 40">
+      <rect class="hit" x="534.9333333333333" y="0" width="22.133333333333333" height="212"></rect>
+      <path class="s-mono" d="M539.36 212V82.67Q539.36 78.67 543.36 78.67H548.64Q552.64 78.67 552.64 82.67V212Z"></path>
+      
+      <text class="tick" x="546" y="240" dy="-8" text-anchor="middle"></text>
+    </g><g class="col" tabindex="0" data-month="sábado 31/10/2026" data-mono="38" data-color="" data-total="38"
+      aria-label="sábado 31/10/2026: B/N 38">
+      <rect class="hit" x="557.0666666666666" y="0" width="22.133333333333333" height="212"></rect>
+      <path class="s-mono" d="M561.49 212V89.33Q561.49 85.33 565.49 85.33H570.77Q574.77 85.33 574.77 89.33V212Z"></path>
+      
+      <text class="tick" x="568.1333333333333" y="240" dy="-8" text-anchor="middle">sáb 31</text>
+    </g><g class="col" tabindex="0" data-month="domingo 01/11/2026" data-mono="0" data-color="" data-total="0"
+      aria-label="domingo 01/11/2026: B/N 0">
+      <rect class="hit" x="579.2" y="0" width="22.133333333333333" height="212"></rect>
+      
+      
+      <text class="tick" x="590.2666666666668" y="240" dy="-8" text-anchor="middle"></text>
+    </g><g class="col" tabindex="0" data-month="lunes 02/11/2026" data-mono="0" data-color="" data-total="0"
+      aria-label="lunes 02/11/2026: B/N 0">
+      <rect class="hit" x="601.3333333333334" y="0" width="22.133333333333333" height="212"></rect>
+      
+      
+      <text class="tick" x="612.4000000000001" y="240" dy="-8" text-anchor="middle"></text>
+    </g><g class="col" tabindex="0" data-month="martes 03/11/2026" data-mono="31" data-color="" data-total="31"
+      aria-label="martes 03/11/2026: B/N 31">
+      <rect class="hit" x="623.4666666666667" y="0" width="22.133333333333333" height="212"></rect>
+      <path class="s-mono" d="M627.89 212V112.67Q627.89 108.67 631.89 108.67H637.17Q641.17 108.67 641.17 112.67V212Z"></path>
+      
+      <text class="tick" x="634.5333333333334" y="240" dy="-8" text-anchor="middle">mar 3</text>
+    </g><g class="col" tabindex="0" data-month="miércoles 04/11/2026" data-mono="35" data-color="" data-total="35"
+      aria-label="miércoles 04/11/2026: B/N 35">
+      <rect class="hit" x="645.6" y="0" width="22.133333333333333" height="212"></rect>
+      <path class="s-mono" d="M650.03 212V99.33Q650.03 95.33 654.03 95.33H659.31Q663.31 95.33 663.31 99.33V212Z"></path>
+      
+      <text class="tick" x="656.6666666666667" y="240" dy="-8" text-anchor="middle"></text>
+    </g><g class="col" tabindex="0" data-month="jueves 05/11/2026" data-mono="28" data-color="" data-total="28"
+      aria-label="jueves 05/11/2026: B/N 28">
+      <rect class="hit" x="667.7333333333333" y="0" width="22.133333333333333" height="212"></rect>
+      <path class="s-mono" d="M672.16 212V122.67Q672.16 118.67 676.16 118.67H681.44Q685.44 118.67 685.44 122.67V212Z"></path>
+      
+      <text class="tick" x="678.8000000000001" y="240" dy="-8" text-anchor="middle"></text>
+    </g><g class="col" tabindex="0" data-month="viernes 06/11/2026" data-mono="43" data-color="" data-total="43"
+      aria-label="viernes 06/11/2026: B/N 43">
+      <rect class="hit" x="689.8666666666667" y="0" width="22.133333333333333" height="212"></rect>
+      <path class="s-mono" d="M694.29 212V72.67Q694.29 68.67 698.29 68.67H703.57Q707.57 68.67 707.57 72.67V212Z"></path>
+      
+      <text class="tick" x="700.9333333333334" y="240" dy="-8" text-anchor="middle">vie 6</text>
+    </g>
+    <line class="axis" x1="48" x2="712" y1="212" y2="212"></line>
+  </svg>
+  <details class="chart-table">
+    <summary>Ver los datos en tabla</summary>
+    <table class="list">
+      <thead><tr><th>Día</th><th class="num">B/N</th></tr></thead>
+      <tbody><tr>
+        <td>jueves 08/10/2026</td>
+        <td class="num" data-label="B/N">23</td>
+        
+      </tr><tr>
+        <td>viernes 09/10/2026</td>
+        <td class="num" data-label="B/N">48</td>
+        
+      </tr><tr>
+        <td>sábado 10/10/2026</td>
+        <td class="num" data-label="B/N">26</td>
+        
+      </tr><tr>
+        <td>domingo 11/10/2026</td>
+        <td class="num" data-label="B/N">0</td>
+        
+      </tr><tr>
+        <td>lunes 12/10/2026</td>
+        <td class="num" data-label="B/N">0</td>
+        
+      </tr><tr>
+        <td>martes 13/10/2026</td>
+        <td class="num" data-label="B/N">35</td>
+        
+      </tr><tr>
+        <td>miércoles 14/10/2026</td>
+        <td class="num" data-label="B/N">28</td>
+        
+      </tr><tr>
+        <td>jueves 15/10/2026</td>
+        <td class="num" data-label="B/N">43</td>
+        
+      </tr><tr>
+        <td>viernes 16/10/2026</td>
+        <td class="num" data-label="B/N">42</td>
+        
+      </tr><tr>
+        <td>sábado 17/10/2026</td>
+        <td class="num" data-label="B/N">38</td>
+        
+      </tr><tr>
+        <td>domingo 18/10/2026</td>
+        <td class="num" data-label="B/N">0</td>
+        
+      </tr><tr>
+        <td>lunes 19/10/2026</td>
+        <td class="num" data-label="B/N">0</td>
+        
+      </tr><tr>
+        <td>martes 20/10/2026</td>
+        <td class="num" data-label="B/N">47</td>
+        
+      </tr><tr>
+        <td>miércoles 21/10/2026</td>
+        <td class="num" data-label="B/N">41</td>
+        
+      </tr><tr>
+        <td>jueves 22/10/2026</td>
+        <td class="num" data-label="B/N">43</td>
+        
+      </tr><tr>
+        <td>viernes 23/10/2026</td>
+        <td class="num" data-label="B/N">43</td>
+        
+      </tr><tr>
+        <td>sábado 24/10/2026</td>
+        <td class="num" data-label="B/N">26</td>
+        
+      </tr><tr>
+        <td>domingo 25/10/2026</td>
+        <td class="num" data-label="B/N">0</td>
+        
+      </tr><tr>
+        <td>lunes 26/10/2026</td>
+        <td class="num" data-label="B/N">0</td>
+        
+      </tr><tr>
+        <td>martes 27/10/2026</td>
+        <td class="num" data-label="B/N">33</td>
+        
+      </tr><tr>
+        <td>miércoles 28/10/2026</td>
+        <td class="num" data-label="B/N">20</td>
+        
+      </tr><tr>
+        <td>jueves 29/10/2026</td>
+        <td class="num" data-label="B/N">47</td>
+        
+      </tr><tr>
+        <td>viernes 30/10/2026</td>
+        <td class="num" data-label="B/N">40</td>
+        
+      </tr><tr>
+        <td>sábado 31/10/2026</td>
+        <td class="num" data-label="B/N">38</td>
+        
+      </tr><tr>
+        <td>domingo 01/11/2026</td>
+        <td class="num" data-label="B/N">0</td>
+        
+      </tr><tr>
+        <td>lunes 02/11/2026</td>
+        <td class="num" data-label="B/N">0</td>
+        
+      </tr><tr>
+        <td>martes 03/11/2026</td>
+        <td class="num" data-label="B/N">31</td>
+        
+      </tr><tr>
+        <td>miércoles 04/11/2026</td>
+        <td class="num" data-label="B/N">35</td>
+        
+      </tr><tr>
+        <td>jueves 05/11/2026</td>
+        <td class="num" data-label="B/N">28</td>
+        
+      </tr><tr>
+        <td>viernes 06/11/2026</td>
+        <td class="num" data-label="B/N">43</td>
+        
+      </tr></tbody>
+    </table>
+  </details>
+  
+</figure>
+
+</section>
+
+
+
+
+
+
+</main>
+<footer>NetPrinter demo</footer>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+

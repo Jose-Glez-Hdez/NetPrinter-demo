@@ -54,7 +54,7 @@
   <div class="menu" id="menu">
     
     <nav aria-label="Menú">
-      <a href="index.html" ><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-building"></use></svg><span>Clientes</span></a>
+      <a href="index.html" ><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-user"></use></svg><span>Acuerdos</span></a>
       <a href="alerts.html" ><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-bell"></use></svg><span>Avisos</span><span class="count">10</span></a>
       <a href="counters.html" ><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-chart"></use></svg><span>Contadores</span></a>
       <a href="settings.html" aria-current="page"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-settings"></use></svg><span>Ajustes</span></a>
@@ -62,7 +62,7 @@
     <div class="tools">
       
       <details class="user-menu">
-        <summary><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-user"></use></svg><span>Usuario de demostración</span><span class="role muted small">Técnico</span></summary>
+        <summary title="Técnico"><span class="avatar tech"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-wrench"></use></svg></span><span>Usuario de demostración</span><span class="visually-hidden">Técnico</span></summary>
         <div class="user-menu-list">
           <a class="view-toggle" href="#" data-demo-off title="Mostrar también los datos técnicos: IP, avisos, piezas, historial"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-detail"></use></svg><span>Vista detallada</span></a>
       <a href="#" data-demo-off lang="en" title="English"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-globe"></use></svg><span>EN</span></a>
@@ -70,7 +70,7 @@
       <a class="theme-dark" href="#" data-demo-off title="Modo oscuro"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-moon"></use></svg><span class="mobile-only">Modo oscuro</span></a>
           <hr>
           <form method="post" action="/logout">
-            <input type="hidden" name="csrf" value="36cd8b276d8adf91b939f834da9a6e52">
+            <input type="hidden" name="csrf" value="a682d206518ef45c35f7876cbc049ad2">
             <button class="link" type="submit"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-logout"></use></svg><span>Cerrar sesión</span></button>
           </form>
         </div>
@@ -94,7 +94,7 @@
   <details class="newclient">
     <summary class="button"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-plus"></use></svg>Nuevo usuario</summary>
     <form method="post" action="/users" class="settings popover">
-      <input type="hidden" name="csrf" value="36cd8b276d8adf91b939f834da9a6e52">
+      <input type="hidden" name="csrf" value="a682d206518ef45c35f7876cbc049ad2">
       <label>Usuario <input name="username" autocapitalize="none" required></label>
       <label>Nombre <input name="name"></label>
       <label>Correo <input name="email" type="email"><span class="hint">Recibe los avisos por correo.</span></label>
@@ -121,8 +121,8 @@
     <details class="edit-dates">
       <summary><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-settings"></use></svg>Editar usuario</summary>
       <div class="grid">
-        <form method="post" action="/users/01a1a6ae-be9b-7000-b0b9-51dd82f2f0a1/edit" class="settings">
-          <input type="hidden" name="csrf" value="36cd8b276d8adf91b939f834da9a6e52">
+        <form method="post" action="/users/01a1b058-e486-7000-a8e3-fe01dc2adc9e/edit" class="settings">
+          <input type="hidden" name="csrf" value="a682d206518ef45c35f7876cbc049ad2">
           <label>Usuario <input name="username" value="demo" autocapitalize="none" required>
             <span class="hint">Con el que entra en Central. Sin espacios.</span></label>
           <label>Nombre <input name="name" value="Usuario de demostración"></label>
@@ -135,8 +135,8 @@
           <label class="check"><input type="checkbox" name="notify" value="1" checked> Recibir avisos</label>
           <button type="submit">Guardar</button>
         </form>
-        <form method="post" action="/users/01a1a6ae-be9b-7000-b0b9-51dd82f2f0a1/password" class="settings">
-          <input type="hidden" name="csrf" value="36cd8b276d8adf91b939f834da9a6e52">
+        <form method="post" action="/users/01a1b058-e486-7000-a8e3-fe01dc2adc9e/password" class="settings">
+          <input type="hidden" name="csrf" value="a682d206518ef45c35f7876cbc049ad2">
           <label>Nueva contraseña <input name="password" type="password" minlength="8" autocomplete="new-password" required>
             <span class="hint">Al menos 8 caracteres.</span></label>
           <button type="submit" class="secondary">Cambiar contraseña</button>
@@ -153,6 +153,7 @@
 <footer>NetPrinter demo</footer>
 </body>
 </html>
+
 
 
 

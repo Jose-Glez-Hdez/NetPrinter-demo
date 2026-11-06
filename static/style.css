@@ -9,7 +9,7 @@
   --ok-bg: #e3f3e9; --warn-bg: #fcefd6; --bad-bg: #fbe6e5;
   --level-ok: #2e9e5b; --level-low: #e0951a;
   --shadow: none; --float: 0 10px 28px rgba(16, 24, 40, .16);
-  --series-mono: #22252b; --series-color: #eb6834; /* black prints in black; colour in orange */
+  --series-mono: #22252b; --series-color: #0a9bd0; /* black prints in black; colour in cyan */
   color-scheme: light;
   --cyan: #10a6d8; --magenta: #d6278a; --yellow: #e8c21c;
   --radius: 10px; --control: 2.5rem;
@@ -23,7 +23,7 @@
   --ok-bg: #173325; --warn-bg: #3a2c12; --bad-bg: #3d1a1a;
   --level-ok: #4cc283; --level-low: #e3a440;
   --float: 0 10px 28px rgba(0, 0, 0, .5);
-  --series-mono: #d3d7de; --series-color: #d95926;
+  --series-mono: #d3d7de; --series-color: #2bbcec;
   color-scheme: dark;
   }
   :root:not([data-theme="light"]) .tools a.theme-light { display: inline-flex; }
@@ -37,7 +37,7 @@
   --ok-bg: #173325; --warn-bg: #3a2c12; --bad-bg: #3d1a1a;
   --level-ok: #4cc283; --level-low: #e3a440;
   --float: 0 10px 28px rgba(0, 0, 0, .5);
-  --series-mono: #d3d7de; --series-color: #d95926;
+  --series-mono: #d3d7de; --series-color: #2bbcec;
   color-scheme: dark;
 }
 .tools a.theme-light { display: none; }
@@ -118,7 +118,13 @@ form.pw input { width: 11rem; display: inline-block; }
   border-radius: 8px; border: 1px solid var(--border); cursor: pointer; color: var(--text); font-size: .95rem; white-space: nowrap; }
 .user-menu > summary::-webkit-details-marker { display: none; }
 .user-menu > summary:hover, .user-menu[open] > summary { background: var(--hover); }
-.user-menu .role { font-size: .78rem; }
+/* Who is signed in: their name, and a filled mark for technicians. */
+.avatar { display: inline-flex; align-items: center; justify-content: center; width: 1.75rem; height: 1.75rem; border-radius: 50%;
+  background: var(--hover); color: var(--muted); flex: none; }
+.avatar .icon { width: 1rem; height: 1rem; vertical-align: 0; }
+.avatar.tech { background: var(--accent); color: var(--accent-text); }
+.user-menu > summary { padding-left: .35rem; }
+.visually-hidden { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
 .user-menu > summary.tech-on { background: var(--warn-bg); color: var(--warn); border-color: transparent; font-weight: 600; }
 .spacer { flex: 1; }
 .user-menu-list { position: absolute; right: 0; top: calc(100% + .4rem); z-index: 20; min-width: 230px; display: flex; flex-direction: column;
@@ -273,7 +279,8 @@ form.inline { display: inline; }
 .settings { display: grid; gap: .9rem; max-width: 560px; margin-bottom: 1rem; }
 .settings > button { justify-self: start; min-width: 8rem; }
 .settings label { display: grid; gap: .25rem; font-weight: 600; }
-.settings label.check { display: flex; gap: .5rem; align-items: center; font-weight: 600; }
+.settings label.check { display: flex; flex-wrap: wrap; gap: .2rem .5rem; align-items: center; font-weight: 600; }
+.settings label.check .hint { flex-basis: 100%; padding-left: 1.55rem; }
 .share code { font-size: 1.05rem; user-select: all; }
 .hint { font-weight: 400; color: var(--muted); font-size: .85rem; }
 .danger { margin-top: 1rem; }

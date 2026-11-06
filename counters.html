@@ -54,7 +54,7 @@
   <div class="menu" id="menu">
     
     <nav aria-label="Menú">
-      <a href="index.html" ><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-building"></use></svg><span>Clientes</span></a>
+      <a href="index.html" ><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-user"></use></svg><span>Acuerdos</span></a>
       <a href="alerts.html" ><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-bell"></use></svg><span>Avisos</span><span class="count">10</span></a>
       <a href="counters.html" aria-current="page"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-chart"></use></svg><span>Contadores</span></a>
       <a href="settings.html" ><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-settings"></use></svg><span>Ajustes</span></a>
@@ -62,7 +62,7 @@
     <div class="tools">
       
       <details class="user-menu">
-        <summary><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-user"></use></svg><span>Usuario de demostración</span><span class="role muted small">Técnico</span></summary>
+        <summary title="Técnico"><span class="avatar tech"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-wrench"></use></svg></span><span>Usuario de demostración</span><span class="visually-hidden">Técnico</span></summary>
         <div class="user-menu-list">
           <a class="view-toggle" href="#" data-demo-off title="Mostrar también los datos técnicos: IP, avisos, piezas, historial"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-detail"></use></svg><span>Vista detallada</span></a>
       <a href="#" data-demo-off lang="en" title="English"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-globe"></use></svg><span>EN</span></a>
@@ -70,7 +70,7 @@
       <a class="theme-dark" href="#" data-demo-off title="Modo oscuro"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-moon"></use></svg><span class="mobile-only">Modo oscuro</span></a>
           <hr>
           <form method="post" action="/logout">
-            <input type="hidden" name="csrf" value="36cd8b276d8adf91b939f834da9a6e52">
+            <input type="hidden" name="csrf" value="a682d206518ef45c35f7876cbc049ad2">
             <button class="link" type="submit"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-logout"></use></svg><span>Cerrar sesión</span></button>
           </form>
         </div>
@@ -85,577 +85,569 @@
 
 <div class="head">
   <h1 class="page-title">Contadores</h1>
-  <form method="get" action="/counters" class="month">
-    <label>Cliente
-      <select name="client" data-autosubmit>
-        <option value="">Todos los clientes</option>
-        <option value="01a1a6ae-bedf-7000-8f4a-ed1696e8b7b4" >Asesoría Teide S.L.</option><option value="01a1a6ae-bf00-7000-a230-20db28a8e34d" >Clínica Dental Atlántico</option><option value="01a1a6ae-bf1d-7003-a9f4-be2b12de3be4" >Colegio San Borondón</option><option value="01a1a6ae-bf0c-7000-a39d-2c1152069a4b" >Construcciones Roque Nublo</option><option value="01a1a6ae-bf4b-7000-abcd-97033b88e241" >Despacho Jurídico Anaga</option><option value="01a1a6ae-bf43-7000-ac3d-00eeef80df0a" >Ferretería La Orotava</option><option value="01a1a6ae-bf35-7000-a59b-19043c761a39" >Hotel Playa Dorada</option><option value="01a1a6ae-bf1d-7000-a88a-199e1b6a07b4" >Impresoras de baja</option>
-      </select>
-    </label>
-    
-    <label>Mes
-      <select name="month" data-autosubmit>
-      <option value="2026-11" selected>noviembre 2026</option><option value="2026-10" >octubre 2026</option><option value="2026-09" >septiembre 2026</option><option value="2026-08" >agosto 2026</option><option value="2026-07" >julio 2026</option><option value="2026-06" >junio 2026</option><option value="2026-05" >mayo 2026</option><option value="2026-04" >abril 2026</option><option value="2026-03" >marzo 2026</option><option value="2026-02" >febrero 2026</option><option value="2026-01" >enero 2026</option><option value="2025-12" >diciembre 2025</option><option value="2025-11" >noviembre 2025</option><option value="2025-10" >octubre 2025</option>
-      </select>
-    </label>
-    <noscript><button type="submit">OK</button></noscript>
-    <a class="button" href="counters__month-2026-11.csv"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-download"></use></svg>Descargar CSV</a>
-  </form>
+  <a class="button secondary" href="counters__quarter-2026-10.csv"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-download"></use></svg>Descargar CSV</a>
 </div>
+<form method="get" action="/counters" class="month billing-tools">
+  <label>Cliente
+    <select name="client" data-autosubmit>
+      <option value="">Todos los clientes</option>
+      <option value="01a1b058-e4f1-7000-b103-1a19b6b2c1fb" >Asesoría Teide S.L.</option><option value="01a1b058-e53e-7000-95d9-ae676786dbf1" >Clínica Dental Atlántico</option><option value="01a1b058-e5a2-7003-8a41-5631ce860c62" >Colegio San Borondón</option><option value="01a1b058-e560-7000-8bc1-44529e8d6b48" >Construcciones Roque Nublo</option><option value="01a1b058-e643-7000-9911-6afdcc9f1f66" >Despacho Jurídico Anaga</option><option value="01a1b058-e62d-7000-a731-df665594d645" >Ferretería La Orotava</option><option value="01a1b058-e5fd-7000-807b-3878c4362678" >Hotel Playa Dorada</option>
+    </select></label>
+  
+  <label>Trimestre
+    <select name="quarter" data-autosubmit><option value="2026-10" selected>octubre – diciembre 2026 (en curso)</option><option value="2026-07">julio – septiembre 2026</option><option value="2026-04">abril – junio 2026</option><option value="2026-01">enero – marzo 2026</option><option value="2025-10">octubre – diciembre 2025</option></select></label>
+  <noscript><button type="submit">OK</button></noscript>
+</form>
 
-<section class="panel" id="chart">
-  <h2>Impresiones por mes</h2>
-  
-<nav class="tabs ranges" aria-label="Periodo">
-  <a href="counters__range-week.html#chart">Esta semana</a><a href="counters__range-7d.html#chart">Últimos 7 días</a><a href="counters__range-30d.html#chart">Últimos 30 días</a><a href="counters__range-12m.html#chart" aria-current="true">Últimos 12 meses</a><a href="counters__range-24m.html#chart">Últimos 24 meses</a><a href="counters__range-all.html#chart">Desde el principio</a>
-</nav>
-<figure class="chart" data-l-mono="B/N" data-l-color="Color" data-l-total="Total" data-l-nodata="sin lecturas">
-  <figcaption>
-    <span class="muted small">Todas las impresoras · Últimos 12 meses</span>
-    <ul class="legend" aria-label="Impresiones por mes">
-      <li><span class="key s-mono"></span>B/N</li>
-      <li><span class="key s-color"></span>Color</li>
-    </ul>
-  </figcaption>
-  
-  <svg class="plot" viewBox="0 0 720 240" role="img" aria-label="Impresiones por mes">
-    <line class="grid" x1="48" x2="712" y1="212" y2="212"></line>
-    <text class="tick" x="48" dx="-8" y="212" dy="4" text-anchor="end">0</text><line class="grid" x1="48" x2="712" y1="145.33333333333334" y2="145.33333333333334"></line>
-    <text class="tick" x="48" dx="-8" y="145.33333333333334" dy="4" text-anchor="end">20K</text><line class="grid" x1="48" x2="712" y1="78.66666666666667" y2="78.66666666666667"></line>
-    <text class="tick" x="48" dx="-8" y="78.66666666666667" dy="4" text-anchor="end">40K</text><line class="grid" x1="48" x2="712" y1="12" y2="12"></line>
-    <text class="tick" x="48" dx="-8" y="12" dy="4" text-anchor="end">60K</text>
-    <g class="col" tabindex="0" data-month="diciembre 2025" data-mono="45.682" data-color="9.517" data-total="55.199"
-      aria-label="diciembre 2025: B/N 45.682, Color 9.517">
-      <rect class="hit" x="48" y="0" width="55.333333333333336" height="212"></rect>
-      <path class="s-mono" d="M63.67 212V59.73Q63.67 59.73 63.67 59.73H87.67Q87.67 59.73 87.67 59.73V212Z"></path>
-      <path class="s-color" d="M63.67 57.73V32Q63.67 28 67.67 28H83.67Q87.67 28 87.67 32V57.73Z"></path>
-      <text class="tick" x="75.66666666666667" y="240" dy="-8" text-anchor="middle">dic</text>
-    </g><g class="col" tabindex="0" data-month="enero 2026" data-mono="46.519" data-color="9.929" data-total="56.448"
-      aria-label="enero 2026: B/N 46.519, Color 9.929">
-      <rect class="hit" x="103.33333333333334" y="0" width="55.333333333333336" height="212"></rect>
-      <path class="s-mono" d="M119 212V56.94Q119 56.94 119 56.94H143Q143 56.94 143 56.94V212Z"></path>
-      <path class="s-color" d="M119 54.94V27.84Q119 23.84 123 23.84H139Q143 23.84 143 27.84V54.94Z"></path>
-      <text class="tick" x="131" y="240" dy="-8" text-anchor="middle">ene</text>
-    </g><g class="col" tabindex="0" data-month="febrero 2026" data-mono="40.328" data-color="8.789" data-total="49.117"
-      aria-label="febrero 2026: B/N 40.328, Color 8.789">
-      <rect class="hit" x="158.66666666666669" y="0" width="55.333333333333336" height="212"></rect>
-      <path class="s-mono" d="M174.33 212V77.57Q174.33 77.57 174.33 77.57H198.33Q198.33 77.57 198.33 77.57V212Z"></path>
-      <path class="s-color" d="M174.33 75.57V52.28Q174.33 48.28 178.33 48.28H194.33Q198.33 48.28 198.33 52.28V75.57Z"></path>
-      <text class="tick" x="186.33333333333334" y="240" dy="-8" text-anchor="middle">feb</text>
-    </g><g class="col" tabindex="0" data-month="marzo 2026" data-mono="42.558" data-color="9.152" data-total="51.710"
-      aria-label="marzo 2026: B/N 42.558, Color 9.152">
-      <rect class="hit" x="214" y="0" width="55.333333333333336" height="212"></rect>
-      <path class="s-mono" d="M229.67 212V70.14Q229.67 70.14 229.67 70.14H253.67Q253.67 70.14 253.67 70.14V212Z"></path>
-      <path class="s-color" d="M229.67 68.14V43.63Q229.67 39.63 233.67 39.63H249.67Q253.67 39.63 253.67 43.63V68.14Z"></path>
-      <text class="tick" x="241.66666666666666" y="240" dy="-8" text-anchor="middle">mar</text>
-    </g><g class="col" tabindex="0" data-month="abril 2026" data-mono="44.247" data-color="9.483" data-total="53.730"
-      aria-label="abril 2026: B/N 44.247, Color 9.483">
-      <rect class="hit" x="269.33333333333337" y="0" width="55.333333333333336" height="212"></rect>
-      <path class="s-mono" d="M285 212V64.51Q285 64.51 285 64.51H309Q309 64.51 309 64.51V212Z"></path>
-      <path class="s-color" d="M285 62.51V36.9Q285 32.9 289 32.9H305Q309 32.9 309 36.9V62.51Z"></path>
-      <text class="tick" x="297.00000000000006" y="240" dy="-8" text-anchor="middle">abr</text>
-    </g><g class="col" tabindex="0" data-month="mayo 2026" data-mono="44.614" data-color="9.459" data-total="54.073"
-      aria-label="mayo 2026: B/N 44.614, Color 9.459">
-      <rect class="hit" x="324.6666666666667" y="0" width="55.333333333333336" height="212"></rect>
-      <path class="s-mono" d="M340.33 212V63.29Q340.33 63.29 340.33 63.29H364.33Q364.33 63.29 364.33 63.29V212Z"></path>
-      <path class="s-color" d="M340.33 61.29V35.76Q340.33 31.76 344.33 31.76H360.33Q364.33 31.76 364.33 35.76V61.29Z"></path>
-      <text class="tick" x="352.33333333333337" y="240" dy="-8" text-anchor="middle">may</text>
-    </g><g class="col" tabindex="0" data-month="junio 2026" data-mono="43.369" data-color="8.907" data-total="52.276"
-      aria-label="junio 2026: B/N 43.369, Color 8.907">
-      <rect class="hit" x="380" y="0" width="55.333333333333336" height="212"></rect>
-      <path class="s-mono" d="M395.67 212V67.44Q395.67 67.44 395.67 67.44H419.67Q419.67 67.44 419.67 67.44V212Z"></path>
-      <path class="s-color" d="M395.67 65.44V41.75Q395.67 37.75 399.67 37.75H415.67Q419.67 37.75 419.67 41.75V65.44Z"></path>
-      <text class="tick" x="407.6666666666667" y="240" dy="-8" text-anchor="middle">jun</text>
-    </g><g class="col" tabindex="0" data-month="julio 2026" data-mono="47.197" data-color="10.182" data-total="57.379"
-      aria-label="julio 2026: B/N 47.197, Color 10.182">
-      <rect class="hit" x="435.33333333333337" y="0" width="55.333333333333336" height="212"></rect>
-      <path class="s-mono" d="M451 212V54.68Q451 54.68 451 54.68H475Q475 54.68 475 54.68V212Z"></path>
-      <path class="s-color" d="M451 52.68V24.74Q451 20.74 455 20.74H471Q475 20.74 475 24.74V52.68Z"></path>
-      <text class="tick" x="463.00000000000006" y="240" dy="-8" text-anchor="middle">jul</text>
-    </g><g class="col" tabindex="0" data-month="agosto 2026" data-mono="42.627" data-color="9.104" data-total="51.731"
-      aria-label="agosto 2026: B/N 42.627, Color 9.104">
-      <rect class="hit" x="490.6666666666667" y="0" width="55.333333333333336" height="212"></rect>
-      <path class="s-mono" d="M506.33 212V69.91Q506.33 69.91 506.33 69.91H530.33Q530.33 69.91 530.33 69.91V212Z"></path>
-      <path class="s-color" d="M506.33 67.91V43.56Q506.33 39.56 510.33 39.56H526.33Q530.33 39.56 530.33 43.56V67.91Z"></path>
-      <text class="tick" x="518.3333333333334" y="240" dy="-8" text-anchor="middle">ago</text>
-    </g><g class="col" tabindex="0" data-month="septiembre 2026" data-mono="44.812" data-color="9.746" data-total="54.558"
-      aria-label="septiembre 2026: B/N 44.812, Color 9.746">
-      <rect class="hit" x="546" y="0" width="55.333333333333336" height="212"></rect>
-      <path class="s-mono" d="M561.67 212V62.63Q561.67 62.63 561.67 62.63H585.67Q585.67 62.63 585.67 62.63V212Z"></path>
-      <path class="s-color" d="M561.67 60.63V34.14Q561.67 30.14 565.67 30.14H581.67Q585.67 30.14 585.67 34.14V60.63Z"></path>
-      <text class="tick" x="573.6666666666666" y="240" dy="-8" text-anchor="middle">sep</text>
-    </g><g class="col" tabindex="0" data-month="octubre 2026" data-mono="45.633" data-color="9.695" data-total="55.328"
-      aria-label="octubre 2026: B/N 45.633, Color 9.695">
-      <rect class="hit" x="601.3333333333334" y="0" width="55.333333333333336" height="212"></rect>
-      <path class="s-mono" d="M617 212V59.89Q617 59.89 617 59.89H641Q641 59.89 641 59.89V212Z"></path>
-      <path class="s-color" d="M617 57.89V31.57Q617 27.57 621 27.57H637Q641 27.57 641 31.57V57.89Z"></path>
-      <text class="tick" x="629" y="240" dy="-8" text-anchor="middle">oct</text>
-    </g><g class="col" tabindex="0" data-month="noviembre 2026" data-mono="4.070" data-color="967" data-total="5.037"
-      aria-label="noviembre 2026: B/N 4.070, Color 967">
-      <rect class="hit" x="656.6666666666667" y="0" width="55.333333333333336" height="212"></rect>
-      <path class="s-mono" d="M672.33 212V198.43Q672.33 198.43 672.33 198.43H696.33Q696.33 198.43 696.33 198.43V212Z"></path>
-      <path class="s-color" d="M672.33 196.43V196.43Q672.33 195.21 673.56 195.21H695.11Q696.33 195.21 696.33 196.43V196.43Z"></path>
-      <text class="tick" x="684.3333333333334" y="240" dy="-8" text-anchor="middle">nov</text>
-    </g>
-    <line class="axis" x1="48" x2="712" y1="212" y2="212"></line>
-  </svg>
-  <details class="chart-table">
-    <summary>Ver los datos en tabla</summary>
-    <table class="list">
-      <thead><tr><th>Mes</th><th class="num">B/N</th><th class="num">Color</th><th class="num">Total</th></tr></thead>
-      <tbody><tr>
-        <td>diciembre 2025</td>
-        <td class="num" data-label="B/N">45.682</td><td class="num" data-label="Color">9.517</td><td class="num" data-label="Total">55.199</td>
-        
-      </tr><tr>
-        <td>enero 2026</td>
-        <td class="num" data-label="B/N">46.519</td><td class="num" data-label="Color">9.929</td><td class="num" data-label="Total">56.448</td>
-        
-      </tr><tr>
-        <td>febrero 2026</td>
-        <td class="num" data-label="B/N">40.328</td><td class="num" data-label="Color">8.789</td><td class="num" data-label="Total">49.117</td>
-        
-      </tr><tr>
-        <td>marzo 2026</td>
-        <td class="num" data-label="B/N">42.558</td><td class="num" data-label="Color">9.152</td><td class="num" data-label="Total">51.710</td>
-        
-      </tr><tr>
-        <td>abril 2026</td>
-        <td class="num" data-label="B/N">44.247</td><td class="num" data-label="Color">9.483</td><td class="num" data-label="Total">53.730</td>
-        
-      </tr><tr>
-        <td>mayo 2026</td>
-        <td class="num" data-label="B/N">44.614</td><td class="num" data-label="Color">9.459</td><td class="num" data-label="Total">54.073</td>
-        
-      </tr><tr>
-        <td>junio 2026</td>
-        <td class="num" data-label="B/N">43.369</td><td class="num" data-label="Color">8.907</td><td class="num" data-label="Total">52.276</td>
-        
-      </tr><tr>
-        <td>julio 2026</td>
-        <td class="num" data-label="B/N">47.197</td><td class="num" data-label="Color">10.182</td><td class="num" data-label="Total">57.379</td>
-        
-      </tr><tr>
-        <td>agosto 2026</td>
-        <td class="num" data-label="B/N">42.627</td><td class="num" data-label="Color">9.104</td><td class="num" data-label="Total">51.731</td>
-        
-      </tr><tr>
-        <td>septiembre 2026</td>
-        <td class="num" data-label="B/N">44.812</td><td class="num" data-label="Color">9.746</td><td class="num" data-label="Total">54.558</td>
-        
-      </tr><tr>
-        <td>octubre 2026</td>
-        <td class="num" data-label="B/N">45.633</td><td class="num" data-label="Color">9.695</td><td class="num" data-label="Total">55.328</td>
-        
-      </tr><tr>
-        <td>noviembre 2026 <span class="muted small">(incompleto: desde la primera lectura)</span></td>
-        <td class="num" data-label="B/N">4.070</td><td class="num" data-label="Color">967</td><td class="num" data-label="Total">5.037</td>
-        
-      </tr></tbody>
-    </table>
-  </details>
-  
-</figure>
+<p class="hint">Las copias, las incluidas y los excesos se calculan por trimestre natural, como en la facturación. Estimación con los contadores leídos; la factura definitiva puede variar.</p>
 
-</section>
-<table class="list counters-list">
+
+<h2 class="site-head"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-user"></use></svg>Asesoría Teide S.L.</h2>
+
+<table class="list billing quarterly">
   <thead>
-    <tr><th rowspan="2">Impresora</th><th colspan="2" class="num">Contador</th><th colspan="3" class="num">Impreso en el mes</th></tr>
-    <tr><th class="num">Inicio</th><th class="num">Fin</th><th class="num">Total</th><th class="num">B/N</th><th class="num">Color</th></tr>
+    <tr><th rowspan="2">Número</th><th rowspan="2">Modelo</th><th rowspan="2" class="num">Cuota mensual</th>
+      <th colspan="3" class="group mono">Negro</th><th colspan="3" class="group color">Color</th>
+      <th rowspan="2" class="num">Total</th></tr>
+    <tr><th class="num">Impresas</th><th class="num">Incluidas</th><th class="num">Excesos</th>
+      <th class="num">Impresas</th><th class="num">Incluidas</th><th class="num">Excesos</th></tr>
   </thead>
   <tbody>
   
+  
     <tr>
-      <td class="name"><a href="printer_01a1a6ae-bee0-7000-a137-f14180cecfe6.html"><span class="ref">M1001</span>Brother MFC-L5750DW series</a><br><span class="muted small">Asesoría Teide S.L.</span>
-        </td>
-      
-      <td class="num" data-label="Inicio">60.761</td>
-      <td class="num" data-label="Fin">60.918</td>
-      <td class="num" data-label="Impreso en el mes"><strong>157</strong></td>
-      <td class="num" data-label="B/N">157</td>
-      <td class="num" data-label="Color">—</td>
-      
+      <td class="ref-cell"><a href="printer_01a1b058-e4f5-7004-9ed9-0a782728a54b.html" class="ref">M1003</a></td>
+      <td data-label="Modelo"><span><a href="printer_01a1b058-e4f5-7004-9ed9-0a782728a54b.html">Brother MFC-L9570CDW series</a></span></td>
+      <td class="num" data-label="Cuota mensual">40,00 €</td>
+      <td class="num" data-label="Impresas · Negro">1.645</td>
+      <td class="num" data-label="Incluidas · Negro">4.500</td>
+      <td class="num" data-label="Excesos · Negro">0,00 €</td>
+      <td class="num" data-label="Impresas · Color">627</td>
+      <td class="num" data-label="Incluidas · Color">900</td>
+      <td class="num" data-label="Excesos · Color">0,00 €</td>
+      <td class="num" data-label="Total"><strong>40,00 €</strong></td>
     </tr>
   
     <tr>
-      <td class="name"><a href="printer_01a1a6ae-bee1-7000-8c20-ed94a56c395d.html"><span class="ref">M1002</span>Brother HL-L8360CDW series</a><br><span class="muted small">Asesoría Teide S.L.</span>
-        </td>
-      
-      <td class="num" data-label="Inicio">85.447</td>
-      <td class="num" data-label="Fin">85.541</td>
-      <td class="num" data-label="Impreso en el mes"><strong>94</strong></td>
-      <td class="num" data-label="B/N">62</td>
-      <td class="num" data-label="Color">32</td>
-      
+      <td class="ref-cell"><a href="printer_01a1b058-e4f6-7004-86cc-f89d92b64b90.html" class="ref">M1006</a></td>
+      <td data-label="Modelo"><span><a href="printer_01a1b058-e4f6-7004-86cc-f89d92b64b90.html">Brother MFC-L5750DW series</a></span></td>
+      <td class="num" data-label="Cuota mensual">40,00 €</td>
+      <td class="num" data-label="Impresas · Negro">2.298</td>
+      <td class="num" data-label="Incluidas · Negro">4.500</td>
+      <td class="num" data-label="Excesos · Negro">0,00 €</td>
+      <td class="num" data-label="Impresas · Color">—</td>
+      <td class="num" data-label="Incluidas · Color">—</td>
+      <td class="num" data-label="Excesos · Color">—</td>
+      <td class="num" data-label="Total"><strong>40,00 €</strong></td>
     </tr>
   
     <tr>
-      <td class="name"><a href="printer_01a1a6ae-bee1-7002-9645-8d507edde26d.html"><span class="ref">M1003</span>HP LaserJet MFP M227fdw</a><br><span class="muted small">Asesoría Teide S.L.</span>
-        </td>
-      
-      <td class="num" data-label="Inicio">63.008</td>
-      <td class="num" data-label="Fin">63.096</td>
-      <td class="num" data-label="Impreso en el mes"><strong>88</strong></td>
-      <td class="num" data-label="B/N">88</td>
-      <td class="num" data-label="Color">—</td>
-      
+      <td class="ref-cell"><a href="printer_01a1b058-e4f7-7002-88ec-d2bf851ac348.html" class="ref">M1009</a></td>
+      <td data-label="Modelo"><span><a href="printer_01a1b058-e4f7-7002-88ec-d2bf851ac348.html">Brother MFC-L9570CDW series</a></span></td>
+      <td class="num" data-label="Cuota mensual">70,00 €</td>
+      <td class="num" data-label="Impresas · Negro">0</td>
+      <td class="num" data-label="Incluidas · Negro">5.576</td>
+      <td class="num" data-label="Excesos · Negro">0,00 €</td>
+      <td class="num" data-label="Impresas · Color">0</td>
+      <td class="num" data-label="Incluidas · Color">1.115</td>
+      <td class="num" data-label="Excesos · Color">0,00 €</td>
+      <td class="num" data-label="Total"><strong>70,00 €</strong></td>
     </tr>
   
     <tr>
-      <td class="name"><a href="printer_01a1a6ae-bee1-7004-9ee6-de4f2d74b122.html"><span class="ref">M1004</span>HP Color LaserJet MFP M477fdw</a><br><span class="muted small">Asesoría Teide S.L.</span>
-        </td>
-      
-      <td class="num" data-label="Inicio">90.078</td>
-      <td class="num" data-label="Fin">90.149</td>
-      <td class="num" data-label="Impreso en el mes"><strong>71</strong></td>
-      <td class="num" data-label="B/N">56</td>
-      <td class="num" data-label="Color">15</td>
-      
+      <td class="ref-cell"><a href="printer_01a1b058-e4f5-7002-b340-0c2ff2eab21c.html" class="ref">M1002</a></td>
+      <td data-label="Modelo"><span><a href="printer_01a1b058-e4f5-7002-b340-0c2ff2eab21c.html">HP LaserJet MFP M227fdw</a></span></td>
+      <td class="num" data-label="Cuota mensual">75,00 €</td>
+      <td class="num" data-label="Impresas · Negro">901</td>
+      <td class="num" data-label="Incluidas · Negro">1.500</td>
+      <td class="num" data-label="Excesos · Negro">0,00 €</td>
+      <td class="num" data-label="Impresas · Color">—</td>
+      <td class="num" data-label="Incluidas · Color">—</td>
+      <td class="num" data-label="Excesos · Color">—</td>
+      <td class="num" data-label="Total"><strong>75,00 €</strong></td>
     </tr>
   
     <tr>
-      <td class="name"><a href="printer_01a1a6ae-bee1-7006-a359-713c384c811a.html"><span class="ref">M1005</span>HP Color LaserJet MFP M477fdw</a><br><span class="muted small">Asesoría Teide S.L.</span>
-        </td>
-      
-      <td class="num" data-label="Inicio">110.366</td>
-      <td class="num" data-label="Fin">110.511</td>
-      <td class="num" data-label="Impreso en el mes"><strong>145</strong></td>
-      <td class="num" data-label="B/N">95</td>
-      <td class="num" data-label="Color">50</td>
-      
+      <td class="ref-cell"><a href="printer_01a1b058-e4f6-7002-8d05-1e8c3db458b5.html" class="ref">M1005</a></td>
+      <td data-label="Modelo"><span><a href="printer_01a1b058-e4f6-7002-8d05-1e8c3db458b5.html">Brother HL-L8360CDW series</a></span></td>
+      <td class="num" data-label="Cuota mensual">40,00 €</td>
+      <td class="num" data-label="Impresas · Negro">2.079</td>
+      <td class="num" data-label="Incluidas · Negro">6.000</td>
+      <td class="num" data-label="Excesos · Negro">0,00 €</td>
+      <td class="num" data-label="Impresas · Color">765</td>
+      <td class="num" data-label="Incluidas · Color">1.200</td>
+      <td class="num" data-label="Excesos · Color">0,00 €</td>
+      <td class="num" data-label="Total"><strong>40,00 €</strong></td>
     </tr>
   
     <tr>
-      <td class="name"><a href="printer_01a1a6ae-bee1-7008-9bdb-f03f47ee0da3.html"><span class="ref">M1006</span>Brother MFC-L9570CDW series</a><br><span class="muted small">Asesoría Teide S.L.</span>
-        </td>
-      
-      <td class="num" data-label="Inicio">126.632</td>
-      <td class="num" data-label="Fin">126.906</td>
-      <td class="num" data-label="Impreso en el mes"><strong>274</strong></td>
-      <td class="num" data-label="B/N">194</td>
-      <td class="num" data-label="Color">80</td>
-      
+      <td class="ref-cell"><a href="printer_01a1b058-e4f7-7000-abd2-a5fd62257634.html" class="ref">M1008</a></td>
+      <td data-label="Modelo"><span><a href="printer_01a1b058-e4f7-7000-abd2-a5fd62257634.html">Kyocera ECOSYS M5526cdw</a></span></td>
+      <td class="num" data-label="Cuota mensual">85,00 €</td>
+      <td class="num" data-label="Impresas · Negro">1.436</td>
+      <td class="num" data-label="Incluidas · Negro">4.500</td>
+      <td class="num" data-label="Excesos · Negro">0,00 €</td>
+      <td class="num" data-label="Impresas · Color">488</td>
+      <td class="num" data-label="Incluidas · Color">900</td>
+      <td class="num" data-label="Excesos · Color">0,00 €</td>
+      <td class="num" data-label="Total"><strong>85,00 €</strong></td>
     </tr>
   
     <tr>
-      <td class="name"><a href="printer_01a1a6ae-bee2-7001-81fd-80c2d991fb93.html"><span class="ref">M1007</span>EPSON WF-C5790 Series</a><br><span class="muted small">Asesoría Teide S.L.</span>
-        </td>
-      
-      <td class="num" data-label="Inicio">89.642</td>
-      <td class="num" data-label="Fin">89.820</td>
-      <td class="num" data-label="Impreso en el mes"><strong>178</strong></td>
-      <td class="num" data-label="B/N">134</td>
-      <td class="num" data-label="Color">44</td>
-      
+      <td class="ref-cell"><a href="printer_01a1b058-e4f5-7000-9b7b-dfaed37573c0.html" class="ref">M1001</a></td>
+      <td data-label="Modelo"><span><a href="printer_01a1b058-e4f5-7000-9b7b-dfaed37573c0.html">Brother MFC-L5750DW series</a></span></td>
+      <td class="num" data-label="Cuota mensual">65,00 €</td>
+      <td class="num" data-label="Impresas · Negro">1.926</td>
+      <td class="num" data-label="Incluidas · Negro">4.500</td>
+      <td class="num" data-label="Excesos · Negro">0,00 €</td>
+      <td class="num" data-label="Impresas · Color">—</td>
+      <td class="num" data-label="Incluidas · Color">—</td>
+      <td class="num" data-label="Excesos · Color">—</td>
+      <td class="num" data-label="Total"><strong>65,00 €</strong></td>
     </tr>
   
     <tr>
-      <td class="name"><a href="printer_01a1a6ae-bee2-7003-a481-e602d64da8ea.html"><span class="ref">M1008</span>Brother MFC-L9570CDW series</a><br><span class="muted small">Asesoría Teide S.L.</span>
-        </td>
-      
-      <td class="num" data-label="Inicio">137.569</td>
-      <td class="num" data-label="Fin">137.983</td>
-      <td class="num" data-label="Impreso en el mes"><strong>414</strong></td>
-      <td class="num" data-label="B/N">294</td>
-      <td class="num" data-label="Color">120</td>
-      
+      <td class="ref-cell"><a href="printer_01a1b058-e4f6-7000-892f-3dd3b2b11312.html" class="ref">M1004</a></td>
+      <td data-label="Modelo"><span><a href="printer_01a1b058-e4f6-7000-892f-3dd3b2b11312.html">HP LaserJet Pro MFP M428fdw</a></span></td>
+      <td class="num" data-label="Cuota mensual">70,00 €</td>
+      <td class="num" data-label="Impresas · Negro">2.920</td>
+      <td class="num" data-label="Incluidas · Negro">6.000</td>
+      <td class="num" data-label="Excesos · Negro">0,00 €</td>
+      <td class="num" data-label="Impresas · Color">—</td>
+      <td class="num" data-label="Incluidas · Color">—</td>
+      <td class="num" data-label="Excesos · Color">—</td>
+      <td class="num" data-label="Total"><strong>70,00 €</strong></td>
     </tr>
   
     <tr>
-      <td class="name"><a href="printer_01a1a6ae-bee2-7005-bce0-4e069b8f7119.html"><span class="ref">M1009</span>HP LaserJet Pro MFP M428fdw</a><br><span class="muted small">Asesoría Teide S.L.</span>
-        <br><span class="muted small">Instalada durante el mes: cuenta desde su primera lectura.</span></td>
-      
-      <td class="num" data-label="Inicio">68.740</td>
-      <td class="num" data-label="Fin">68.849</td>
-      <td class="num" data-label="Impreso en el mes"><strong>109</strong></td>
-      <td class="num" data-label="B/N">109</td>
-      <td class="num" data-label="Color">—</td>
-      
+      <td class="ref-cell"><a href="printer_01a1b058-e4f6-7006-8af8-a93e9cf44a3f.html" class="ref">M1007</a></td>
+      <td data-label="Modelo"><span><a href="printer_01a1b058-e4f6-7006-8af8-a93e9cf44a3f.html">HP LaserJet Pro MFP M428fdw</a></span></td>
+      <td class="num" data-label="Cuota mensual">30,00 €</td>
+      <td class="num" data-label="Impresas · Negro">4.216</td>
+      <td class="num" data-label="Incluidas · Negro">7.500</td>
+      <td class="num" data-label="Excesos · Negro">0,00 €</td>
+      <td class="num" data-label="Impresas · Color">—</td>
+      <td class="num" data-label="Incluidas · Color">—</td>
+      <td class="num" data-label="Excesos · Color">—</td>
+      <td class="num" data-label="Total"><strong>30,00 €</strong></td>
     </tr>
   
-    <tr>
-      <td class="name"><a href="printer_01a1a6ae-bf01-7000-be66-2784dcd358d7.html"><span class="ref">M1010</span>Brother MFC-L9570CDW series</a><br><span class="muted small">Clínica Dental Atlántico</span>
-        </td>
-      
-      <td class="num" data-label="Inicio">105.798</td>
-      <td class="num" data-label="Fin">105.988</td>
-      <td class="num" data-label="Impreso en el mes"><strong>190</strong></td>
-      <td class="num" data-label="B/N">130</td>
-      <td class="num" data-label="Color">60</td>
-      
-    </tr>
-  
-    <tr>
-      <td class="name"><a href="printer_01a1a6ae-bf01-7002-90dc-a1d7b2877ff0.html"><span class="ref">M1011</span>Brother MFC-L5750DW series</a><br><span class="muted small">Clínica Dental Atlántico</span>
-        </td>
-      
-      <td class="num" data-label="Inicio">99.756</td>
-      <td class="num" data-label="Fin">100.028</td>
-      <td class="num" data-label="Impreso en el mes"><strong>272</strong></td>
-      <td class="num" data-label="B/N">272</td>
-      <td class="num" data-label="Color">—</td>
-      
-    </tr>
-  
-    <tr>
-      <td class="name"><a href="printer_01a1a6ae-bf01-7004-ba34-26f39fb8d126.html"><span class="ref">M1012</span>Brother MFC-L9570CDW series</a><br><span class="muted small">Clínica Dental Atlántico</span>
-        </td>
-      
-      <td class="num" data-label="Inicio">98.936</td>
-      <td class="num" data-label="Fin">99.428</td>
-      <td class="num" data-label="Impreso en el mes"><strong>492</strong></td>
-      <td class="num" data-label="B/N">349</td>
-      <td class="num" data-label="Color">143</td>
-      
-    </tr>
-  
-    <tr>
-      <td class="name"><a href="printer_01a1a6ae-bf0d-7000-b6c7-df1d42cc40f7.html"><span class="ref">M1013</span>HP LaserJet MFP M227fdw</a><br><span class="muted small">Impresoras de baja</span>
-        </td>
-      
-      <td class="num" data-label="Inicio">33.438</td>
-      <td class="num" data-label="Fin">33.499</td>
-      <td class="num" data-label="Impreso en el mes"><strong>61</strong></td>
-      <td class="num" data-label="B/N">61</td>
-      <td class="num" data-label="Color">—</td>
-      
-    </tr>
-  
-    <tr>
-      <td class="name"><a href="printer_01a1a6ae-bf0e-7000-b9b7-d6ec28c9d68b.html"><span class="ref">M1014</span>EPSON WF-C5790 Series</a><br><span class="muted small">Construcciones Roque Nublo</span>
-        </td>
-      
-      <td class="num" data-label="Inicio">43.772</td>
-      <td class="num" data-label="Fin">43.836</td>
-      <td class="num" data-label="Impreso en el mes"><strong>64</strong></td>
-      <td class="num" data-label="B/N">47</td>
-      <td class="num" data-label="Color">17</td>
-      
-    </tr>
-  
-    <tr>
-      <td class="name"><a href="printer_01a1a6ae-bf0e-7002-9342-6f82c4d05859.html"><span class="ref">M1015</span>HP LaserJet MFP M227fdw</a><br><span class="muted small">Construcciones Roque Nublo</span>
-        </td>
-      
-      <td class="num" data-label="Inicio">33.272</td>
-      <td class="num" data-label="Fin">33.335</td>
-      <td class="num" data-label="Impreso en el mes"><strong>63</strong></td>
-      <td class="num" data-label="B/N">63</td>
-      <td class="num" data-label="Color">—</td>
-      
-    </tr>
-  
-    <tr>
-      <td class="name"><a href="printer_01a1a6ae-bf0e-7004-b803-d32554334f78.html"><span class="ref">M1016</span>HP Color LaserJet MFP M477fdw</a><br><span class="muted small">Construcciones Roque Nublo</span>
-        </td>
-      
-      <td class="num" data-label="Inicio">68.956</td>
-      <td class="num" data-label="Fin">69.039</td>
-      <td class="num" data-label="Impreso en el mes"><strong>83</strong></td>
-      <td class="num" data-label="B/N">59</td>
-      <td class="num" data-label="Color">24</td>
-      
-    </tr>
-  
-    <tr>
-      <td class="name"><a href="printer_01a1a6ae-bf0e-7006-8f81-42314fad9c4c.html"><span class="ref">M1017</span>HP LaserJet MFP M227fdw</a><br><span class="muted small">Construcciones Roque Nublo</span>
-        <br><span class="muted small">Instalada durante el mes: cuenta desde su primera lectura.</span></td>
-      
-      <td class="num" data-label="Inicio">40.208</td>
-      <td class="num" data-label="Fin">40.208</td>
-      <td class="num" data-label="Impreso en el mes"><strong>0</strong></td>
-      <td class="num" data-label="B/N">0</td>
-      <td class="num" data-label="Color">—</td>
-      
-    </tr>
-  
-    <tr>
-      <td class="name"><a href="printer_01a1a6ae-bf1f-7000-a1f6-0deefb3fd1ae.html"><span class="ref">M1018</span>HP LaserJet MFP M227fdw</a><br><span class="muted small">Colegio San Borondón</span>
-        </td>
-      
-      <td class="num" data-label="Inicio">73.565</td>
-      <td class="num" data-label="Fin">73.656</td>
-      <td class="num" data-label="Impreso en el mes"><strong>91</strong></td>
-      <td class="num" data-label="B/N">91</td>
-      <td class="num" data-label="Color">—</td>
-      
-    </tr>
-  
-    <tr>
-      <td class="name"><a href="printer_01a1a6ae-bf1f-7002-a2ba-c73ae3498954.html"><span class="ref">M1019</span>HP LaserJet Pro MFP M428fdw</a><br><span class="muted small">Colegio San Borondón</span>
-        </td>
-      
-      <td class="num" data-label="Inicio">62.382</td>
-      <td class="num" data-label="Fin">62.382</td>
-      <td class="num" data-label="Impreso en el mes"><strong>0</strong></td>
-      <td class="num" data-label="B/N">0</td>
-      <td class="num" data-label="Color">—</td>
-      
-    </tr>
-  
-    <tr>
-      <td class="name"><a href="printer_01a1a6ae-bf1f-7004-b7c0-8aaab1dbaac7.html"><span class="ref">M1020</span>HP LaserJet Pro MFP M428fdw</a><br><span class="muted small">Colegio San Borondón</span>
-        </td>
-      
-      <td class="num" data-label="Inicio">99.719</td>
-      <td class="num" data-label="Fin">100.009</td>
-      <td class="num" data-label="Impreso en el mes"><strong>290</strong></td>
-      <td class="num" data-label="B/N">290</td>
-      <td class="num" data-label="Color">—</td>
-      
-    </tr>
-  
-    <tr>
-      <td class="name"><a href="printer_01a1a6ae-bf1f-7006-8d72-f297a9dfea2a.html"><span class="ref">M1021</span>HP LaserJet Pro MFP M428fdw</a><br><span class="muted small">Colegio San Borondón</span>
-        </td>
-      
-      <td class="num" data-label="Inicio">98.954</td>
-      <td class="num" data-label="Fin">99.407</td>
-      <td class="num" data-label="Impreso en el mes"><strong>453</strong></td>
-      <td class="num" data-label="B/N">453</td>
-      <td class="num" data-label="Color">—</td>
-      
-    </tr>
-  
-    <tr>
-      <td class="name"><a href="printer_01a1a6ae-bf1f-7008-a13c-bed88055b7d7.html"><span class="ref">M1022</span>Brother MFC-L9570CDW series</a><br><span class="muted small">Colegio San Borondón</span>
-        </td>
-      
-      <td class="num" data-label="Inicio">115.867</td>
-      <td class="num" data-label="Fin">116.152</td>
-      <td class="num" data-label="Impreso en el mes"><strong>285</strong></td>
-      <td class="num" data-label="B/N">209</td>
-      <td class="num" data-label="Color">76</td>
-      
-    </tr>
-  
-    <tr>
-      <td class="name"><a href="printer_01a1a6ae-bf20-7000-b293-219d29334c49.html"><span class="ref">M1023</span>Brother HL-L8360CDW series</a><br><span class="muted small">Colegio San Borondón</span>
-        </td>
-      
-      <td class="num" data-label="Inicio">79.718</td>
-      <td class="num" data-label="Fin">79.913</td>
-      <td class="num" data-label="Impreso en el mes"><strong>195</strong></td>
-      <td class="num" data-label="B/N">127</td>
-      <td class="num" data-label="Color">68</td>
-      
-    </tr>
-  
-    <tr>
-      <td class="name"><a href="printer_01a1a6ae-bf36-7000-acd1-2956ab0bf249.html"><span class="ref">M1024</span>Brother HL-L8360CDW series</a><br><span class="muted small">Hotel Playa Dorada</span>
-        </td>
-      
-      <td class="num" data-label="Inicio">105.616</td>
-      <td class="num" data-label="Fin">105.742</td>
-      <td class="num" data-label="Impreso en el mes"><strong>126</strong></td>
-      <td class="num" data-label="B/N">85</td>
-      <td class="num" data-label="Color">41</td>
-      
-    </tr>
-  
-    <tr>
-      <td class="name"><a href="printer_01a1a6ae-bf36-7002-94a2-e3fb255ccd87.html"><span class="ref">M1025</span>EPSON WF-C5790 Series</a><br><span class="muted small">Hotel Playa Dorada</span>
-        </td>
-      
-      <td class="num" data-label="Inicio">116.728</td>
-      <td class="num" data-label="Fin">116.860</td>
-      <td class="num" data-label="Impreso en el mes"><strong>132</strong></td>
-      <td class="num" data-label="B/N">101</td>
-      <td class="num" data-label="Color">31</td>
-      
-    </tr>
-  
-    <tr>
-      <td class="name"><a href="printer_01a1a6ae-bf36-7004-9b1f-d91df5b9b3d6.html"><span class="ref">M1026</span>Brother HL-L8360CDW series</a><br><span class="muted small">Hotel Playa Dorada</span>
-        </td>
-      
-      <td class="num" data-label="Inicio">77.911</td>
-      <td class="num" data-label="Fin">78.127</td>
-      <td class="num" data-label="Impreso en el mes"><strong>216</strong></td>
-      <td class="num" data-label="B/N">156</td>
-      <td class="num" data-label="Color">60</td>
-      
-    </tr>
-  
-    <tr>
-      <td class="name"><a href="printer_01a1a6ae-bf36-7006-93ec-2d21b15d7d77.html"><span class="ref">M1027</span>Kyocera ECOSYS M5526cdw</a><br><span class="muted small">Hotel Playa Dorada</span>
-        <br><span class="muted small">Instalada durante el mes: cuenta desde su primera lectura.</span></td>
-      
-      <td class="num" data-label="Inicio">66.952</td>
-      <td class="num" data-label="Fin">66.988</td>
-      <td class="num" data-label="Impreso en el mes"><strong>36</strong></td>
-      <td class="num" data-label="B/N">28</td>
-      <td class="num" data-label="Color">8</td>
-      
-    </tr>
-  
-    <tr>
-      <td class="name"><a href="printer_01a1a6ae-bf43-7002-8ebc-21e50b5101ab.html"><span class="ref">M1028</span>Brother MFC-L9570CDW series</a><br><span class="muted small">Ferretería La Orotava</span>
-        </td>
-      
-      <td class="num" data-label="Inicio">85.759</td>
-      <td class="num" data-label="Fin">85.969</td>
-      <td class="num" data-label="Impreso en el mes"><strong>210</strong></td>
-      <td class="num" data-label="B/N">146</td>
-      <td class="num" data-label="Color">64</td>
-      
-    </tr>
-  
-    <tr>
-      <td class="name"><a href="printer_01a1a6ae-bf43-7004-8c7d-d11565b7fd3d.html"><span class="ref">M1029</span>HP LaserJet MFP M227fdw</a><br><span class="muted small">Ferretería La Orotava</span>
-        </td>
-      
-      <td class="num" data-label="Inicio">32.739</td>
-      <td class="num" data-label="Fin">32.807</td>
-      <td class="num" data-label="Impreso en el mes"><strong>68</strong></td>
-      <td class="num" data-label="B/N">68</td>
-      <td class="num" data-label="Color">—</td>
-      
-    </tr>
-  
-    <tr>
-      <td class="name"><a href="printer_01a1a6ae-bf4b-7002-a160-6bb812b4b350.html"><span class="ref">M1030</span>HP LaserJet MFP M227fdw</a><br><span class="muted small">Despacho Jurídico Anaga</span>
-        </td>
-      
-      <td class="num" data-label="Inicio">52.418</td>
-      <td class="num" data-label="Fin">52.473</td>
-      <td class="num" data-label="Impreso en el mes"><strong>55</strong></td>
-      <td class="num" data-label="B/N">55</td>
-      <td class="num" data-label="Color">—</td>
-      
-    </tr>
-  
-    <tr>
-      <td class="name"><a href="printer_01a1a6ae-bf4b-7004-9d72-3d591f26e2ae.html"><span class="ref">M1031</span>HP Color LaserJet MFP M477fdw</a><br><span class="muted small">Despacho Jurídico Anaga</span>
-        </td>
-      
-      <td class="num" data-label="Inicio">98.925</td>
-      <td class="num" data-label="Fin">99.050</td>
-      <td class="num" data-label="Impreso en el mes"><strong>125</strong></td>
-      <td class="num" data-label="B/N">91</td>
-      <td class="num" data-label="Color">34</td>
-      
-    </tr>
-  
-    <tr>
-      <td class="name"><a href="printer_01a1a6ae-bf4c-7001-92b7-0ba9bed91395.html"><span class="ref">M1032</span>HP Color LaserJet MFP M477fdw</a><br><span class="muted small">Despacho Jurídico Anaga</span>
-        <br><span class="muted small">Instalada durante el mes: cuenta desde su primera lectura.</span></td>
-      
-      <td class="num" data-label="Inicio">69.899</td>
-      <td class="num" data-label="Fin">69.899</td>
-      <td class="num" data-label="Impreso en el mes"><strong>0</strong></td>
-      <td class="num" data-label="B/N">0</td>
-      <td class="num" data-label="Color">0</td>
-      
-    </tr>
-  
+    <tr class="total"><td></td><td colspan="8"><strong>Total Asesoría Teide S.L.</strong></td>
+      <td class="num" data-label="Total"><strong>515,00 €</strong></td></tr>
   </tbody>
 </table>
+
+<h2 class="site-head"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-user"></use></svg>Clínica Dental Atlántico</h2>
+
+<table class="list billing quarterly">
+  <thead>
+    <tr><th rowspan="2">Número</th><th rowspan="2">Modelo</th><th rowspan="2" class="num">Cuota mensual</th>
+      <th colspan="3" class="group mono">Negro</th><th colspan="3" class="group color">Color</th>
+      <th rowspan="2" class="num">Total</th></tr>
+    <tr><th class="num">Impresas</th><th class="num">Incluidas</th><th class="num">Excesos</th>
+      <th class="num">Impresas</th><th class="num">Incluidas</th><th class="num">Excesos</th></tr>
+  </thead>
+  <tbody>
+  
+  
+    <tr class="todo">
+      <td class="ref-cell"><a href="printer_01a1b058-e540-7000-8b41-f0b1c72d4acb.html" class="ref">M1010</a></td>
+      <td data-label="Modelo"><span><a href="printer_01a1b058-e540-7000-8b41-f0b1c72d4acb.html">Kyocera ECOSYS M5526cdw</a><br><span class="warn small">Sin contrato.</span> · <a class="small" href="printer_01a1b058-e540-7000-8b41-f0b1c72d4acb__tab-settings.html#contract">Indicar el contrato</a></span></td>
+      <td class="num" data-label="Cuota mensual">—</td>
+      <td class="num" data-label="Impresas · Negro">1.551</td>
+      <td class="num" data-label="Incluidas · Negro">—</td>
+      <td class="num" data-label="Excesos · Negro">—</td>
+      <td class="num" data-label="Impresas · Color">555</td>
+      <td class="num" data-label="Incluidas · Color">—</td>
+      <td class="num" data-label="Excesos · Color">—</td>
+      <td class="num" data-label="Total"><strong>—</strong></td>
+    </tr>
+  
+    <tr>
+      <td class="ref-cell"><a href="printer_01a1b058-e541-7000-99ab-18f880ad81e6.html" class="ref">M1011</a></td>
+      <td data-label="Modelo"><span><a href="printer_01a1b058-e541-7000-99ab-18f880ad81e6.html">EPSON WF-C5790 Series</a></span></td>
+      <td class="num" data-label="Cuota mensual">40,00 €</td>
+      <td class="num" data-label="Impresas · Negro">2.033</td>
+      <td class="num" data-label="Incluidas · Negro">4.500</td>
+      <td class="num" data-label="Excesos · Negro">0,00 €</td>
+      <td class="num" data-label="Impresas · Color">693</td>
+      <td class="num" data-label="Incluidas · Color">900</td>
+      <td class="num" data-label="Excesos · Color">0,00 €</td>
+      <td class="num" data-label="Total"><strong>40,00 €</strong></td>
+    </tr>
+  
+    <tr>
+      <td class="ref-cell"><a href="printer_01a1b058-e542-7000-bb07-2cfd3027859a.html" class="ref">M1012</a></td>
+      <td data-label="Modelo"><span><a href="printer_01a1b058-e542-7000-bb07-2cfd3027859a.html">Brother MFC-L5750DW series</a></span></td>
+      <td class="num" data-label="Cuota mensual">30,00 €</td>
+      <td class="num" data-label="Impresas · Negro">2.186</td>
+      <td class="num" data-label="Incluidas · Negro">4.500</td>
+      <td class="num" data-label="Excesos · Negro">0,00 €</td>
+      <td class="num" data-label="Impresas · Color">—</td>
+      <td class="num" data-label="Incluidas · Color">—</td>
+      <td class="num" data-label="Excesos · Color">—</td>
+      <td class="num" data-label="Total"><strong>30,00 €</strong></td>
+    </tr>
+  
+    <tr class="total"><td></td><td colspan="8"><strong>Total Clínica Dental Atlántico</strong></td>
+      <td class="num" data-label="Total"><strong>70,00 €</strong></td></tr>
+  </tbody>
+</table>
+
+<h2 class="site-head"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-user"></use></svg>Colegio San Borondón</h2>
+
+<table class="list billing quarterly">
+  <thead>
+    <tr><th rowspan="2">Número</th><th rowspan="2">Modelo</th><th rowspan="2" class="num">Cuota mensual</th>
+      <th colspan="3" class="group mono">Negro</th><th colspan="3" class="group color">Color</th>
+      <th rowspan="2" class="num">Total</th></tr>
+    <tr><th class="num">Impresas</th><th class="num">Incluidas</th><th class="num">Excesos</th>
+      <th class="num">Impresas</th><th class="num">Incluidas</th><th class="num">Excesos</th></tr>
+  </thead>
+  <tbody>
+  
+  
+    <tr>
+      <td class="ref-cell"><a href="printer_01a1b058-e5b2-7000-9b92-9bb747d62b8a.html" class="ref">M1018</a></td>
+      <td data-label="Modelo"><span><a href="printer_01a1b058-e5b2-7000-9b92-9bb747d62b8a.html">Kyocera ECOSYS M5526cdw</a></span></td>
+      <td class="num" data-label="Cuota mensual">70,00 €</td>
+      <td class="num" data-label="Impresas · Negro">1.000</td>
+      <td class="num" data-label="Incluidas · Negro">3.000</td>
+      <td class="num" data-label="Excesos · Negro">0,00 €</td>
+      <td class="num" data-label="Impresas · Color">414</td>
+      <td class="num" data-label="Incluidas · Color">600</td>
+      <td class="num" data-label="Excesos · Color">0,00 €</td>
+      <td class="num" data-label="Total"><strong>70,00 €</strong></td>
+    </tr>
+  
+    <tr>
+      <td class="ref-cell"><a href="printer_01a1b058-e5b3-7000-bd43-ae9b03daa572.html" class="ref">M1019</a></td>
+      <td data-label="Modelo"><span><a href="printer_01a1b058-e5b3-7000-bd43-ae9b03daa572.html">Brother MFC-L9570CDW series</a></span></td>
+      <td class="num" data-label="Cuota mensual">35,00 €</td>
+      <td class="num" data-label="Impresas · Negro">2.720</td>
+      <td class="num" data-label="Incluidas · Negro">9.000</td>
+      <td class="num" data-label="Excesos · Negro">0,00 €</td>
+      <td class="num" data-label="Impresas · Color">999</td>
+      <td class="num" data-label="Incluidas · Color">1.800</td>
+      <td class="num" data-label="Excesos · Color">0,00 €</td>
+      <td class="num" data-label="Total"><strong>35,00 €</strong></td>
+    </tr>
+  
+    <tr>
+      <td class="ref-cell"><a href="printer_01a1b058-e5b3-7002-886b-99a14462a8b8.html" class="ref">M1020</a></td>
+      <td data-label="Modelo"><span><a href="printer_01a1b058-e5b3-7002-886b-99a14462a8b8.html">HP LaserJet MFP M227fdw</a></span></td>
+      <td class="num" data-label="Cuota mensual">50,00 €</td>
+      <td class="num" data-label="Impresas · Negro">981</td>
+      <td class="num" data-label="Incluidas · Negro">1.500</td>
+      <td class="num" data-label="Excesos · Negro">0,00 €</td>
+      <td class="num" data-label="Impresas · Color">—</td>
+      <td class="num" data-label="Incluidas · Color">—</td>
+      <td class="num" data-label="Excesos · Color">—</td>
+      <td class="num" data-label="Total"><strong>50,00 €</strong></td>
+    </tr>
+  
+    <tr>
+      <td class="ref-cell"><a href="printer_01a1b058-e5b4-7000-8a5a-f86bedbe2d01.html" class="ref">M1021</a></td>
+      <td data-label="Modelo"><span><a href="printer_01a1b058-e5b4-7000-8a5a-f86bedbe2d01.html">Kyocera ECOSYS M5526cdw</a></span></td>
+      <td class="num" data-label="Cuota mensual">55,00 €</td>
+      <td class="num" data-label="Impresas · Negro">1.732</td>
+      <td class="num" data-label="Incluidas · Negro">4.500</td>
+      <td class="num" data-label="Excesos · Negro">0,00 €</td>
+      <td class="num" data-label="Impresas · Color">728</td>
+      <td class="num" data-label="Incluidas · Color">900</td>
+      <td class="num" data-label="Excesos · Color">0,00 €</td>
+      <td class="num" data-label="Total"><strong>55,00 €</strong></td>
+    </tr>
+  
+    <tr>
+      <td class="ref-cell"><a href="printer_01a1b058-e5b5-7000-8b6b-c9c844425612.html" class="ref">M1022</a></td>
+      <td data-label="Modelo"><span><a href="printer_01a1b058-e5b5-7000-8b6b-c9c844425612.html">Brother MFC-L9570CDW series</a></span></td>
+      <td class="num" data-label="Cuota mensual">30,00 €</td>
+      <td class="num" data-label="Impresas · Negro">1.451</td>
+      <td class="num" data-label="Incluidas · Negro">3.000</td>
+      <td class="num" data-label="Excesos · Negro">0,00 €</td>
+      <td class="num" data-label="Impresas · Color">540</td>
+      <td class="num" data-label="Incluidas · Color">600</td>
+      <td class="num" data-label="Excesos · Color">0,00 €</td>
+      <td class="num" data-label="Total"><strong>30,00 €</strong></td>
+    </tr>
+  
+    <tr>
+      <td class="ref-cell"><a href="printer_01a1b058-e5b5-7002-b366-c60aeb6deb72.html" class="ref">M1023</a></td>
+      <td data-label="Modelo"><span><a href="printer_01a1b058-e5b5-7002-b366-c60aeb6deb72.html">HP Color LaserJet MFP M477fdw</a></span></td>
+      <td class="num" data-label="Cuota mensual">40,00 €</td>
+      <td class="num" data-label="Impresas · Negro">1.287</td>
+      <td class="num" data-label="Incluidas · Negro">3.000</td>
+      <td class="num" data-label="Excesos · Negro">0,00 €</td>
+      <td class="num" data-label="Impresas · Color">517</td>
+      <td class="num" data-label="Incluidas · Color">600</td>
+      <td class="num" data-label="Excesos · Color">0,00 €</td>
+      <td class="num" data-label="Total"><strong>40,00 €</strong></td>
+    </tr>
+  
+    <tr class="total"><td></td><td colspan="8"><strong>Total Colegio San Borondón</strong></td>
+      <td class="num" data-label="Total"><strong>280,00 €</strong></td></tr>
+  </tbody>
+</table>
+
+<h2 class="site-head"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-user"></use></svg>Construcciones Roque Nublo</h2>
+
+<table class="list billing quarterly">
+  <thead>
+    <tr><th rowspan="2">Número</th><th rowspan="2">Modelo</th><th rowspan="2" class="num">Cuota mensual</th>
+      <th colspan="3" class="group mono">Negro</th><th colspan="3" class="group color">Color</th>
+      <th rowspan="2" class="num">Total</th></tr>
+    <tr><th class="num">Impresas</th><th class="num">Incluidas</th><th class="num">Excesos</th>
+      <th class="num">Impresas</th><th class="num">Incluidas</th><th class="num">Excesos</th></tr>
+  </thead>
+  <tbody>
+  
+  
+    <tr>
+      <td class="ref-cell"><a href="printer_01a1b058-e563-7000-9c03-f5b095d28fca.html" class="ref">M1014</a></td>
+      <td data-label="Modelo"><span><a href="printer_01a1b058-e563-7000-9c03-f5b095d28fca.html">EPSON WF-C5790 Series</a></span></td>
+      <td class="num" data-label="Cuota mensual">60,00 €</td>
+      <td class="num" data-label="Impresas · Negro">2.111</td>
+      <td class="num" data-label="Incluidas · Negro">4.500</td>
+      <td class="num" data-label="Excesos · Negro">0,00 €</td>
+      <td class="num" data-label="Impresas · Color">848</td>
+      <td class="num" data-label="Incluidas · Color">900</td>
+      <td class="num" data-label="Excesos · Color">0,00 €</td>
+      <td class="num" data-label="Total"><strong>60,00 €</strong></td>
+    </tr>
+  
+    <tr>
+      <td class="ref-cell"><a href="printer_01a1b058-e564-7001-bee6-71134e3c9f08.html" class="ref">M1016</a></td>
+      <td data-label="Modelo"><span><a href="printer_01a1b058-e564-7001-bee6-71134e3c9f08.html">Brother MFC-L9570CDW series</a></span></td>
+      <td class="num" data-label="Cuota mensual">35,00 €</td>
+      <td class="num" data-label="Impresas · Negro">1.303</td>
+      <td class="num" data-label="Incluidas · Negro">3.000</td>
+      <td class="num" data-label="Excesos · Negro">0,00 €</td>
+      <td class="num" data-label="Impresas · Color">489</td>
+      <td class="num" data-label="Incluidas · Color">600</td>
+      <td class="num" data-label="Excesos · Color">0,00 €</td>
+      <td class="num" data-label="Total"><strong>35,00 €</strong></td>
+    </tr>
+  
+    <tr>
+      <td class="ref-cell"><a href="printer_01a1b058-e563-7002-bcd4-d7f29542fda9.html" class="ref">M1015</a></td>
+      <td data-label="Modelo"><span><a href="printer_01a1b058-e563-7002-bcd4-d7f29542fda9.html">HP LaserJet MFP M227fdw</a></span></td>
+      <td class="num" data-label="Cuota mensual">35,00 €</td>
+      <td class="num" data-label="Impresas · Negro">1.679</td>
+      <td class="num" data-label="Incluidas · Negro">3.000</td>
+      <td class="num" data-label="Excesos · Negro">0,00 €</td>
+      <td class="num" data-label="Impresas · Color">—</td>
+      <td class="num" data-label="Incluidas · Color">—</td>
+      <td class="num" data-label="Excesos · Color">—</td>
+      <td class="num" data-label="Total"><strong>35,00 €</strong></td>
+    </tr>
+  
+    <tr>
+      <td class="ref-cell"><a href="printer_01a1b058-e564-7003-927b-b2e347dd21d7.html" class="ref">M1017</a></td>
+      <td data-label="Modelo"><span><a href="printer_01a1b058-e564-7003-927b-b2e347dd21d7.html">HP Color LaserJet MFP M477fdw</a></span></td>
+      <td class="num" data-label="Cuota mensual">60,00 €</td>
+      <td class="num" data-label="Impresas · Negro">121</td>
+      <td class="num" data-label="Incluidas · Negro">2.886</td>
+      <td class="num" data-label="Excesos · Negro">0,00 €</td>
+      <td class="num" data-label="Impresas · Color">44</td>
+      <td class="num" data-label="Incluidas · Color">577</td>
+      <td class="num" data-label="Excesos · Color">0,00 €</td>
+      <td class="num" data-label="Total"><strong>60,00 €</strong></td>
+    </tr>
+  
+    <tr class="total"><td></td><td colspan="8"><strong>Total Construcciones Roque Nublo</strong></td>
+      <td class="num" data-label="Total"><strong>190,00 €</strong></td></tr>
+  </tbody>
+</table>
+
+<h2 class="site-head"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-user"></use></svg>Despacho Jurídico Anaga</h2>
+
+<table class="list billing quarterly">
+  <thead>
+    <tr><th rowspan="2">Número</th><th rowspan="2">Modelo</th><th rowspan="2" class="num">Cuota mensual</th>
+      <th colspan="3" class="group mono">Negro</th><th colspan="3" class="group color">Color</th>
+      <th rowspan="2" class="num">Total</th></tr>
+    <tr><th class="num">Impresas</th><th class="num">Incluidas</th><th class="num">Excesos</th>
+      <th class="num">Impresas</th><th class="num">Incluidas</th><th class="num">Excesos</th></tr>
+  </thead>
+  <tbody>
+  
+  
+    <tr>
+      <td class="ref-cell"><a href="printer_01a1b058-e645-7000-9ddb-17b43f6ce7fb.html" class="ref">M1030</a></td>
+      <td data-label="Modelo"><span><a href="printer_01a1b058-e645-7000-9ddb-17b43f6ce7fb.html">HP Color LaserJet MFP M477fdw</a></span></td>
+      <td class="num" data-label="Cuota mensual">75,00 €</td>
+      <td class="num" data-label="Impresas · Negro">912</td>
+      <td class="num" data-label="Incluidas · Negro">3.000</td>
+      <td class="num" data-label="Excesos · Negro">0,00 €</td>
+      <td class="num" data-label="Impresas · Color">335</td>
+      <td class="num" data-label="Incluidas · Color">600</td>
+      <td class="num" data-label="Excesos · Color">0,00 €</td>
+      <td class="num" data-label="Total"><strong>75,00 €</strong></td>
+    </tr>
+  
+    <tr>
+      <td class="ref-cell"><a href="printer_01a1b058-e646-7000-b8cb-83bd9f3ce8d1.html" class="ref">M1031</a></td>
+      <td data-label="Modelo"><span><a href="printer_01a1b058-e646-7000-b8cb-83bd9f3ce8d1.html">Brother MFC-L9570CDW series</a></span></td>
+      <td class="num" data-label="Cuota mensual">25,00 €</td>
+      <td class="num" data-label="Impresas · Negro">2.203</td>
+      <td class="num" data-label="Incluidas · Negro">6.000</td>
+      <td class="num" data-label="Excesos · Negro">0,00 €</td>
+      <td class="num" data-label="Impresas · Color">862</td>
+      <td class="num" data-label="Incluidas · Color">1.200</td>
+      <td class="num" data-label="Excesos · Color">0,00 €</td>
+      <td class="num" data-label="Total"><strong>25,00 €</strong></td>
+    </tr>
+  
+    <tr>
+      <td class="ref-cell"><a href="printer_01a1b058-e647-7001-8162-788b1eaaa21f.html" class="ref">M1032</a></td>
+      <td data-label="Modelo"><span><a href="printer_01a1b058-e647-7001-8162-788b1eaaa21f.html">Brother MFC-L9570CDW series</a></span></td>
+      <td class="num" data-label="Cuota mensual">40,00 €</td>
+      <td class="num" data-label="Impresas · Negro">385</td>
+      <td class="num" data-label="Incluidas · Negro">4.973</td>
+      <td class="num" data-label="Excesos · Negro">0,00 €</td>
+      <td class="num" data-label="Impresas · Color">152</td>
+      <td class="num" data-label="Incluidas · Color">995</td>
+      <td class="num" data-label="Excesos · Color">0,00 €</td>
+      <td class="num" data-label="Total"><strong>40,00 €</strong></td>
+    </tr>
+  
+    <tr class="total"><td></td><td colspan="8"><strong>Total Despacho Jurídico Anaga</strong></td>
+      <td class="num" data-label="Total"><strong>140,00 €</strong></td></tr>
+  </tbody>
+</table>
+
+<h2 class="site-head"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-user"></use></svg>Ferretería La Orotava</h2>
+
+<table class="list billing quarterly">
+  <thead>
+    <tr><th rowspan="2">Número</th><th rowspan="2">Modelo</th><th rowspan="2" class="num">Cuota mensual</th>
+      <th colspan="3" class="group mono">Negro</th><th colspan="3" class="group color">Color</th>
+      <th rowspan="2" class="num">Total</th></tr>
+    <tr><th class="num">Impresas</th><th class="num">Incluidas</th><th class="num">Excesos</th>
+      <th class="num">Impresas</th><th class="num">Incluidas</th><th class="num">Excesos</th></tr>
+  </thead>
+  <tbody>
+  
+  
+    <tr>
+      <td class="ref-cell"><a href="printer_01a1b058-e62f-7000-9ac7-a698a1478cdf.html" class="ref">M1028</a></td>
+      <td data-label="Modelo"><span><a href="printer_01a1b058-e62f-7000-9ac7-a698a1478cdf.html">HP Color LaserJet MFP M477fdw</a></span></td>
+      <td class="num" data-label="Cuota mensual">45,00 €</td>
+      <td class="num" data-label="Impresas · Negro">1.261</td>
+      <td class="num" data-label="Incluidas · Negro">3.000</td>
+      <td class="num" data-label="Excesos · Negro">0,00 €</td>
+      <td class="num" data-label="Impresas · Color">455</td>
+      <td class="num" data-label="Incluidas · Color">600</td>
+      <td class="num" data-label="Excesos · Color">0,00 €</td>
+      <td class="num" data-label="Total"><strong>45,00 €</strong></td>
+    </tr>
+  
+    <tr>
+      <td class="ref-cell"><a href="printer_01a1b058-e630-7000-a787-c9da1d069d6e.html" class="ref">M1029</a></td>
+      <td data-label="Modelo"><span><a href="printer_01a1b058-e630-7000-a787-c9da1d069d6e.html">HP LaserJet Pro MFP M428fdw</a></span></td>
+      <td class="num" data-label="Cuota mensual">85,00 €</td>
+      <td class="num" data-label="Impresas · Negro">4.459</td>
+      <td class="num" data-label="Incluidas · Negro">7.500</td>
+      <td class="num" data-label="Excesos · Negro">0,00 €</td>
+      <td class="num" data-label="Impresas · Color">—</td>
+      <td class="num" data-label="Incluidas · Color">—</td>
+      <td class="num" data-label="Excesos · Color">—</td>
+      <td class="num" data-label="Total"><strong>85,00 €</strong></td>
+    </tr>
+  
+    <tr class="total"><td></td><td colspan="8"><strong>Total Ferretería La Orotava</strong></td>
+      <td class="num" data-label="Total"><strong>130,00 €</strong></td></tr>
+  </tbody>
+</table>
+
+<h2 class="site-head"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-user"></use></svg>Hotel Playa Dorada</h2>
+
+<table class="list billing quarterly">
+  <thead>
+    <tr><th rowspan="2">Número</th><th rowspan="2">Modelo</th><th rowspan="2" class="num">Cuota mensual</th>
+      <th colspan="3" class="group mono">Negro</th><th colspan="3" class="group color">Color</th>
+      <th rowspan="2" class="num">Total</th></tr>
+    <tr><th class="num">Impresas</th><th class="num">Incluidas</th><th class="num">Excesos</th>
+      <th class="num">Impresas</th><th class="num">Incluidas</th><th class="num">Excesos</th></tr>
+  </thead>
+  <tbody>
+  
+  
+    <tr>
+      <td class="ref-cell"><a href="printer_01a1b058-e5ff-7000-8699-e08602174dc9.html" class="ref">M1024</a></td>
+      <td data-label="Modelo"><span><a href="printer_01a1b058-e5ff-7000-8699-e08602174dc9.html">HP LaserJet MFP M227fdw</a></span></td>
+      <td class="num" data-label="Cuota mensual">25,00 €</td>
+      <td class="num" data-label="Impresas · Negro">1.566</td>
+      <td class="num" data-label="Incluidas · Negro">3.000</td>
+      <td class="num" data-label="Excesos · Negro">0,00 €</td>
+      <td class="num" data-label="Impresas · Color">—</td>
+      <td class="num" data-label="Incluidas · Color">—</td>
+      <td class="num" data-label="Excesos · Color">—</td>
+      <td class="num" data-label="Total"><strong>25,00 €</strong></td>
+    </tr>
+  
+    <tr>
+      <td class="ref-cell"><a href="printer_01a1b058-e600-7000-94d2-bea2ef2d0d2d.html" class="ref">M1025</a></td>
+      <td data-label="Modelo"><span><a href="printer_01a1b058-e600-7000-94d2-bea2ef2d0d2d.html">HP LaserJet Pro MFP M428fdw</a></span></td>
+      <td class="num" data-label="Cuota mensual">40,00 €</td>
+      <td class="num" data-label="Impresas · Negro">2.377</td>
+      <td class="num" data-label="Incluidas · Negro">4.500</td>
+      <td class="num" data-label="Excesos · Negro">0,00 €</td>
+      <td class="num" data-label="Impresas · Color">—</td>
+      <td class="num" data-label="Incluidas · Color">—</td>
+      <td class="num" data-label="Excesos · Color">—</td>
+      <td class="num" data-label="Total"><strong>40,00 €</strong></td>
+    </tr>
+  
+    <tr>
+      <td class="ref-cell"><a href="printer_01a1b058-e600-7002-a1f0-86871e98961c.html" class="ref">M1026</a></td>
+      <td data-label="Modelo"><span><a href="printer_01a1b058-e600-7002-a1f0-86871e98961c.html">EPSON WF-C5790 Series</a></span></td>
+      <td class="num" data-label="Cuota mensual">60,00 €</td>
+      <td class="num" data-label="Impresas · Negro">2.339</td>
+      <td class="num" data-label="Incluidas · Negro">6.000</td>
+      <td class="num" data-label="Excesos · Negro">0,00 €</td>
+      <td class="num" data-label="Impresas · Color">880</td>
+      <td class="num" data-label="Incluidas · Color">1.200</td>
+      <td class="num" data-label="Excesos · Color">0,00 €</td>
+      <td class="num" data-label="Total"><strong>60,00 €</strong></td>
+    </tr>
+  
+    <tr>
+      <td class="ref-cell"><a href="printer_01a1b058-e601-7000-b944-c0fd135a609e.html" class="ref">M1027</a></td>
+      <td data-label="Modelo"><span><a href="printer_01a1b058-e601-7000-b944-c0fd135a609e.html">Kyocera ECOSYS M5526cdw</a></span></td>
+      <td class="num" data-label="Cuota mensual">60,00 €</td>
+      <td class="num" data-label="Impresas · Negro">190</td>
+      <td class="num" data-label="Incluidas · Negro">2.935</td>
+      <td class="num" data-label="Excesos · Negro">0,00 €</td>
+      <td class="num" data-label="Impresas · Color">79</td>
+      <td class="num" data-label="Incluidas · Color">587</td>
+      <td class="num" data-label="Excesos · Color">0,00 €</td>
+      <td class="num" data-label="Total"><strong>60,00 €</strong></td>
+    </tr>
+  
+    <tr class="total"><td></td><td colspan="8"><strong>Total Hotel Playa Dorada</strong></td>
+      <td class="num" data-label="Total"><strong>185,00 €</strong></td></tr>
+  </tbody>
+</table>
+
+
+<h2>Total por acuerdo</h2>
+<table class="list billing-sum">
+  <thead><tr><th>Cliente</th><th class="num">Total</th></tr></thead>
+  <tbody><tr><td>Asesoría Teide S.L.</td><td class="num" data-label="Total">515,00 €</td></tr><tr><td>Clínica Dental Atlántico</td><td class="num" data-label="Total">70,00 €</td></tr><tr><td>Colegio San Borondón</td><td class="num" data-label="Total">280,00 €</td></tr><tr><td>Construcciones Roque Nublo</td><td class="num" data-label="Total">190,00 €</td></tr><tr><td>Despacho Jurídico Anaga</td><td class="num" data-label="Total">140,00 €</td></tr><tr><td>Ferretería La Orotava</td><td class="num" data-label="Total">130,00 €</td></tr><tr><td>Hotel Playa Dorada</td><td class="num" data-label="Total">185,00 €</td></tr>
+    <tr class="total"><td><strong>Total</strong></td><td class="num" data-label="Total"><strong>1.510,00 €</strong></td></tr></tbody>
+</table>
+
+
+
+
 
 </main>
 <footer>NetPrinter demo</footer>
 </body>
 </html>
+
 
 
 
